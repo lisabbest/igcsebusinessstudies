@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IGCSE Business Studies (0450) - Paper 1 Mock Examination</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+    body { font-family: 'Inter', sans-serif; }
+    .mark-tag { font-size: 0.75rem; padding: 0.15rem 0.4rem; border-radius: 0.25rem; font-weight: 600; }
+    .tag-ao1 { background-color: #DBEAFE; color: #1E40AF; }
+    .tag-ao2 { background-color: #D1FAE5; color: #065F46; }
+    .tag-ao3 { background-color: #FEF3C7; color: #92400E; }
+    .tag-ao4 { background-color: #FCE7F3; color: #9D174D; }
+    @media print {
+      .no-print { display: none !important; }
+      .print-only { display: block !important; }
+      body { background: white; color: black; }
+      textarea { border: 1px solid #ccc !important; height: auto !important; }
+    }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col">
+
+  <!-- Header & Navigation -->
+  <header class="bg-slate-900 text-white sticky top-0 z-50 shadow-md no-print">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex flex-wrap justify-between items-center gap-4">
+      <div class="flex items-center space-x-3">
+        <div class="bg-blue-600 text-white p-2 rounded-lg font-bold text-xl">0450</div>
+        <div>
+          <h1 class="text-lg font-bold leading-tight">Cambridge IGCSE™ Business Studies</h1>
+          <p class="text-xs text-slate-400">Paper 1 Short Answer and Data Response • Units 1, 2 & 3</p>
+        </div>
+      </div>
+
+      <!-- Timer & Controls -->
+      <div class="flex items-center space-x-6">
+        <div class="flex items-center space-x-2 bg-slate-800 px-4 py-2 rounded-lg border border-slate-700">
+          <i class="fa-regular fa-clock text-blue-400 text-lg"></i>
+          <div>
+            <div class="text-xs text-slate-400 font-medium">TIME REMAINING</div>
+            <div id="timerDisplay" class="font-mono text-xl font-bold tracking-wider text-amber-400">01:30:00</div>
+          </div>
+        </div>
+
+        <div class="flex items-center space-x-2">
+          <button id="startTimerBtn" onclick="toggleTimer()" class="bg-emerald-600 hover:bg-emerald-500 text-white px-3 py-2 rounded-lg font-medium text-sm flex items-center gap-2 transition">
+            <i class="fa-solid fa-play" id="timerIcon"></i> <span id="timerBtnText">Start Exam</span>
+          </button>
+          <button onclick="resetTimer()" class="bg-slate-700 hover:bg-slate-600 text-slate-200 px-3 py-2 rounded-lg text-sm font-medium transition" title="Reset Timer">
+            <i class="fa-solid fa-rotate-right"></i>
+          </button>
+          <button onclick="window.print()" class="bg-blue-700 hover:bg-blue-600 text-white px-3 py-2 rounded-lg text-sm font-medium transition flex items-center gap-2">
+            <i class="fa-solid fa-print"></i> Print / PDF
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Container -->
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex-grow w-full">
+
+    <!-- Instructions Banner -->
+    <div class="bg-white border-l-4 border-blue-600 rounded-xl shadow-sm p-6 mb-8">
+      <div class="flex flex-col md:flex-row justify-between md:items-center gap-4">
+        <div>
+          <h2 class="text-xl font-bold text-slate-900 mb-1">Paper 1 Instructions & Information</h2>
+          <ul class="text-sm text-slate-600 space-y-1 list-disc list-inside">
+            <li><strong>Duration:</strong> 1 hour 30 minutes (90 minutes).</li>
+            <li><strong>Total Marks:</strong> 80 marks (4 compulsory case study questions, 20 marks each).</li>
+            <li><strong>Coverage:</strong> Unit 1 (Understanding activity), Unit 2 (People), Unit 3 (Marketing).</li>
+            <li><strong>Assessment Objectives:</strong> AO1 Knowledge (30%), AO2 Application (30%), AO3 Analysis (20%), AO4 Evaluation (20%).</li>
+          </ul>
+        </div>
+        <div class="bg-blue-50 border border-blue-100 p-4 rounded-lg text-blue-900 text-sm max-w-xs">
+          <p class="font-semibold mb-1"><i class="fa-solid fa-lightbulb text-amber-500 mr-1"></i> Exam Tip:</p>
+          <p class="text-xs text-blue-800">Always contextually apply your answers to the given case study business in parts (b), (c), (d), and (e) to earn full AO2 application marks!</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Question Navigation Tabs -->
+    <div class="flex border-b border-slate-200 mb-6 overflow-x-auto no-print space-x-2">
+      <button onclick="switchTab('q1')" id="tab-q1" class="tab-btn px-5 py-3 font-semibold text-sm border-b-2 border-blue-600 text-blue-600 flex items-center gap-2 whitespace-nowrap">
+        <span>Q1: GreenLeaf Furniture</span> <span class="bg-slate-200 text-slate-700 text-xs px-2 py-0.5 rounded-full">20 Marks</span>
+      </button>
+      <button onclick="switchTab('q2')" id="tab-q2" class="tab-btn px-5 py-3 font-semibold text-sm border-b-2 border-transparent text-slate-500 hover:text-slate-700 flex items-center gap-2 whitespace-nowrap">
+        <span>Q2: Apex Logistics Ltd</span> <span class="bg-slate-200 text-slate-700 text-xs px-2 py-0.5 rounded-full">20 Marks</span>
+      </button>
+      <button onclick="switchTab('q3')" id="tab-q3" class="tab-btn px-5 py-3 font-semibold text-sm border-b-2 border-transparent text-slate-500 hover:text-slate-700 flex items-center gap-2 whitespace-nowrap">
+        <span>Q3: Nova Tech Smartwatches</span> <span class="bg-slate-200 text-slate-700 text-xs px-2 py-0.5 rounded-full">20 Marks</span>
+      </button>
+      <button onclick="switchTab('q4')" id="tab-q4" class="tab-btn px-5 py-3 font-semibold text-sm border-b-2 border-transparent text-slate-500 hover:text-slate-700 flex items-center gap-2 whitespace-nowrap">
+        <span>Q4: FreshBite Foods</span> <span class="bg-slate-200 text-slate-700 text-xs px-2 py-0.5 rounded-full">20 Marks</span>
+      </button>
+      <button onclick="switchTab('all')" id="tab-all" class="tab-btn px-5 py-3 font-semibold text-sm border-b-2 border-transparent text-slate-500 hover:text-slate-700 flex items-center gap-2 whitespace-nowrap">
+        <i class="fa-solid fa-eye"></i> View Entire Paper
+      </button>
+    </div>
+
+    <!-- ==================== QUESTION 1 ==================== -->
+    <section id="sec-q1" class="question-block space-y-6">
+      <div class="bg-white rounded-xl shadow-sm border border-slate-200 p-6">
+        <div class="flex justify-between items-start border-b border-slate-100 pb-4 mb-4">
+          <div>
+            <span class="text-xs font-bold text-blue-600 uppercase tracking-wider">Question 1 • Unit 1 Focus</span>
+            <h3 class="text-2xl font-bold text-slate-900">GreenLeaf Furniture (GLF)</h3>
+          </div>
+          <span class="bg-blue-100 text-blue-800 font-bold text-sm px-3 py-1 rounded-full">20 Marks</span>
+        </div>
+
+        <!-- Case Study Scenario -->
+        <div class="bg-slate-50 border-l-4 border-amber-500 p-4 rounded-r-lg text-slate-700 text-sm leading-relaxed mb-6">
+          <h4 class="font-bold text-slate-900 mb-1 flex items-center gap-2">
+            <i class="fa-solid fa-building text-amber-600"></i> Business Context:
+          </h4>
+          <p>
+            Tariq is an entrepreneur who founded <strong>GreenLeaf Furniture (GLF)</strong> as a sole trader. GLF produces handcrafted wooden dining tables and chairs using timber supplied by local sawmills. Demand for high-quality wooden furniture has risen sharply due to economic growth in the region. 
+          </p>
+          <p class="mt-2">
+            GLF currently employs 8 skilled carpenters in a small workshop. However, Tariq faces scarcity of skilled labor and high timber raw material costs. To fund the purchase of a larger automated factory, Tariq is considering changing GLF's legal form of business organization to a <strong>Private Limited Company (Ltd)</strong>. He is also evaluating two growth strategies: opening a second manufacturing site (internal growth) or acquiring a competing local carpentry business (external growth).
+          </p>
+        </div>
+
+        <!-- Sub-questions -->
+        <div class="space-y-6">
+
+          <!-- 1(a) -->
+          <div class="border border-slate-200 rounded-lg p-4 bg-white">
+            <div class="flex justify-between items-center mb-2">
+              <label class="font-semibold text-slate-900 text-sm">(a) Define 'opportunity cost'.</label>
+              <span class="text-xs font-bold text-slate-500 bg-slate-100 px-2 py-1 rounded">[2 marks]</span>
+            </div>
+            <textarea id="ans-q1a" rows="2" class="w-full p-3 border border-slate-300 rounded-lg text-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition" placeholder="Write your answer here..."></textarea>
+            
+            <button onclick="toggleScheme('ms-q1a')" class="mt-2 text-xs font-semibold text-blue-600 hover:text-blue-800 flex items-center gap-1 no-print">
+              <i class="fa-solid fa-chevron-down"></i> Toggle Mark Scheme & Model Answer
+            </button>
+
+            <div id="ms-q1a" class="hidden mt-3 p-4 bg-emerald-50 border border-emerald-200 rounded-lg text-xs text-emerald-950 space-y-2">
+              <div class="flex gap-2 mb-1">
+                <span class="mark-tag tag-ao1">AO1 Knowledge: 2 Marks</span>
+              </div>
+              <p><strong>Official Mark Scheme Definition:</strong> The next best alternative given up / foregone by choosing another item [2 marks].</p>
+              <p><em>Partial credit:</em> Giving up an alternative without specifying 'next best' or 'foregone' [1 mark].</p>
+              <div class="bg-white p-2 rounded border border-emerald-200 mt-1">
+                <strong>Model Answer:</strong> Opportunity cost is the value of the next best alternative that is foregone when making a choice between competing options.
+              </div>
+            </div>
+          </div>
+
+          <!-- 1(b) -->
+          <div class="border border-slate-200 rounded-lg p-4 bg-white">
+            <div class="flex justify-between items-center mb-2">
+              <label class="font-semibold text-slate-900 text-sm">(b) Identify two ways in which GreenLeaf Furniture (GLF) could add value to its products.</label>
+              <span class="text-xs font-bold text-slate-500 bg-slate-100 px-2 py-1 rounded">[2 marks]</span>
+            </div>
+            <textarea id="ans-q1b" rows="2" class="w-full p-3 border border-slate-300 rounded-lg text-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition" placeholder="Write your answer here..."></textarea>
+            
+            <button onclick="toggleScheme('ms-q1b')" class="mt-2 text-xs font-semibold text-blue-600 hover:text-blue-800 flex items-center gap-1 no-print">
+              <i class="fa-solid fa-chevron-down"></i> Toggle Mark Scheme & Model Answer
+            </button>
+
+            <div id="ms-q1b" class="hidden mt-3 p-4 bg-emerald-50 border border-emerald-200 rounded-lg text-xs text-emerald-950 space-y-2">
+              <div class="flex gap-2 mb-1">
+                <span class="mark-tag tag-ao1">AO1 Knowledge: 1 Mark</span>
+                <span class="mark-tag tag-ao2">AO2 Application: 1 Mark</span>
+              </div>
+              <p><strong>Mark Breakdown:</strong> 1 mark per valid method identified applied to GLF context (1 mark x 2 = 2 marks).</p>
+              <ul class="list-disc list-inside space-y-1">
+                <li>Creating a strong brand image for handcrafted timber tables.</li>
+                <li>Improving design/finishing of the wooden chairs.</li>
+                <li>Offering customized wood staining or carving services.</li>
+                <li>Providing free home delivery and assembly for customers.</li>
+              </ul>
+              <div class="bg-white p-2 rounded border border-emerald-200 mt-1">
+                <strong>Model Answer:</strong> 1. Offering custom carving and finishing services on timber furniture. 2. Building a premium brand image for handcrafted wooden tables.
+              </div>
+            </div>
+          </div>
+
+          <!-- 1(c) -->
+          <div class="border border-slate-200 rounded-lg p-4 bg-white">
+            <div class="flex justify-between items-center mb-2">
+              <label class="font-semibold text-slate-900 text-sm">(c) Outline two benefits to Tariq of converting GLF from a sole trader to a Private Limited Company (Ltd).</label>
+              <span class="text-xs font-bold text-slate-500 bg-slate-100 px-2 py-1 rounded">[4 marks]</span>
+            </div>
+            <textarea id="ans-q1c" rows="4" class="w-full p-3 border border-slate-300 rounded-lg text-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition" placeholder="Write your answer here..."></textarea>
+            
+            <button onclick="toggleScheme('ms-q1c')" class="mt-2 text-xs font-semibold text-blue-600 hover:text-blue-800 flex items-center gap-1 no-print">
+              <i class="fa-solid fa-chevron-down"></i> Toggle Mark Scheme & Model Answer
+            </button>
+
+            <div id="ms-q1c" class="hidden mt-3 p-4 bg-emerald-50 border border-emerald-200 rounded-lg text-xs text-emerald-950 space-y-2">
+              <div class="flex gap-2 mb-1">
+                <span class="mark-tag tag-ao1">AO1 Knowledge: 2 Marks</span>
+                <span class="mark-tag tag-ao2">AO2 Application: 2 Marks</span>
+              </div>
+              <p><strong>Mark Scheme:</strong> Award 1 mark for each relevant benefit identified (max 2) + 1 mark for application of each benefit to GLF (max 2).</p>
+              <div class="bg-white p-2 rounded border border-emerald-200 mt-1 space-y-2">
+                <p><strong>Benefit 1:</strong> Limited liability. Tariq’s personal assets will not be at risk if the furniture business incurs debts when purchasing automated machinery.</p>
+                <p><strong>Benefit 2:</strong> Ability to raise capital by selling shares to private investors. This helps fund the purchase of the larger factory without taking on excessive bank loans.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- 1(d) -->
+          <div class="border border-slate-200 rounded-lg p-4 bg-white">
+            <div class="flex justify-between items-center mb-2">
+              <label class="font-semibold text-slate-900 text-sm">(d) Explain two problems GLF might experience as a result of business growth.</label>
+              <span class="text-xs font-bold text-slate-500 bg-slate-100 px-2 py-1 rounded">[6 marks]</span>
+            </div>
+            <textarea id="ans-q1d" rows="5" class="w-full p-3 border border-slate-300 rounded-lg text-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition" placeholder="Write your answer here..."></textarea>
+            
+            <button onclick="toggleScheme('ms-q1d')" class="mt-2 text-xs font-semibold text-blue-600 hover:text-blue-800 flex items-center gap-1 no-print">
+              <i class="fa-solid fa-chevron-down"></i> Toggle Mark Scheme & Model Answer
+            </button>
+
+            <div id="ms-q1d" class="hidden mt-3 p-4 bg-emerald-50 border border-emerald-200 rounded-lg text-xs text-emerald-950 space-y-2">
+              <div class="flex gap-2 mb-1">
+                <span class="mark-tag tag-ao1">AO1 Knowledge: 2 Marks</span>
+                <span class="mark-tag tag-ao2">AO2 Application: 2 Marks</span>
+                <span class="mark-tag tag-ao3">AO3 Analysis: 2 Marks</span>
+              </div>
+              <p><strong>Mark Scheme (per point):</strong> 1 mark for identifying problem (K), 1 mark for contextual application (APP), 1 mark for explaining the impact/consequence (AN).</p>
+              <div class="bg-white p-2 rounded border border-emerald-200 mt-1 space-y-2">
+                <p><strong>Point 1:</strong> Diseconomies of scale due to communication barriers. As GLF hires more carpenters across multiple workshops, messages may become delayed, resulting in production errors or delayed furniture deliveries.</p>
+                <p><strong>Point 2:</strong> Liquidity and cash flow problems (overtrading). Purchasing additional machinery and stocking up on large quantities of timber requires large upfront cash outflows before revenue from expanded sales is collected, potentially leading to working capital shortages.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- 1(e) -->
+          <div class="border border-slate-200 rounded-lg p-4 bg-white">
+            <div class="flex justify-between items-center mb-2">
+              <label class="font-semibold text-slate-900 text-sm">(e) Tariq is deciding whether to expand GLF through internal growth (opening a second workshop) or external growth (taking over a competing local workshop). Recommend which expansion method Tariq should choose. Justify your answer.</label>
+              <span class="text-xs font-bold text-slate-500 bg-slate-100 px-2 py-1 rounded">[6 marks]</span>
+            </div>
+            <textarea id="ans-q1e" rows="6" class="w-full p-3 border border-slate-300 rounded-lg text-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition" placeholder="Write your answer here..."></textarea>
+            
+            <button onclick="toggleScheme('ms-q1e')" class="mt-2 text-xs font-semibold text-blue-600 hover:text-blue-800 flex items-center gap-1 no-print">
+              <i class="fa-solid fa-chevron-down"></i> Toggle Mark Scheme & Model Answer
+            </button>
+
+            <div id="ms-q1e" class="hidden mt-3 p-4 bg-emerald-50 border border-emerald-200 rounded-lg text-xs text-emerald-950 space-y-2">
+              <div class="flex gap-2 mb-1">
+                <span class="mark-tag tag-ao1">AO1 Knowledge: 1 Mark</span>
+                <span class="mark-tag tag-ao2">AO2 Application: 1 Mark</span>
+                <span class="mark-tag tag-ao3">AO3 Analysis: 2 Marks</span>
+                <span class="mark-tag tag-ao4">AO4 Evaluation: 2 Marks</span>
+              </div>
+              <p><strong>Evaluation Guidance:</strong> Compare both options in context and provide a clear, supported final recommendation.</p>
+              <div class="bg-white p-2 rounded border border-emerald-200 mt-1 space-y-2 leading-relaxed">
+                <p><strong>Model Structure:</strong></p>
+                <p>• <em>Internal Growth:</em> Slower and lower risk. Tariq maintains full quality control over handcrafted furniture standards and workplace culture. However, building a second workshop takes significant time and delays revenue generation.</p>
+                <p>• <em>External Growth (Takeover):</em> Provides instant market share and existing customer databases, along with trained carpenters and machinery. However, integration costs are high and clash of corporate cultures might occur.</p>
+                <p>• <em>Recommendation / Conclusion:</em> Tariq should choose internal growth. Because GLF’s reputation relies heavily on handcrafted wooden quality, acquiring a rival workshop risks inconsistent craftsmanship. Slower internal growth ensures quality control while maintaining Tariq's brand image.</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== QUESTION 2 ==================== -->
+    <section id="sec-q2" class="question-block space-y-6 hidden">
+      <div class="bg-white rounded-xl shadow-sm border border-slate-200 p-6">
+        <div class="flex justify-between items-start border-b border-slate-100 pb-4 mb-4">
+          <div>
+            <span class="text-xs font-bold text-blue-600 uppercase tracking-wider">Question 2 • Unit 2 Focus</span>
+            <h3 class="text-2xl font-bold text-slate-900">Apex Logistics Ltd (ALL)</h3>
+          </div>
+          <span class="bg-blue-100 text-blue-800 font-bold text-sm px-3 py-1 rounded-full">20 Marks</span>
+        </div>
+
+        <div class="bg-slate-50 border-l-4 border-amber-500 p-4 rounded-r-lg text-slate-700 text-sm leading-relaxed mb-6">
+          <h4 class="font-bold text-slate-900 mb-1 flex items-center gap-2">
+            <i class="fa-solid fa-truck text-amber-600"></i> Business Context:
+          </h4>
+          <p>
+            <strong>Apex Logistics Ltd (ALL)</strong> is a courier and delivery firm operating a tall hierarchical organizational structure. Managing Director Sarah manages 6 regional directors, who each oversee 25 delivery fleet drivers (a wide span of control). 
+          </p>
+          <p class="mt-2">
+            ALL is currently suffering from high employee turnover and excessive absenteeism among its drivers. Drivers receive a basic time-rate wage and complain about repetitive work and autocratic leadership. Sarah wants to improve driver motivation and productivity. She is considering either introducing <strong>profit-sharing</strong> or adopting financial bonuses alongside non-financial methods such as <strong>job enrichment</strong> and increased <strong>delegation</strong>.
+          </p>
+        </div>
+
+        <div class="space-y-6">
+
+          <!-- 2(a) -->
+          <div class="border border-slate-200 rounded-lg p-4 bg-white">
+            <div class="flex justify-between items-center mb-2">
+              <label class="font-semibold text-slate-900 text-sm">(a) Define 'span of control'.</label>
+              <span class="text-xs font-bold text-slate-500 bg-slate-100 px-2 py-1 rounded">[2 marks]</span>
+            </div>
+            <textarea id="ans-q2a" rows="2" class="w-full p-3 border border-slate-300 rounded-lg text-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition" placeholder="Write your answer here..."></textarea>
+            
+            <button onclick="toggleScheme('ms-q2a')" class="mt-2 text-xs font-semibold text-blue-600 hover:text-blue-800 flex items-center gap-1 no-print">
+              <i class="fa-solid fa-chevron-down"></i> Toggle Mark Scheme & Model Answer
+            </button>
+
+            <div id="ms-q2a" class="hidden mt-3 p-4 bg-emerald-50 border border-emerald-200 rounded-lg text-xs text-emerald-950 space-y-2">
+              <div class="flex gap-2 mb-1"><span class="mark-tag tag-ao1">AO1 Knowledge: 2 Marks</span></div>
+              <p><strong>Mark Scheme:</strong> The number of subordinates working directly under / reporting to a manager [2 marks].</p>
+              <div class="bg-white p-2 rounded border border-emerald-200 mt-1">
+                <strong>Model Answer:</strong> Span of control refers to the number of subordinates who report directly to a manager or supervisor in an organizational structure.
+              </div>
+            </div>
+          </div>
+
+          <!-- 2(b) -->
+          <div class="border border-slate-200 rounded-lg p-4 bg-white">
+            <div class="flex justify-between items-center mb-2">
+              <label class="font-semibold text-slate-900 text-sm">(b) State two functions of management carried out by Sarah at Apex Logistics.</label>
+              <span class="text-xs font-bold text-slate-500 bg-slate-100 px-2 py-1 rounded">[2 marks]</span>
+            </div>
+            <textarea id="ans-q2b" rows="2" class="w-full p-3 border border-slate-300 rounded-lg text-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition" placeholder="Write your answer here..."></textarea>
+            
+            <button onclick="toggleScheme('ms-q2b')" class="mt-2 text-xs font-semibold text-blue-600 hover:text-blue-800 flex items-center gap-1 no-print">
+              <i class="fa-solid fa-chevron-down"></i> Toggle Mark Scheme & Model Answer
+            </button>
+
+            <div id="ms-q2b" class="hidden mt-3 p-4 bg-emerald-50 border border-emerald-200 rounded-lg text-xs text-emerald-950 space-y-2">
+              <div class="flex gap-2 mb-1"><span class="mark-tag tag-ao1">AO1 Knowledge: 2 Marks</span></div>
+              <p><strong>Mark Scheme:</strong> Award 1 mark per valid management function listed (Planning, Organizing, Coordinating, Commanding, Controlling).</p>
+              <div class="bg-white p-2 rounded border border-emerald-200 mt-1">
+                <strong>Model Answer:</strong> 1. Planning (setting delivery targets and expansion goals). 2. Controlling (monitoring driver absenteeism and performance).
+              </div>
+            </div>
+          </div>
+
+          <!-- 2(c) -->
+          <div class="border border-slate-200 rounded-lg p-4 bg-white">
+            <div class="flex justify-between items-center mb-2">
+              <label class="font-semibold text-slate-900 text-sm">(c) Outline two benefits to ALL of having a well-motivated workforce.</label>
+              <span class="text-xs font-bold text-slate-500 bg-slate-100 px-2 py-1 rounded">[4 marks]</span>
+            </div>
+            <textarea id="ans-q2c" rows="4" class="w-full p-3 border border-slate-300 rounded-lg text-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition" placeholder="Write your answer here..."></textarea>
+            
+            <button onclick="toggleScheme('ms-q2c')" class="mt-2 text-xs font-semibold text-blue-600 hover:text-blue-800 flex items-center gap-1 no-print">
+              <i class="fa-solid fa-chevron-down"></i> Toggle Mark Scheme & Model Answer
+            </button>
+
+            <div id="ms-q2c" class="hidden mt-3 p-4 bg-emerald-50 border border-emerald-200 rounded-lg text-xs text-emerald-950 space-y-2">
+              <div class="flex gap-2 mb-1">
+                <span class="mark-tag tag-ao1">AO1 Knowledge: 2 Marks</span>
+                <span class="mark-tag tag-ao2">AO2 Application: 2 Marks</span>
+              </div>
+              <div class="bg-white p-2 rounded border border-emerald-200 mt-1 space-y-2">
+                <p><strong>Benefit 1:</strong> Reduced employee turnover. Motivated drivers are less likely to leave ALL, reducing recruitment costs for new drivers.</p>
+                <p><strong>Benefit 2:</strong> Higher labor productivity. Motivated courier staff will complete delivery routes faster and with fewer parcel damage complaints.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- 2(d) -->
+          <div class="border border-slate-200 rounded-lg p-4 bg-white">
+            <div class="flex justify-between items-center mb-2">
+              <label class="font-semibold text-slate-900 text-sm">(d) Explain two advantages to ALL’s managers of delegating routing decisions to delivery drivers.</label>
+              <span class="text-xs font-bold text-slate-500 bg-slate-100 px-2 py-1 rounded">[6 marks]</span>
+            </div>
+            <textarea id="ans-q2d" rows="5" class="w-full p-3 border border-slate-300 rounded-lg text-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition" placeholder="Write your answer here..."></textarea>
+            
+            <button onclick="toggleScheme('ms-q2d')" class="mt-2 text-xs font-semibold text-blue-600 hover:text-blue-800 flex items-center gap-1 no-print">
+              <i class="fa-solid fa-chevron-down"></i> Toggle Mark Scheme & Model Answer
+            </button>
+
+            <div id="ms-q2d" class="hidden mt-3 p-4 bg-emerald-50 border border-emerald-200 rounded-lg text-xs text-emerald-950 space-y-2">
+              <div class="flex gap-2 mb-1">
+                <span class="mark-tag tag-ao1">AO1 Knowledge: 2 Marks</span>
+                <span class="mark-tag tag-ao2">AO2 Application: 2 Marks</span>
+                <span class="mark-tag tag-ao3">AO3 Analysis: 2 Marks</span>
+              </div>
+              <div class="bg-white p-2 rounded border border-emerald-200 mt-1 space-y-2">
+                <p><strong>Advantage 1:</strong> Reduces workload for regional directors. By letting drivers plan daily delivery schedules, directors free up time to focus on strategic logistics planning.</p>
+                <p><strong>Advantage 2:</strong> Fosters driver empowerment and job satisfaction. Trusting drivers with route planning fulfills higher-level esteem needs (Herzberg), boosting morale and reducing absenteeism.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- 2(e) -->
+          <div class="border border-slate-200 rounded-lg p-4 bg-white">
+            <div class="flex justify-between items-center mb-2">
+              <label class="font-semibold text-slate-900 text-sm">(e) Sarah wants to improve driver motivation. Do you think introducing a profit-sharing scheme is a better method than job enrichment for ALL? Justify your answer.</label>
+              <span class="text-xs font-bold text-slate-500 bg-slate-100 px-2 py-1 rounded">[6 marks]</span>
+            </div>
+            <textarea id="ans-q2e" rows="6" class="w-full p-3 border border-slate-300 rounded-lg text-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition" placeholder="Write your answer here..."></textarea>
+            
+            <button onclick="toggleScheme('ms-q2e')" class="mt-2 text-xs font-semibold text-blue-600 hover:text-blue-800 flex items-center gap-1 no-print">
+              <i class="fa-solid fa-chevron-down"></i> Toggle Mark Scheme & Model Answer
+            </button>
+
+            <div id="ms-q2e" class="hidden mt-3 p-4 bg-emerald-50 border border-emerald-200 rounded-lg text-xs text-emerald-950 space-y-2">
+              <div class="flex gap-2 mb-1">
+                <span class="mark-tag tag-ao1">AO1 Knowledge: 1</span>
+                <span class="mark-tag tag-ao2">AO2 Application: 1</span>
+                <span class="mark-tag tag-ao3">AO3 Analysis: 2</span>
+                <span class="mark-tag tag-ao4">AO4 Evaluation: 2</span>
+              </div>
+              <div class="bg-white p-2 rounded border border-emerald-200 mt-1 space-y-2 leading-relaxed">
+                <p>• <em>Profit Sharing:</em> Provides direct financial incentive (Taylor), linking company profit to driver effort. However, individual drivers may feel their daily efforts have little impact on overall annual company profit.</p>
+                <p>• <em>Job Enrichment:</em> Giving drivers more challenging roles (e.g., managing customer service issues or route planning) addresses motivators (Herzberg). It incurs no direct cash cost to ALL.</p>
+                <p>• <em>Conclusion:</em> Job enrichment is better for ALL. Courier driving is repetitive, so giving drivers greater responsibility over route management directly improves engagement without increasing wage overheads if profits fluctuate.</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== QUESTION 3 ==================== -->
+    <section id="sec-q3" class="question-block space-y-6 hidden">
+      <div class="bg-white rounded-xl shadow-sm border border-slate-200 p-6">
+        <div class="flex justify-between items-start border-b border-slate-100 pb-4 mb-4">
+          <div>
+            <span class="text-xs font-bold text-blue-600 uppercase tracking-wider">Question 3 • Unit 3 Focus</span>
+            <h3 class="text-2xl font-bold text-slate-900">Nova Tech Smartwatches (NT)</h3>
+          </div>
+          <span class="bg-blue-100 text-blue-800 font-bold text-sm px-3 py-1 rounded-full">20 Marks</span>
+        </div>
+
+        <div class="bg-slate-50 border-l-4 border-amber-500 p-4 rounded-r-lg text-slate-700 text-sm leading-relaxed mb-6">
+          <h4 class="font-bold text-slate-900 mb-1 flex items-center gap-2">
+            <i class="fa-solid fa-mobile-screen-button text-amber-600"></i> Business Context:
+          </h4>
+          <p>
+            <strong>Nova Tech (NT)</strong> designs advanced fitness smartwatches. NT targets active professionals aged 25–45 (demographic market segmentation). Sales of its original model, <em>FitPulse v1</em>, are entering the saturation stage of the product life cycle due to intense competition.
+          </p>
+          <p class="mt-2">
+            NT plans to launch a innovative new model, <em>FitPulse Pro</em>, with heart-rate tracking and GPS. The marketing manager is debating whether to use <strong>price skimming</strong> or <strong>penetration pricing</strong>. Additionally, NT plans to enter new foreign markets by expanding its direct-to-consumer <strong>e-commerce</strong> website.
+          </p>
+        </div>
+
+        <div class="space-y-6">
+
+          <!-- 3(a) -->
+          <div class="border border-slate-200 rounded-lg p-4 bg-white">
+            <div class="flex justify-between items-center mb-2">
+              <label class="font-semibold text-slate-900 text-sm">(a) Define 'market segmentation'.</label>
+              <span class="text-xs font-bold text-slate-500 bg-slate-100 px-2 py-1 rounded">[2 marks]</span>
+            </div>
+            <textarea id="ans-q3a" rows="2" class="w-full p-3 border border-slate-300 rounded-lg text-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition" placeholder="Write your answer here..."></textarea>
+            
+            <button onclick="toggleScheme('ms-q3a')" class="mt-2 text-xs font-semibold text-blue-600 hover:text-blue-800 flex items-center gap-1 no-print">
+              <i class="fa-solid fa-chevron-down"></i> Toggle Mark Scheme & Model Answer
+            </button>
+
+            <div id="ms-q3a" class="hidden mt-3 p-4 bg-emerald-50 border border-emerald-200 rounded-lg text-xs text-emerald-950 space-y-2">
+              <div class="flex gap-2 mb-1"><span class="mark-tag tag-ao1">AO1 Knowledge: 2 Marks</span></div>
+              <p><strong>Mark Scheme:</strong> Dividing a total market into distinct sub-groups of consumers who share similar characteristics or needs [2 marks].</p>
+              <div class="bg-white p-2 rounded border border-emerald-200 mt-1">
+                <strong>Model Answer:</strong> Market segmentation is the process of dividing a target market into smaller sub-groups of buyers who share common characteristics, such as age, income, or lifestyle.
+              </div>
+            </div>
+          </div>
+
+          <!-- 3(b) -->
+          <div class="border border-slate-200 rounded-lg p-4 bg-white">
+            <div class="flex justify-between items-center mb-2">
+              <label class="font-semibold text-slate-900 text-sm">(b) State two primary market research methods NT could use before launching FitPulse Pro.</label>
+              <span class="text-xs font-bold text-slate-500 bg-slate-100 px-2 py-1 rounded">[2 marks]</span>
+            </div>
+            <textarea id="ans-q3b" rows="2" class="w-full p-3 border border-slate-300 rounded-lg text-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition" placeholder="Write your answer here..."></textarea>
+            
+            <button onclick="toggleScheme('ms-q3b')" class="mt-2 text-xs font-semibold text-blue-600 hover:text-blue-800 flex items-center gap-1 no-print">
+              <i class="fa-solid fa-chevron-down"></i> Toggle Mark Scheme & Model Answer
+            </button>
+
+            <div id="ms-q3b" class="hidden mt-3 p-4 bg-emerald-50 border border-emerald-200 rounded-lg text-xs text-emerald-950 space-y-2">
+              <div class="flex gap-2 mb-1"><span class="mark-tag tag-ao1">AO1 Knowledge: 2 Marks</span></div>
+              <p><strong>Mark Scheme:</strong> Award 1 mark per valid primary research method (Online questionnaires, Focus groups, Consumer interviews, Product testing panels).</p>
+              <div class="bg-white p-2 rounded border border-emerald-200 mt-1">
+                <strong>Model Answer:</strong> 1. Online consumer surveys. 2. Focus groups with fitness enthusiasts.
+              </div>
+            </div>
+          </div>
+
+          <!-- 3(c) -->
+          <div class="border border-slate-200 rounded-lg p-4 bg-white">
+            <div class="flex justify-between items-center mb-2">
+              <label class="font-semibold text-slate-900 text-sm">(c) Outline two extension strategies NT could use for its FitPulse v1 smartwatch in the saturation stage.</label>
+              <span class="text-xs font-bold text-slate-500 bg-slate-100 px-2 py-1 rounded">[4 marks]</span>
+            </div>
+            <textarea id="ans-q3c" rows="4" class="w-full p-3 border border-slate-300 rounded-lg text-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition" placeholder="Write your answer here..."></textarea>
+            
+            <button onclick="toggleScheme('ms-q3c')" class="mt-2 text-xs font-semibold text-blue-600 hover:text-blue-800 flex items-center gap-1 no-print">
+              <i class="fa-solid fa-chevron-down"></i> Toggle Mark Scheme & Model Answer
+            </button>
+
+            <div id="ms-q3c" class="hidden mt-3 p-4 bg-emerald-50 border border-emerald-200 rounded-lg text-xs text-emerald-950 space-y-2">
+              <div class="flex gap-2 mb-1">
+                <span class="mark-tag tag-ao1">AO1 Knowledge: 2</span>
+                <span class="mark-tag tag-ao2">AO2 Application: 2</span>
+              </div>
+              <div class="bg-white p-2 rounded border border-emerald-200 mt-1 space-y-2">
+                <p><strong>Strategy 1:</strong> Redesigning packaging or releasing new strap colors for FitPulse v1 to refresh brand appeal for active consumers.</p>
+                <p><strong>Strategy 2:</strong> Lowering the retail price or bundling FitPulse v1 with free fitness apps to attract price-sensitive customers.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- 3(d) -->
+          <div class="border border-slate-200 rounded-lg p-4 bg-white">
+            <div class="flex justify-between items-center mb-2">
+              <label class="font-semibold text-slate-900 text-sm">(d) Explain one opportunity and one threat to NT of selling its smartwatches internationally through e-commerce.</label>
+              <span class="text-xs font-bold text-slate-500 bg-slate-100 px-2 py-1 rounded">[6 marks]</span>
+            </div>
+            <textarea id="ans-q3d" rows="5" class="w-full p-3 border border-slate-300 rounded-lg text-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition" placeholder="Write your answer here..."></textarea>
+            
+            <button onclick="toggleScheme('ms-q3d')" class="mt-2 text-xs font-semibold text-blue-600 hover:text-blue-800 flex items-center gap-1 no-print">
+              <i class="fa-solid fa-chevron-down"></i> Toggle Mark Scheme & Model Answer
+            </button>
+
+            <div id="ms-q3d" class="hidden mt-3 p-4 bg-emerald-50 border border-emerald-200 rounded-lg text-xs text-emerald-950 space-y-2">
+              <div class="flex gap-2 mb-1">
+                <span class="mark-tag tag-ao1">AO1 Knowledge: 2</span>
+                <span class="mark-tag tag-ao2">AO2 Application: 2</span>
+                <span class="mark-tag tag-ao3">AO3 Analysis: 2</span>
+              </div>
+              <div class="bg-white p-2 rounded border border-emerald-200 mt-1 space-y-2">
+                <p><strong>Opportunity:</strong> Access to global mass markets without opening physical stores, significantly expanding potential sales of FitPulse Pro while lowering retail fixed overheads.</p>
+                <p><strong>Threat:</strong> High international shipping and return costs, along with foreign exchange rate risks or customs duties that increase prices for foreign customers.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- 3(e) -->
+          <div class="border border-slate-200 rounded-lg p-4 bg-white">
+            <div class="flex justify-between items-center mb-2">
+              <label class="font-semibold text-slate-900 text-sm">(e) NT is deciding between price skimming and penetration pricing for the launch of FitPulse Pro. Recommend which pricing strategy NT should adopt. Justify your answer.</label>
+              <span class="text-xs font-bold text-slate-500 bg-slate-100 px-2 py-1 rounded">[6 marks]</span>
+            </div>
+            <textarea id="ans-q3e" rows="6" class="w-full p-3 border border-slate-300 rounded-lg text-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition" placeholder="Write your answer here..."></textarea>
+            
+            <button onclick="toggleScheme('ms-q3e')" class="mt-2 text-xs font-semibold text-blue-600 hover:text-blue-800 flex items-center gap-1 no-print">
+              <i class="fa-solid fa-chevron-down"></i> Toggle Mark Scheme & Model Answer
+            </button>
+
+            <div id="ms-q3e" class="hidden mt-3 p-4 bg-emerald-50 border border-emerald-200 rounded-lg text-xs text-emerald-950 space-y-2">
+              <div class="flex gap-2 mb-1">
+                <span class="mark-tag tag-ao1">AO1 Knowledge: 1</span>
+                <span class="mark-tag tag-ao2">AO2 Application: 1</span>
+                <span class="mark-tag tag-ao3">AO3 Analysis: 2</span>
+                <span class="mark-tag tag-ao4">AO4 Evaluation: 2</span>
+              </div>
+              <div class="bg-white p-2 rounded border border-emerald-200 mt-1 space-y-2 leading-relaxed">
+                <p>• <em>Price Skimming:</em> Setting a high initial price. Recovers high R&D costs quickly from tech-savvy early adopters who value GPS feature innovation.</p>
+                <p>• <em>Penetration Pricing:</em> Setting a low initial price to gain rapid market share in a highly competitive wearable tech market.</p>
+                <p>• <em>Recommendation:</em> Adopt Price Skimming. FitPulse Pro has high-tech differentiated features (GPS and heart-rate monitoring) targeting high-income active professionals who equate high prices with premium quality.</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== QUESTION 4 ==================== -->
+    <section id="sec-q4" class="question-block space-y-6 hidden">
+      <div class="bg-white rounded-xl shadow-sm border border-slate-200 p-6">
+        <div class="flex justify-between items-start border-b border-slate-100 pb-4 mb-4">
+          <div>
+            <span class="text-xs font-bold text-blue-600 uppercase tracking-wider">Question 4 • Integrated Units 1–3 Focus</span>
+            <h3 class="text-2xl font-bold text-slate-900">FreshBite Foods (FBF)</h3>
+          </div>
+          <span class="bg-blue-100 text-blue-800 font-bold text-sm px-3 py-1 rounded-full">20 Marks</span>
+        </div>
+
+        <div class="bg-slate-50 border-l-4 border-amber-500 p-4 rounded-r-lg text-slate-700 text-sm leading-relaxed mb-6">
+          <h4 class="font-bold text-slate-900 mb-1 flex items-center gap-2">
+            <i class="fa-solid fa-leaf text-amber-600"></i> Business Context:
+          </h4>
+          <p>
+            <strong>FreshBite Foods (FBF)</strong> produces organic fruit snack bars. Having previously operated in a niche market selling to small organic specialty stores, FBF is expanding into mass consumer markets by negotiating shelf placement with national supermarket chains.
+          </p>
+          <p class="mt-2">
+            The Marketing Director proposes spending $150,000 on national television advertising and supermarket sales promotions ("buy one, get one free"). However, the Finance Director is concerned about cash flow and whether national TV ads are cost-effective compared to targeted social media marketing. Furthermore, FBF must choose between using <strong>wholesalers</strong> or distributing <strong>directly to retail chains</strong>.
+          </p>
+        </div>
+
+        <div class="space-y-6">
+
+          <!-- 4(a) -->
+          <div class="border border-slate-200 rounded-lg p-4 bg-white">
+            <div class="flex justify-between items-center mb-2">
+              <label class="font-semibold text-slate-900 text-sm">(a) Define 'mass market'.</label>
+              <span class="text-xs font-bold text-slate-500 bg-slate-100 px-2 py-1 rounded">[2 marks]</span>
+            </div>
+            <textarea id="ans-q4a" rows="2" class="w-full p-3 border border-slate-300 rounded-lg text-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition" placeholder="Write your answer here..."></textarea>
+            
+            <button onclick="toggleScheme('ms-q4a')" class="mt-2 text-xs font-semibold text-blue-600 hover:text-blue-800 flex items-center gap-1 no-print">
+              <i class="fa-solid fa-chevron-down"></i> Toggle Mark Scheme & Model Answer
+            </button>
+
+            <div id="ms-q4a" class="hidden mt-3 p-4 bg-emerald-50 border border-emerald-200 rounded-lg text-xs text-emerald-950 space-y-2">
+              <div class="flex gap-2 mb-1"><span class="mark-tag tag-ao1">AO1 Knowledge: 2 Marks</span></div>
+              <p><strong>Mark Scheme:</strong> A very large market where a standardized product is sold to a large number of consumers [2 marks].</p>
+              <div class="bg-white p-2 rounded border border-emerald-200 mt-1">
+                <strong>Model Answer:</strong> A mass market is a market for products that are produced in large quantities and aimed at a broad population of consumers with general needs.
+              </div>
+            </div>
+          </div>
+
+          <!-- 4(b) -->
+          <div class="border border-slate-200 rounded-lg p-4 bg-white">
+            <div class="flex justify-between items-center mb-2">
+              <label class="font-semibold text-slate-900 text-sm">(b) Identify two forms of sales promotion FBF could use in supermarkets.</label>
+              <span class="text-xs font-bold text-slate-500 bg-slate-100 px-2 py-1 rounded">[2 marks]</span>
+            </div>
+            <textarea id="ans-q4b" rows="2" class="w-full p-3 border border-slate-300 rounded-lg text-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition" placeholder="Write your answer here..."></textarea>
+            
+            <button onclick="toggleScheme('ms-q4b')" class="mt-2 text-xs font-semibold text-blue-600 hover:text-blue-800 flex items-center gap-1 no-print">
+              <i class="fa-solid fa-chevron-down"></i> Toggle Mark Scheme & Model Answer
+            </button>
+
+            <div id="ms-q4b" class="hidden mt-3 p-4 bg-emerald-50 border border-emerald-200 rounded-lg text-xs text-emerald-950 space-y-2">
+              <div class="flex gap-2 mb-1"><span class="mark-tag tag-ao1">AO1 Knowledge: 2 Marks</span></div>
+              <p><strong>Mark Scheme:</strong> Award 1 mark per valid sales promotion technique (BOGO offers, Money-off coupons, Free tasting samples, Price discounts).</p>
+              <div class="bg-white p-2 rounded border border-emerald-200 mt-1">
+                <strong>Model Answer:</strong> 1. "Buy one, get one free" (BOGOF) offers. 2. Free tasting samples in supermarket aisles.
+              </div>
+            </div>
+          </div>
+
+          <!-- 4(c) -->
+          <div class="border border-slate-200 rounded-lg p-4 bg-white">
+            <div class="flex justify-between items-center mb-2">
+              <label class="font-semibold text-slate-900 text-sm">(c) Outline two benefits to FBF of building customer loyalty for its snack bars.</label>
+              <span class="text-xs font-bold text-slate-500 bg-slate-100 px-2 py-1 rounded">[4 marks]</span>
+            </div>
+            <textarea id="ans-q4c" rows="4" class="w-full p-3 border border-slate-300 rounded-lg text-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition" placeholder="Write your answer here..."></textarea>
+            
+            <button onclick="toggleScheme('ms-q4c')" class="mt-2 text-xs font-semibold text-blue-600 hover:text-blue-800 flex items-center gap-1 no-print">
+              <i class="fa-solid fa-chevron-down"></i> Toggle Mark Scheme & Model Answer
+            </button>
+
+            <div id="ms-q4c" class="hidden mt-3 p-4 bg-emerald-50 border border-emerald-200 rounded-lg text-xs text-emerald-950 space-y-2">
+              <div class="flex gap-2 mb-1">
+                <span class="mark-tag tag-ao1">AO1 Knowledge: 2</span>
+                <span class="mark-tag tag-ao2">AO2 Application: 2</span>
+              </div>
+              <div class="bg-white p-2 rounded border border-emerald-200 mt-1 space-y-2">
+                <p><strong>Benefit 1:</strong> Repeat purchases. Loyal customers will regularly buy organic snack bars, ensuring predictable revenues for FBF.</p>
+                <p><strong>Benefit 2:</strong> Brand resistance to price increases. Loyal health-conscious consumers are less likely to switch to rival snack brands if FBF increases prices slightly.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- 4(d) -->
+          <div class="border border-slate-200 rounded-lg p-4 bg-white">
+            <div class="flex justify-between items-center mb-2">
+              <label class="font-semibold text-slate-900 text-sm">(d) Explain two disadvantages to FBF of distributing its snack bars through wholesalers rather than directly to supermarkets.</label>
+              <span class="text-xs font-bold text-slate-500 bg-slate-100 px-2 py-1 rounded">[6 marks]</span>
+            </div>
+            <textarea id="ans-q4d" rows="5" class="w-full p-3 border border-slate-300 rounded-lg text-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition" placeholder="Write your answer here..."></textarea>
+            
+            <button onclick="toggleScheme('ms-q4d')" class="mt-2 text-xs font-semibold text-blue-600 hover:text-blue-800 flex items-center gap-1 no-print">
+              <i class="fa-solid fa-chevron-down"></i> Toggle Mark Scheme & Model Answer
+            </button>
+
+            <div id="ms-q4d" class="hidden mt-3 p-4 bg-emerald-50 border border-emerald-200 rounded-lg text-xs text-emerald-950 space-y-2">
+              <div class="flex gap-2 mb-1">
+                <span class="mark-tag tag-ao1">AO1 Knowledge: 2</span>
+                <span class="mark-tag tag-ao2">AO2 Application: 2</span>
+                <span class="mark-tag tag-ao3">AO3 Analysis: 2</span>
+              </div>
+              <div class="bg-white p-2 rounded border border-emerald-200 mt-1 space-y-2">
+                <p><strong>Disadvantage 1:</strong> Reduced profit margins. Wholesalers buy in bulk but expect price markups, reducing profit per organic snack bar sold.</p>
+                <p><strong>Disadvantage 2:</strong> Loss of promotional control. Wholesalers may not display or promote FBF’s snack bars effectively in retail outlets, weakening brand image.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- 4(e) -->
+          <div class="border border-slate-200 rounded-lg p-4 bg-white">
+            <div class="flex justify-between items-center mb-2">
+              <label class="font-semibold text-slate-900 text-sm">(e) FBF wants to increase market share in the snack industry. Do you think spending most of its promotional budget on television advertising is the best strategy? Justify your answer.</label>
+              <span class="text-xs font-bold text-slate-500 bg-slate-100 px-2 py-1 rounded">[6 marks]</span>
+            </div>
+            <textarea id="ans-q4e" rows="6" class="w-full p-3 border border-slate-300 rounded-lg text-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition" placeholder="Write your answer here..."></textarea>
+            
+            <button onclick="toggleScheme('ms-q4e')" class="mt-2 text-xs font-semibold text-blue-600 hover:text-blue-800 flex items-center gap-1 no-print">
+              <i class="fa-solid fa-chevron-down"></i> Toggle Mark Scheme & Model Answer
+            </button>
+
+            <div id="ms-q4e" class="hidden mt-3 p-4 bg-emerald-50 border border-emerald-200 rounded-lg text-xs text-emerald-950 space-y-2">
+              <div class="flex gap-2 mb-1">
+                <span class="mark-tag tag-ao1">AO1 Knowledge: 1</span>
+                <span class="mark-tag tag-ao2">AO2 Application: 1</span>
+                <span class="mark-tag tag-ao3">AO3 Analysis: 2</span>
+                <span class="mark-tag tag-ao4">AO4 Evaluation: 2</span>
+              </div>
+              <div class="bg-white p-2 rounded border border-emerald-200 mt-1 space-y-2 leading-relaxed">
+                <p>• <em>TV Advertising:</em> Reaches millions of households, building widespread mass market brand awareness quickly. However, TV ads are extremely expensive ($150,000) and reach many non-snack buyers, wasting money.</p>
+                <p>• <em>Alternative (Social Media & Supermarket Promotions):</em> Social media advertising can target health-conscious snack buyers precisely at lower cost, while in-store BOGOF deals encourage immediate purchase at point of sale.</p>
+                <p>• <em>Recommendation:</em> TV advertising is NOT the best choice for FBF at this stage. TV ads are too expensive and risk cash flow problems. Allocating funds to targeted social media ads combined with in-store supermarket promotions will be more cost-effective.</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Score Calculator & Grade Boundaries Tool -->
+    <div class="mt-8 bg-slate-900 text-white rounded-xl p-6 no-print shadow-lg">
+      <h3 class="text-xl font-bold mb-3 flex items-center gap-2 text-blue-400">
+        <i class="fa-solid fa-calculator"></i> Exam Grade Calculator & Self-Assessment
+      </h3>
+      <p class="text-xs text-slate-300 mb-4">Enter your total self-assessed mark out of 80 below based on the official Cambridge IGCSE mark scheme criteria:</p>
+      
+      <div class="flex flex-wrap items-center gap-6">
+        <div>
+          <label class="text-xs text-slate-400 block mb-1">Your Total Score:</label>
+          <div class="flex items-center gap-2">
+            <input id="userScoreInput" type="number" min="0" max="80" placeholder="0" class="w-24 p-2 bg-slate-800 border border-slate-700 rounded text-center text-xl font-bold text-amber-400 focus:outline-none focus:border-blue-500" oninput="calculateGrade()">
+            <span class="text-xl font-bold text-slate-400">/ 80</span>
+          </div>
+        </div>
+
+        <div class="h-12 border-r border-slate-700 hidden sm:block"></div>
+
+        <div>
+          <label class="text-xs text-slate-400 block mb-1">Estimated IGCSE Grade:</label>
+          <div id="gradeResult" class="text-2xl font-extrabold text-blue-400">--</div>
+        </div>
+
+        <div class="h-12 border-r border-slate-700 hidden sm:block"></div>
+
+        <div class="text-xs text-slate-400 space-y-1">
+          <p><strong class="text-amber-400">Grade Boundaries (Approx.):</strong></p>
+          <p>A*: 68+ (85%) • A: 60+ (75%) • B: 51+ (64%) • C: 42+ (52.5%) • D: 34+ (42.5%)</p>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-slate-900 border-t border-slate-800 py-6 text-center text-xs text-slate-500 no-print">
+    <div class="max-w-7xl mx-auto px-4">
+      <p>Cambridge IGCSE™ Business Studies (0450) Paper 1 Practice Exam System</p>
+      <p class="mt-1 text-slate-600">Aligned with Syllabus Units 1, 2, and 3 • AO1, AO2, AO3, AO4 Mark Scheme Criteria</p>
+    </div>
+  </footer>
+
+  <!-- Embedded Logic -->
+  <script>
+    // Timer Logic
+    let totalSeconds = 90 * 60; // 90 minutes
+    let timerInterval = null;
+    let isTimerRunning = false;
+
+    function updateTimerDisplay() {
+      const hours = Math.floor(totalSeconds / 3600);
+      const minutes = Math.floor((totalSeconds % 3600) / 60);
+      const seconds = totalSeconds % 60;
+
+      const pad = (num) => String(num).padStart(2, '0');
+      document.getElementById('timerDisplay').textContent = `${pad(hours)}:${pad(minutes)}:${pad(seconds)}`;
+
+      if (totalSeconds <= 300) { // last 5 mins
+        document.getElementById('timerDisplay').classList.remove('text-amber-400');
+        document.getElementById('timerDisplay').classList.add('text-red-500', 'animate-pulse');
+      }
+    }
+
+    function toggleTimer() {
+      if (isTimerRunning) {
+        clearInterval(timerInterval);
+        isTimerRunning = false;
+        document.getElementById('timerBtnText').textContent = "Resume Exam";
+        document.getElementById('timerIcon').className = "fa-solid fa-play";
+      } else {
+        timerInterval = setInterval(() => {
+          if (totalSeconds > 0) {
+            totalSeconds--;
+            updateTimerDisplay();
+          } else {
+            clearInterval(timerInterval);
+            alert("Time is up! Please complete your self-assessment.");
+          }
+        }, 1000);
+        isTimerRunning = true;
+        document.getElementById('timerBtnText').textContent = "Pause Exam";
+        document.getElementById('timerIcon').className = "fa-solid fa-pause";
+      }
+    }
+
+    function resetTimer() {
+      clearInterval(timerInterval);
+      isTimerRunning = false;
+      totalSeconds = 90 * 60;
+      updateTimerDisplay();
+      document.getElementById('timerBtnText').textContent = "Start Exam";
+      document.getElementById('timerIcon').className = "fa-solid fa-play";
+      document.getElementById('timerDisplay').className = "font-mono text-xl font-bold tracking-wider text-amber-400";
+    }
+
+    // Navigation Tabs
+    function switchTab(tabId) {
+      const blocks = document.querySelectorAll('.question-block');
+      const tabs = document.querySelectorAll('.tab-btn');
+
+      tabs.forEach(tab => {
+        tab.classList.remove('border-blue-600', 'text-blue-600');
+        tab.classList.add('border-transparent', 'text-slate-500');
+      });
+
+      if (tabId === 'all') {
+        blocks.forEach(b => b.classList.remove('hidden'));
+        document.getElementById('tab-all').classList.add('border-blue-600', 'text-blue-600');
+        return;
+      }
+
+      blocks.forEach(b => b.classList.add('hidden'));
+      document.getElementById(`sec-${tabId}`).classList.remove('hidden');
+      document.getElementById(`tab-${tabId}`).classList.add('border-blue-600', 'text-blue-600');
+    }
+
+    // Toggle Mark Schemes
+    function toggleScheme(id) {
+      const ms = document.getElementById(id);
+      ms.classList.toggle('hidden');
+    }
+
+    // Grade Calculator
+    function calculateGrade() {
+      const score = parseInt(document.getElementById('userScoreInput').value) || 0;
+      const res = document.getElementById('gradeResult');
+
+      if (score >= 68) {
+        res.textContent = "Grade A* (Outstanding)";
+        res.className = "text-2xl font-extrabold text-emerald-400";
+      } else if (score >= 60) {
+        res.textContent = "Grade A (Excellent)";
+        res.className = "text-2xl font-extrabold text-emerald-500";
+      } else if (score >= 51) {
+        res.textContent = "Grade B (Very Good)";
+        res.className = "text-2xl font-extrabold text-blue-400";
+      } else if (score >= 42) {
+        res.textContent = "Grade C (Good Pass)";
+        res.className = "text-2xl font-extrabold text-amber-400";
+      } else if (score >= 34) {
+        res.textContent = "Grade D (Satisfactory)";
+        res.className = "text-2xl font-extrabold text-orange-400";
+      } else if (score >= 25) {
+        res.textContent = "Grade E";
+        res.className = "text-2xl font-extrabold text-rose-400";
+      } else {
+        res.textContent = "Grade U (Ungraded)";
+        res.className = "text-2xl font-extrabold text-slate-500";
+      }
+    }
+  </script>
+</body>
+</html>
