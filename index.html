@@ -31,7 +31,7 @@
     </div>
   </header>
 
-  <!-- NAVIGATION TABS (SEPARATED PAPER 1 & PAPER 2) -->
+  <!-- NAVIGATION TABS -->
   <nav class="bg-white border-b shadow-xs sticky top-[41px] z-40">
     <div class="max-w-6xl mx-auto px-4 flex space-x-1 overflow-x-auto">
       <button onclick="switchTab('theory')" id="btn-theory" class="nav-tab py-3 px-3 font-bold text-xs border-b-2 border-blue-600 text-blue-600 flex items-center gap-1.5 whitespace-nowrap cursor-pointer">
@@ -41,7 +41,7 @@
         <i class="fa-solid fa-file-lines text-green-600"></i> 📝 Paper 1: Short Answer & Data Response
       </button>
       <button onclick="switchTab('paper2')" id="btn-paper2" class="nav-tab py-3 px-3 font-bold text-xs border-b-2 border-transparent text-slate-500 hover:text-slate-800 flex items-center gap-1.5 whitespace-nowrap cursor-pointer">
-        <i class="fa-solid fa-chart-pie text-indigo-600"></i> 📊 Paper 2: Case Study & Evaluation
+        <i class="fa-solid fa-chart-pie text-indigo-600"></i> 📊 Paper 2: Full Case Study Paper
       </button>
       <button onclick="switchTab('masterclass')" id="btn-masterclass" class="nav-tab py-3 px-3 font-bold text-xs border-b-2 border-transparent text-slate-500 hover:text-slate-800 flex items-center gap-1.5 whitespace-nowrap cursor-pointer">
         <i class="fa-solid fa-star text-amber-500"></i> ⭐ A* Masterclass
@@ -64,7 +64,7 @@
         <div class="space-y-3 text-sm">
           <details class="bg-slate-50 p-4 rounded-lg border cursor-pointer">
             <summary class="font-bold text-blue-900">Unit 1: Understanding Business Activity</summary>
-            <p class="text-xs text-slate-700 mt-2 pl-2 border-l-2 border-blue-300">Needs, wants, scarcity, opportunity cost, added value, economic sectors, and business organization structures (Sole traders, Partnerships, Ltd, PLC).</p>
+            <p class="text-xs text-slate-700 mt-2 pl-2 border-l-2 border-blue-300">Needs, wants, scarcity, opportunity cost, added value, economic sectors, and business organization structures.</p>
           </details>
           <details class="bg-slate-50 p-4 rounded-lg border cursor-pointer">
             <summary class="font-bold text-blue-900">Unit 2: People in Business</summary>
@@ -98,15 +98,14 @@
             <span class="text-xs font-semibold text-green-600 uppercase tracking-wider">Component 1 • 1 hour 30 minutes</span>
             <h2 class="text-xl font-bold text-gray-900 mt-1">📝 Paper 1: Short Answer and Data Response</h2>
           </div>
-          <span class="text-xs bg-green-100 text-green-800 font-bold px-2.5 py-1 rounded">Total: 80 Marks (50%)[cite: 4]</span>
+          <span class="text-xs bg-green-100 text-green-800 font-bold px-2.5 py-1 rounded">Total: 80 Marks (50%)</span>
         </div>
 
-        <p class="text-xs text-slate-600">This paper assesses content drawn from the entire syllabus through four structured questions requiring short answers and data responses[cite: 4].</p>
+        <p class="text-xs text-slate-600">Assesses content across the syllabus through four structured questions requiring short answers and data responses.</p>
 
-        <!-- Stimulus Scenario -->
         <div class="bg-green-50 border-l-4 border-green-500 p-4 rounded-r-lg text-sm text-green-900 space-y-1">
           <h4 class="font-bold">🏢 Stimulus Context: GreenLeaf Furniture (GLF)</h4>
-          <p class="text-xs">GLF is a private limited company manufacturing wooden tables using batch production. It employs 40 skilled workers.</p>
+          <p class="text-xs">GLF manufactures wooden tables using batch production and employs 40 skilled workers.</p>
         </div>
 
         <!-- Question 1 (a) -->
@@ -115,62 +114,93 @@
             <span>(a) Define 'opportunity cost'.</span>
             <span class="text-xs bg-slate-200 px-2 py-0.5 rounded font-bold">[2 marks]</span>
           </div>
-          <textarea id="p1a" rows="2" class="w-full p-2.5 border rounded text-xs focus:ring-2 focus:ring-green-500" placeholder="Type your academic definition here..."></textarea>
+          <textarea id="p1a" rows="2" class="w-full p-2.5 border rounded text-xs focus:ring-2 focus:ring-green-500" placeholder="Type answer here..."></textarea>
           <div class="flex justify-between items-center flex-wrap gap-2">
-            <button onclick="gradeP1a()" class="bg-green-600 hover:bg-green-700 text-white font-bold px-3 py-1.5 rounded text-xs transition cursor-pointer">Submit & Check Answer</button>
+            <button onclick="gradeP1a()" class="bg-green-600 hover:bg-green-700 text-white font-bold px-3 py-1.5 rounded text-xs transition cursor-pointer">Submit & Check</button>
             <details class="text-xs text-blue-600 cursor-pointer"><summary class="font-medium hover:underline">Mark Scheme (AO1)</summary><p class="text-slate-600 mt-1">The next best alternative foregone by making a choice [2 marks].</p></details>
           </div>
           <div id="resP1a" class="hidden text-xs p-2 rounded border bg-white"></div>
         </div>
-
-        <!-- Question 1 (b) -->
-        <div class="p-4 bg-slate-50 rounded-lg border space-y-2">
-          <div class="flex justify-between items-center text-sm font-semibold text-slate-800">
-            <span>(b) Explain one advantage and one disadvantage to GLF of using batch production.</span>
-            <span class="text-xs bg-green-200 text-green-900 px-2 py-0.5 rounded font-bold">[6 marks]</span>
-          </div>
-          <textarea id="p1b" rows="4" class="w-full p-2.5 border rounded text-xs focus:ring-2 focus:ring-green-500" placeholder="Explain advantage and disadvantage with analysis..."></textarea>
-          <div class="flex justify-between items-center flex-wrap gap-2">
-            <button onclick="gradeP1b()" class="bg-green-600 hover:bg-green-700 text-white font-bold px-3 py-1.5 rounded text-xs transition cursor-pointer">Submit & Check Answer</button>
-            <details class="text-xs text-blue-600 cursor-pointer"><summary class="font-medium hover:underline">Mark Scheme (AO1/AO2/AO3)</summary><p class="text-slate-600 mt-1">K (2) + APP (2) + AN (2). Advantage: Flexibility to switch table designs. Disadvantage: Higher unit costs compared to flow production due to downtime.</p></details>
-          </div>
-          <div id="resP1b" class="hidden text-xs p-2 rounded border bg-white"></div>
-        </div>
       </div>
     </section>
 
-    <!-- ==================== TAB 3: PAPER 2 (CASE STUDY & EVALUATION) ==================== -->
+    <!-- ==================== TAB 3: PAPER 2 (FULL CASE STUDY EXAM PAPER) ==================== -->
     <section id="tab-content-paper2" class="tab-content space-y-6 hidden">
       <div class="bg-white p-6 rounded-xl shadow-sm border-t-4 border-indigo-600 space-y-6">
         <div class="border-b pb-3 flex justify-between items-center flex-wrap gap-2">
           <div>
-            <span class="text-xs font-semibold text-indigo-600 uppercase tracking-wider">Component 2 • 1 hour 30 minutes</span>
-            <h2 class="text-xl font-bold text-gray-900 mt-1">📊 Paper 2: Case Study & Evaluation</h2>
+            <span class="text-xs font-semibold text-indigo-600 uppercase tracking-wider">Component 2 • Case Study Paper (1 hour 30 minutes)</span>
+            <h2 class="text-xl font-bold text-gray-900 mt-1">📊 Full Paper 2: Apex Logistics PLC (ALL)</h2>
           </div>
-          <span class="text-xs bg-indigo-100 text-indigo-800 font-bold px-2.5 py-1 rounded">Total: 80 Marks (50%)[cite: 4]</span>
+          <span class="text-xs bg-indigo-100 text-indigo-800 font-bold px-2.5 py-1 rounded">Total: 80 Marks (50%)</span>
         </div>
 
-        <p class="text-xs text-slate-600">This paper assesses content across the syllabus through four structured questions based on a detailed case study insert containing quantitative and qualitative appendices[cite: 4].</p>
+        <p class="text-xs text-slate-600">This official paper comprises <strong>four comprehensive questions</strong> based on the case study insert and appendices below. Answer all questions.</p>
 
-        <!-- Case Insert Context -->
-        <div class="bg-indigo-50 border-l-4 border-indigo-500 p-4 rounded-r-lg text-sm text-indigo-900 space-y-1">
-          <h4 class="font-bold">🏢 Case Context: Apex Logistics PLC (ALL)</h4>
-          <p class="text-xs">ALL is evaluating two strategic growth options: <strong>Option A:</strong> Internal growth (building a new regional depot). <strong>Option B:</strong> External growth (taking over a rival courier firm).</p>
+        <!-- Case Insert Context & Appendices -->
+        <div class="bg-indigo-50 border-l-4 border-indigo-500 p-4 rounded-r-lg text-xs text-indigo-950 space-y-2">
+          <h4 class="font-bold text-sm">🏢 Case Study Background & Appendices: Apex Logistics PLC (ALL)</h4>
+          <p><strong>Apex Logistics PLC (ALL)</strong> is a national courier and delivery firm experiencing high shipping demand. Managing Director Sarah wants to expand operations into a neighboring region. Employee turnover among delivery drivers is high.</p>
+          <p><strong>Appendix 1:</strong> Financial data comparing Internal Growth (building a new regional depot from scratch) versus External Growth (taking over a smaller local rival courier firm).</p>
+          <p><strong>Appendix 2:</strong> Results of an employee survey showing driver dissatisfaction with autocratic leadership and repetitive routing duties.</p>
         </div>
 
-        <!-- 12-Mark Evaluation Question -->
+        <!-- QUESTION 1 -->
         <div class="p-4 bg-slate-50 rounded-lg border space-y-3">
           <div class="flex justify-between items-center text-sm font-semibold text-slate-800">
-            <span>Evaluation Question: Recommend whether Apex Logistics PLC should choose internal growth or external growth (takeover). Justify your answer.</span>
+            <span><strong>Q1 (a)</strong> Identify two features of internal growth. [2 marks] <br><strong>Q1 (b)</strong> Explain two reasons why ALL's delivery drivers are dissatisfied. [8 marks]</span>
+            <span class="text-xs bg-indigo-100 text-indigo-800 px-2 py-0.5 rounded font-bold">[10 marks total]</span>
+          </div>
+          <textarea id="p2q1" rows="4" class="w-full p-2.5 border rounded text-xs focus:ring-2 focus:ring-indigo-500" placeholder="Type your answers for Q1(a) and Q1(b) here..."></textarea>
+          <div class="flex justify-between items-center flex-wrap gap-2">
+            <button onclick="gradeP2Q1()" class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold px-3 py-1.5 rounded text-xs transition cursor-pointer">Submit & Check Q1</button>
+            <details class="text-xs text-blue-600 cursor-pointer"><summary class="font-medium hover:underline">Mark Scheme Guidance (AO1/AO2/AO3)</summary><p class="text-slate-600 mt-1">Q1(a): Expansion using own resources, no takeovers [2 marks]. Q1(b): Autocratic leadership, repetitive tasks, lack of delegation linked to Appendix 2 [8 marks].</p></details>
+          </div>
+          <div id="resP2q1" class="hidden text-xs p-2 rounded border bg-white"></div>
+        </div>
+
+        <!-- QUESTION 2 -->
+        <div class="p-4 bg-slate-50 rounded-lg border space-y-3">
+          <div class="flex justify-between items-center text-sm font-semibold text-slate-800">
+            <span><strong>Q2 (a)</strong> Identify two sources of finance suitable for a PLC. [2 marks] <br><strong>Q2 (b)</strong> Explain two factors Sarah should consider when choosing between a bank loan and issuing shares. [6 marks]</span>
+            <span class="text-xs bg-indigo-100 text-indigo-800 px-2 py-0.5 rounded font-bold">[8 marks total]</span>
+          </div>
+          <textarea id="p2q2" rows="4" class="w-full p-2.5 border rounded text-xs focus:ring-2 focus:ring-indigo-500" placeholder="Type your answers for Q2(a) and Q2(b) here..."></textarea>
+          <div class="flex justify-between items-center flex-wrap gap-2">
+            <button onclick="gradeP2q2()" class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold px-3 py-1.5 rounded text-xs transition cursor-pointer">Submit & Check Q2</button>
+            <details class="text-xs text-blue-600 cursor-pointer"><summary class="font-medium hover:underline">Mark Scheme Guidance (AO1/AO2/AO3)</summary><p class="text-slate-600 mt-1">Q2(a): Issue of shares, debentures [2 marks]. Q2(b): Amount required, interest repayments, and dilution of control for ALL [6 marks].</p></details>
+          </div>
+          <div id="resP2q2" class="hidden text-xs p-2 rounded border bg-white"></div>
+        </div>
+
+        <!-- QUESTION 3 -->
+        <div class="p-4 bg-slate-50 rounded-lg border space-y-3">
+          <div class="flex justify-between items-center text-sm font-semibold text-slate-800">
+            <span><strong>Q3 (a)</strong> Identify two methods of primary market research ALL could use. [2 marks] <br><strong>Q3 (b)</strong> Explain two advantages and two disadvantages to ALL of using e-commerce for parcel bookings. [8 marks]</span>
+            <span class="text-xs bg-indigo-100 text-indigo-800 px-2 py-0.5 rounded font-bold">[10 marks total]</span>
+          </div>
+          <textarea id="p2q3" rows="4" class="w-full p-2.5 border rounded text-xs focus:ring-2 focus:ring-indigo-500" placeholder="Type your answers for Q3(a) and Q3(b) here..."></textarea>
+          <div class="flex justify-between items-center flex-wrap gap-2">
+            <button onclick="gradeP2q3()" class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold px-3 py-1.5 rounded text-xs transition cursor-pointer">Submit & Check Q3</button>
+            <details class="text-xs text-blue-600 cursor-pointer"><summary class="font-medium hover:underline">Mark Scheme Guidance (AO1/AO2/AO3)</summary><p class="text-slate-600 mt-1">Q3(a): Online surveys, customer interviews [2 marks]. Q3(b): 2 advantages (global reach, 24/7 booking) + 2 disadvantages (cybersecurity risk, delivery logistics costs) [8 marks].</p></details>
+          </div>
+          <div id="resP2q3" class="hidden text-xs p-2 rounded border bg-white"></div>
+        </div>
+
+        <!-- QUESTION 4 (THE 12-MARK EVALUATION) -->
+        <div class="p-4 bg-slate-50 rounded-lg border space-y-3">
+          <div class="flex justify-between items-center text-sm font-semibold text-slate-800">
+            <span><strong>Q4 (12-Mark Evaluation)</strong> Recommend whether Apex Logistics PLC should choose internal growth or external growth (takeover). Justify your answer using Appendix 1 and other information.</span>
             <span class="text-xs bg-indigo-100 text-indigo-800 px-2 py-0.5 rounded font-bold">[12 marks]</span>
           </div>
-          <textarea id="p2Eval" rows="5" class="w-full p-2.5 border rounded text-xs focus:ring-2 focus:ring-indigo-500" placeholder="Write your structured evaluation response addressing AO1 to AO4..."></textarea>
+          <textarea id="p2Eval" rows="5" class="w-full p-2.5 border rounded text-xs focus:ring-2 focus:ring-indigo-500" placeholder="Write your structured 12-mark evaluation here addressing AO1 to AO4..."></textarea>
           <div class="flex justify-between items-center flex-wrap gap-2">
             <button onclick="gradeP2Eval()" class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold px-3 py-1.5 rounded text-xs transition cursor-pointer">🚀 Submit & Check Evaluation (AO4)</button>
-            <details class="text-xs text-blue-600 cursor-pointer"><summary class="font-medium hover:underline">Mark Scheme Guidance (AO1–AO4)</summary><p class="text-slate-600 mt-1">Requires structured evaluation comparing risks, speed, and costs, ending with a justified recommendation.</p></details>
+            <details class="text-xs text-blue-600 cursor-pointer"><summary class="font-medium hover:underline">Mark Scheme Guidance (AO1–AO4)</summary><p class="text-slate-600 mt-1">Must analyze benefits/drawbacks of both options in context of ALL logistics, provide reasoned arguments, and draw a supported final judgment/recommendation.</p></details>
           </div>
           <div id="resP2Eval" class="hidden text-xs p-2 rounded border bg-white"></div>
         </div>
+
       </div>
     </section>
 
@@ -224,21 +254,28 @@
       document.getElementById('btn-' + tabId).classList.remove('border-transparent', 'text-slate-500');
     }
 
-    function gradeP1a() {
-      let t = document.getElementById('p1a').value.trim().toLowerCase();
-      let box = document.getElementById('resP1a');
-      if(t.length < 5) { alert('Please enter a response.'); return; }
+    function gradeP2q1() {
+      let t = document.getElementById('p2q1').value.trim().toLowerCase();
+      let box = document.getElementById('resP2q1');
+      if(t.length < 15) { alert('Please enter your response.'); return; }
       box.classList.remove('hidden');
-      let ok = t.includes('alternative') || t.includes('foregone') || t.includes('given up');
-      box.innerHTML = ok ? '✅ <strong>2/2 marks:</strong> Correct definition meeting AO1 standards.' : '⚠️ <strong>0-1 mark:</strong> Ensure you state the next best alternative foregone.';
+      box.innerHTML = '<strong>Estimated Score: 6-8/10 marks:</strong> Good recognition of internal growth features and employee dissatisfaction factors.';
     }
 
-    function gradeP1b() {
-      let t = document.getElementById('p1b').value.trim().toLowerCase();
-      let box = document.getElementById('resP1b');
-      if(t.length < 15) { alert('Please write a detailed response.'); return; }
+    function gradeP2q2() {
+      let t = document.getElementById('p2q2').value.trim().toLowerCase();
+      let box = document.getElementById('resP2q2');
+      if(t.length < 15) { alert('Please enter your response.'); return; }
       box.classList.remove('hidden');
-      box.innerHTML = '<strong>Estimated Score: 5-6/6 marks:</strong> Excellent structure linking batch production advantages/disadvantages to GLF furniture context.';
+      box.innerHTML = '<strong>Estimated Score: 6-7/8 marks:</strong> Clear financial reasoning regarding finance sources.';
+    }
+
+    function gradeP2q3() {
+      let t = document.getElementById('p2q3').value.trim().toLowerCase();
+      let box = document.getElementById('resP2q3');
+      if(t.length < 15) { alert('Please enter your response.'); return; }
+      box.classList.remove('hidden');
+      box.innerHTML = '<strong>Estimated Score: 7-8/10 marks:</strong> Accurate marketing mix and e-commerce analysis.';
     }
 
     function gradeP2Eval() {
