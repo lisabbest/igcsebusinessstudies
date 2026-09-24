@@ -3,12 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>IGCSE Business Studies (0450) - Ultimate Portal</title>
+  <title>IGCSE Business Studies (0450) - Ultimate A* Revision Portal</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
     body { font-family: 'Inter', sans-serif; }
+    .mark-tag { font-size: 0.7rem; padding: 0.1rem 0.35rem; border-radius: 0.2rem; font-weight: 600; }
+    .tag-ao1 { background-color: #DBEAFE; color: #1E40AF; }
+    .tag-ao2 { background-color: #D1FAE5; color: #065F46; }
+    .tag-ao3 { background-color: #FEF3C7; color: #92400E; }
+    .tag-ao4 { background-color: #FCE7F3; color: #9D174D; }
   </style>
 </head>
 <body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col">
@@ -21,59 +26,114 @@
         <h1 class="text-xs font-bold">Cambridge IGCSE™ Business Studies</h1>
       </div>
       <div class="text-[11px] text-slate-300">
-        <span>Portal Ôn Thi Chuyên Sâu</span>
+        <span>A* Exam Mastery & Revision Portal</span>
       </div>
     </div>
   </header>
 
-  <!-- NAVIGATION TABS (CHUYỂN ĐỔI NHANH TRACK A & TRACK B) -->
+  <!-- NAVIGATION TABS -->
   <nav class="bg-white border-b shadow-xs sticky top-[41px] z-40">
-    <div class="max-w-4xl mx-auto px-4 flex space-x-4">
-      <button onclick="switchTrack('trackA')" id="btn-trackA" class="track-tab py-3 px-4 font-bold text-xs border-b-2 border-blue-600 text-blue-600 flex items-center gap-2 cursor-pointer">
+    <div class="max-w-5xl mx-auto px-4 flex space-x-2 overflow-x-auto">
+      <button onclick="switchTab('trackA')" id="btn-trackA" class="nav-tab py-3 px-4 font-bold text-xs border-b-2 border-blue-600 text-blue-600 flex items-center gap-2 whitespace-nowrap cursor-pointer">
         <i class="fa-solid fa-book-open"></i> 📚 Track A: Lý thuyết (Units 1–6)
       </button>
-      <button onclick="switchTrack('trackB')" id="btn-trackB" class="track-tab py-3 px-4 font-bold text-xs border-b-2 border-transparent text-slate-500 hover:text-slate-800 flex items-center gap-2 cursor-pointer">
+      <button onclick="switchTab('trackB')" id="btn-trackB" class="nav-tab py-3 px-4 font-bold text-xs border-b-2 border-transparent text-slate-500 hover:text-slate-800 flex items-center gap-2 whitespace-nowrap cursor-pointer">
         <i class="fa-solid fa-pen-to-square"></i> 📝 Track B: Luyện đề (Paper 1 & 2)
+      </button>
+      <button onclick="switchTab('masterclass')" id="btn-masterclass" class="nav-tab py-3 px-4 font-bold text-xs border-b-2 border-transparent text-slate-500 hover:text-slate-800 flex items-center gap-2 whitespace-nowrap cursor-pointer">
+        <i class="fa-solid fa-star text-amber-500"></i> ⭐ A* Writing Masterclass
       </button>
     </div>
   </nav>
 
   <!-- MAIN CONTAINER -->
-  <main class="max-w-4xl mx-auto px-4 py-6 flex-grow w-full">
+  <main class="max-w-5xl mx-auto px-4 py-6 flex-grow w-full">
 
-    <!-- ==================== TRACK A: LÝ THUYẾT UNITS 1 - 6 ==================== -->
-    <section id="content-trackA" class="track-content space-y-6">
-      <div class="bg-white p-6 rounded-xl shadow-sm border-t-4 border-blue-600 space-y-6">
+    <!-- ==================== TAB 1: TRACK A (LÝ THUYẾT 6 UNITS) ==================== -->
+    <section id="tab-content-trackA" class="tab-content space-y-6">
+      <div class="bg-white p-6 rounded-xl shadow-sm border-t-4 border-blue-600 space-y-4">
         <div class="border-b pb-3">
-          <span class="text-xs font-semibold text-blue-600 uppercase tracking-wider">Track A • Comprehensive Theory</span>
-          <h2 class="text-xl font-bold text-gray-900 mt-1">📚 Tóm tắt Lý thuyết chuẩn Syllabus 0450 (Units 1 – 6)</h2>
-          <p class="text-xs text-slate-500 mt-1">Bấm vào từng Unit để xem tóm tắt kiến thức trọng tâm:</p>
+          <span class="text-xs font-semibold text-blue-600 uppercase tracking-wider">Track A • Comprehensive Theory Syllabus 0450</span>
+          <h2 class="text-xl font-bold text-gray-900 mt-1">📚 Tóm tắt Lý thuyết Trọng tâm từ Unit 1 đến Unit 6</h2>
+          <p class="text-xs text-slate-500 mt-1">Bấm vào từng Unit để xem từ vựng cốt lõi và khái niệm nền tảng:</p>
         </div>
 
         <div class="space-y-3 text-sm">
-          <details class="bg-slate-50 p-3 rounded-lg border cursor-pointer"><summary class="font-bold text-blue-900 text-xs">Unit 1: Understanding Business Activity</summary><p class="text-xs text-slate-700 mt-2">Needs vs. Wants, Scarcity, Opportunity Cost, Factors of Production, Added Value, Specialisation, Business Growth.</p></details>
-          <details class="bg-slate-50 p-3 rounded-lg border cursor-pointer"><summary class="font-bold text-blue-900 text-xs">Unit 2: People in Business</summary><p class="text-xs text-slate-700 mt-2">Motivation theories (Maslow, Herzberg, Taylor), Financial & Non-financial rewards, Organisational structures, Recruitment.</p></details>
-          <details class="bg-slate-50 p-3 rounded-lg border cursor-pointer"><summary class="font-bold text-blue-900 text-xs">Unit 3: Marketing</summary><p class="text-xs text-slate-700 mt-2">Market segmentation, Mass vs Niche, Market research, Marketing Mix (4Ps), Product Life Cycle, Pricing strategies, E-commerce.</p></details>
-          <details class="bg-slate-50 p-3 rounded-lg border cursor-pointer"><summary class="font-bold text-blue-900 text-xs">Unit 4: Operations Management</summary><p class="text-xs text-slate-700 mt-2">Production methods (Job, Batch, Flow), Lean production, Economies/Diseconomies of scale, Location decisions.</p></details>
-          <details class="bg-slate-50 p-3 rounded-lg border cursor-pointer"><summary class="font-bold text-blue-900 text-xs">Unit 5: Financial Information & Decisions</summary><p class="text-xs text-slate-700 mt-2">Sources of finance, Cash flow forecasting, Break-even analysis, Income statements & balance sheets.</p></details>
-          <details class="bg-slate-50 p-3 rounded-lg border cursor-pointer"><summary class="font-bold text-blue-900 text-xs">Unit 6: External Influences on Business Activity</summary><p class="text-xs text-slate-700 mt-2">Government economic policies (Inflation, Exchange rates, Taxation), Environmental pressures, Ethics.</p></details>
+          <!-- Unit 1 -->
+          <details class="bg-slate-50 p-4 rounded-lg border cursor-pointer">
+            <summary class="font-bold text-blue-900">Unit 1: Understanding Business Activity</summary>
+            <div class="mt-2 text-xs text-slate-700 space-y-1 pl-2 border-l-2 border-blue-300">
+              <p><strong>Scarcity & Opportunity Cost:</strong> Unlimited wants vs. limited resources. The next best alternative foregone.</p>
+              <p><strong>Added Value:</strong> Selling price minus cost of raw materials. (Note: Added value is not profit).</p>
+              <p><strong>Business Growth:</strong> Internal (organic) vs. External (takeover/merger). Sole trader to Private Limited Company (Ltd).</p>
+            </div>
+          </details>
+
+          <!-- Unit 2 -->
+          <details class="bg-slate-50 p-4 rounded-lg border cursor-pointer">
+            <summary class="font-bold text-blue-900">Unit 2: People in Business</summary>
+            <div class="mt-2 text-xs text-slate-700 space-y-1 pl-2 border-l-2 border-blue-300">
+              <p><strong>Motivation Theories:</strong> Maslow (Hierarchy of needs), Herzberg (Two-factor theory), Taylor (Scientific management).</p>
+              <p><strong>Financial vs Non-financial Rewards:</strong> Piece-rate, commission, profit-sharing vs. job enrichment, rotation, empowerment.</p>
+              <p><strong>Organisational Structure:</strong> Span of control, chain of command, delegation, tall vs. flat hierarchies.</p>
+            </div>
+          </details>
+
+          <!-- Unit 3 -->
+          <details class="bg-slate-50 p-4 rounded-lg border cursor-pointer">
+            <summary class="font-bold text-blue-900">Unit 3: Marketing</summary>
+            <div class="mt-2 text-xs text-slate-700 space-y-1 pl-2 border-l-2 border-blue-300">
+              <p><strong>Market Segmentation & Research:</strong> Demographic, psychographic. Primary (surveys) vs Secondary (desk research).</p>
+              <p><strong>The Marketing Mix (4Ps):</strong> Product, Price (Skimming, Penetration, Cost-plus), Place (Distribution channels), Promotion (Advertising, Sales promotion).</p>
+              <p><strong>Product Life Cycle:</strong> Introduction, Growth, Maturity, Saturation, Decline + Extension strategies.</p>
+            </div>
+          </details>
+
+          <!-- Unit 4 -->
+          <details class="bg-slate-50 p-4 rounded-lg border cursor-pointer">
+            <summary class="font-bold text-blue-900">Unit 4: Operations Management</summary>
+            <div class="mt-2 text-xs text-slate-700 space-y-1 pl-2 border-l-2 border-blue-300">
+              <p><strong>Production Methods:</strong> Job production (customised), Batch production (groups), Flow production (mass continuous).</p>
+              <p><strong>Lean Production:</strong> Kaizen (continuous improvement), Just-in-Time (JIT), reducing waste.</p>
+              <p><strong>Economies & Diseconomies of Scale:</strong> Purchasing, financial, marketing economies vs communication breakdown in giant firms.</p>
+            </div>
+          </details>
+
+          <!-- Unit 5 -->
+          <details class="bg-slate-50 p-4 rounded-lg border cursor-pointer">
+            <summary class="font-bold text-blue-900">Unit 5: Financial Information & Financial Decisions</summary>
+            <div class="mt-2 text-xs text-slate-700 space-y-1 pl-2 border-l-2 border-blue-300">
+              <p><strong>Sources of Finance:</strong> Internal (retained profit) vs External (bank loans, issuing shares, overdrafts).</p>
+              <p><strong>Cash Flow Forecasting:</strong> Inflows, outflows, net cash flow, and closing balance. Managing working capital.</p>
+              <p><strong>Break-even Analysis:</strong> Fixed costs, variable costs, contribution, margin of safety.</p>
+            </div>
+          </details>
+
+          <!-- Unit 6 -->
+          <details class="bg-slate-50 p-4 rounded-lg border cursor-pointer">
+            <summary class="font-bold text-blue-900">Unit 6: External Influences on Business Activity</summary>
+            <div class="mt-2 text-xs text-slate-700 space-y-1 pl-2 border-l-2 border-blue-300">
+              <p><strong>Government Policies:</strong> Economic growth, inflation, unemployment, exchange rates, interest rates, and taxation.</p>
+              <p><strong>Environmental & Ethical Issues:</strong> Sustainability, carbon footprint, ethical sourcing, and pressure groups.</p>
+            </div>
+          </details>
         </div>
       </div>
     </section>
 
-    <!-- ==================== TRACK B: LUYỆN ĐỀ PAPER 1 & PAPER 2 ==================== -->
-    <section id="content-trackB" class="track-content space-y-6 hidden">
+    <!-- ==================== TAB 2: TRACK B (LUYỆN ĐỀ PAPER 1 & 2) ==================== -->
+    <section id="tab-content-trackB" class="tab-content space-y-6 hidden">
       
       <!-- PAPER 1 PRACTICE -->
       <div class="bg-white p-6 rounded-xl shadow-sm border-t-4 border-green-600 space-y-6">
         <div class="border-b pb-3">
-          <span class="text-xs font-semibold text-green-600 uppercase tracking-wider">Track B • Paper 1 Practice</span>
+          <span class="text-xs font-semibold text-green-600 uppercase tracking-wider">Track B • Paper 1 Exam Practice</span>
           <h2 class="text-xl font-bold text-gray-900 mt-1">Question Set: GreenLeaf Furniture (GLF)</h2>
         </div>
 
         <div class="bg-green-50 border-l-4 border-green-500 p-4 rounded-r-lg text-sm text-green-900">
           <h4 class="font-bold mb-1">🏢 Business Context:</h4>
-          <p>Tariq is an entrepreneur who founded <strong>GreenLeaf Furniture (GLF)</strong> as a sole trader, producing handcrafted wooden tables. He faces scarcity of skilled labor and high raw material costs. He is considering converting GLF into a Private Limited Company (Ltd) and expanding operations.</p>
+          <p>Tariq founded <strong>GreenLeaf Furniture (GLF)</strong> as a sole trader, producing handcrafted wooden tables. He faces scarcity of skilled labor and high raw material costs. He is considering converting GLF into a Private Limited Company (Ltd).</p>
         </div>
 
         <!-- Question (a) -->
@@ -85,23 +145,9 @@
           <textarea id="ansA" rows="2" class="w-full p-2.5 border rounded text-xs focus:ring-2 focus:ring-green-500" placeholder="Nhập định nghĩa..."></textarea>
           <div class="flex justify-between items-center flex-wrap gap-2">
             <button onclick="gradeA()" class="bg-green-600 hover:bg-green-700 text-white font-bold px-4 py-1.5 rounded text-xs transition cursor-pointer">🚀 Submit & Chấm câu (a)</button>
-            <details class="text-xs text-blue-600 cursor-pointer"><summary class="hover:underline font-medium">Xem Mark Scheme</summary><p class="text-slate-600 mt-1"><em>Đáp án chuẩn:</em> The next best alternative foregone by making a choice [2 marks].</p></details>
+            <details class="text-xs text-blue-600 cursor-pointer"><summary class="hover:underline font-medium">Xem Mark Scheme</summary><p class="text-slate-600 mt-1"><em>Đáp án:</em> The next best alternative foregone by making a choice [2 marks].</p></details>
           </div>
           <div id="fbA" class="hidden text-xs p-2 rounded border bg-white"></div>
-        </div>
-
-        <!-- Question (b) -->
-        <div class="p-4 bg-slate-50 rounded-lg border space-y-2">
-          <div class="flex justify-between items-center text-sm font-semibold text-slate-800">
-            <span>(b) Identify two ways in which GLF could add value to its products.</span>
-            <span class="text-xs bg-slate-200 px-2 py-0.5 rounded font-bold">[2 marks]</span>
-          </div>
-          <textarea id="ansB" rows="2" class="w-full p-2.5 border rounded text-xs focus:ring-2 focus:ring-green-500" placeholder="Nêu 2 cách tăng giá trị..."></textarea>
-          <div class="flex justify-between items-center flex-wrap gap-2">
-            <button onclick="gradeB()" class="bg-green-600 hover:bg-green-700 text-white font-bold px-4 py-1.5 rounded text-xs transition cursor-pointer">🚀 Submit & Chấm câu (b)</button>
-            <details class="text-xs text-blue-600 cursor-pointer"><summary class="hover:underline font-medium">Xem Mark Scheme</summary><p class="text-slate-600 mt-1"><em>Đáp án chuẩn:</em> Branded packaging, high-quality finishing, custom wood carving [2 marks].</p></details>
-          </div>
-          <div id="fbB" class="hidden text-xs p-2 rounded border bg-white"></div>
         </div>
 
         <!-- Question (c) -->
@@ -113,7 +159,7 @@
           <textarea id="ansC" rows="3" class="w-full p-2.5 border rounded text-xs focus:ring-2 focus:ring-green-500" placeholder="Nêu 2 lợi ích..."></textarea>
           <div class="flex justify-between items-center flex-wrap gap-2">
             <button onclick="gradeC()" class="bg-green-600 hover:bg-green-700 text-white font-bold px-4 py-1.5 rounded text-xs transition cursor-pointer">🚀 Submit & Chấm câu (c)</button>
-            <details class="text-xs text-blue-600 cursor-pointer"><summary class="hover:underline font-medium">Xem Mark Scheme</summary><p class="text-slate-600 mt-1"><em>Đáp án chuẩn:</em> Limited liability protects personal assets; easier to raise capital by selling shares [4 marks].</p></details>
+            <details class="text-xs text-blue-600 cursor-pointer"><summary class="hover:underline font-medium">Xem Mark Scheme</summary><p class="text-slate-600 mt-1"><em>Đáp án:</em> Limited liability protects personal assets; easier to raise capital by selling shares [4 marks].</p></details>
           </div>
           <div id="fbC" class="hidden text-xs p-2 rounded border bg-white"></div>
         </div>
@@ -136,10 +182,10 @@
             <span>Evaluation: Recommend whether MegaRetail PLC should choose Option A or Option B. Justify your answer.</span>
             <span class="text-xs bg-indigo-100 text-indigo-800 px-2 py-0.5 rounded font-bold">[12 marks]</span>
           </div>
-          <textarea id="p2Answer" rows="4" class="w-full p-2.5 border rounded text-xs focus:ring-2 focus:ring-indigo-500" placeholder="Viết câu trả lời 12-mark của bạn (chọn option nào và lý do)..."></textarea>
+          <textarea id="p2Answer" rows="4" class="w-full p-2.5 border rounded text-xs focus:ring-2 focus:ring-indigo-500" placeholder="Viết câu trả lời 12-mark của bạn (chọn option nào và lập luận chứng minh)..."></textarea>
           <div class="flex justify-between items-center flex-wrap gap-2">
             <button onclick="gradeP2()" class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold px-4 py-1.5 rounded text-xs transition cursor-pointer">🚀 Submit & Chấm điểm Paper 2</button>
-            <details class="text-xs text-blue-600 cursor-pointer"><summary class="hover:underline font-medium">Xem Gợi ý Mark Scheme</summary><p class="text-slate-600 mt-1"><em>Đáp án chuẩn:</em> Cần phân tích ưu/nhược điểm cả 2 option và đưa ra kết luận lựa chọn có căn cứ (AO4) dựa trên xu hướng thương mại điện tử.</p></details>
+            <details class="text-xs text-blue-600 cursor-pointer"><summary class="hover:underline font-medium">Xem Gợi ý Mark Scheme</summary><p class="text-slate-600 mt-1"><em>Đáp án:</em> Phân tích ưu/nhược điểm cả 2 option, gắn kết dữ liệu siêu thị, kết luận dứt khoát bằng phán quyết có căn cứ (AO4).</p></details>
           </div>
           <div id="fbP2" class="hidden text-xs p-2 rounded border bg-white"></div>
         </div>
@@ -147,24 +193,73 @@
 
     </section>
 
+    <!-- ==================== TAB 3: A* WRITING MASTERCLASS ==================== -->
+    <section id="tab-content-masterclass" class="tab-content space-y-6 hidden">
+      <div class="bg-white p-6 rounded-xl shadow-sm border-t-4 border-amber-500 space-y-6">
+        <div class="border-b pb-3">
+          <span class="text-xs font-semibold text-amber-600 uppercase tracking-wider">Exam Technique Masterclass</span>
+          <h2 class="text-xl font-bold text-gray-900 mt-1">⭐ Bí Quyết Đạt Điểm A* & Công Thức Viết Chuẩn Cambridge</h2>
+          <p class="text-xs text-slate-500 mt-1">Nắm vững cấu trúc chấm điểm theo các Mục tiêu Đánh giá (AO1 đến AO4) của Examiner.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs">
+          <!-- AO1 -->
+          <div class="bg-blue-50 p-4 rounded-lg border border-blue-200 space-y-2">
+            <span class="mark-tag tag-ao1 text-sm font-bold block w-fit">AO1: Knowledge (Kiến thức)</span>
+            <p class="text-slate-700">Nêu đúng định nghĩa, khái niệm hoặc kể tên chính xác các yếu tố theo đúng giáo trình 0450.</p>
+            <p class="text-blue-900 font-semibold"><em>Mẹo A*:</em> Không dài dòng, đi thẳng vào thuật ngữ cốt lõi ở các câu 2 marks.</p>
+          </div>
+
+          <!-- AO2 -->
+          <div class="bg-emerald-50 p-4 rounded-lg border border-emerald-200 space-y-2">
+            <span class="mark-tag tag-ao2 text-sm font-bold block w-fit">AO2: Application (Gắn kết bối cảnh)</span>
+            <p class="text-slate-700">Phải lồng ghép tên doanh nghiệp (VD: GLF, BCF, MegaRetail) hoặc chi tiết đề bài vào trong câu trả lời.</p>
+            <p class="text-emerald-900 font-semibold"><em>Mẹo A*:</em> Thiếu Application sẽ bị mất điểm đáng tiếc ở các câu từ 4 marks trở lên.</p>
+          </div>
+
+          <!-- AO3 -->
+          <div class="bg-amber-50 p-4 rounded-lg border border-amber-200 space-y-2">
+            <span class="mark-tag tag-ao3 text-sm font-bold block w-fit">AO3: Analysis (Phân tích hệ quả)</span>
+            <p class="text-slate-700">Sử dụng chuỗi logic nguyên nhân - kết quả (Because $\rightarrow$ Leading to $\rightarrow$ Resulting in profits/costs).</p>
+            <p class="text-amber-900 font-semibold"><em>Mẹo A*:</em> Luôn giải thích "Tại sao điều đó lại làm tăng doanh thu hoặc giảm chi phí?".</p>
+          </div>
+
+          <!-- AO4 -->
+          <div class="bg-pink-50 p-4 rounded-lg border border-pink-200 space-y-2">
+            <span class="mark-tag tag-ao4 text-sm font-bold block w-fit">AO4: Evaluation (Đánh giá & Phán quyết)</span>
+            <p class="text-slate-700">Đưa ra lựa chọn dứt khoát giữa 2 phương án ở Paper 2 (12-mark) và giải thích tại sao phương án đó tốt hơn trong ngắn/dài hạn.</p>
+            <p class="text-pink-900 font-semibold"><em>Mẹo A*:</em> Tránh trả lời chung chung "cả hai đều tốt". Phải so sánh rủi ro tài chính.</p>
+          </div>
+        </div>
+
+        <!-- Formula Box -->
+        <div class="bg-slate-900 text-white p-4 rounded-lg space-y-2 text-xs">
+          <h4 class="font-bold text-amber-400 text-sm">💡 Công thức "K - APP - AN" cho câu hỏi 6 marks:</h4>
+          <p class="text-slate-300">1. <strong>Knowledge (K):</strong> Nêu một lợi ích rõ ràng.</p>
+          <p class="text-slate-300">2. <strong>Application (APP):</strong> Gắn với hoạt động của doanh nghiệp trong đề (ví dụ: thợ mộc, bàn ghế gỗ).</p>
+          <p class="text-slate-300">3. <strong>Analysis (AN):</strong> Suy ra hệ quả tài chính (lợi nhuận tăng hoặc giảm chi phí lãng phí).</p>
+        </div>
+      </div>
+    </section>
+
   </main>
 
   <!-- FOOTER -->
   <footer class="bg-slate-900 text-slate-500 text-center py-4 text-xs mt-auto">
-    <p>Cambridge IGCSE™ Business Studies (0450) Portal</p>
+    <p>Cambridge IGCSE™ Business Studies (0450) Ultimate A* Revision Portal</p>
   </footer>
 
   <!-- SCRIPT XỬ LÝ CHUYỂN TAB & CHẤM ĐIỂM -->
   <script>
-    function switchTrack(trackId) {
-      document.querySelectorAll('.track-content').forEach(el => el.classList.add('hidden'));
-      document.querySelectorAll('.track-tab').forEach(el => {
+    function switchTab(tabId) {
+      document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
+      document.querySelectorAll('.nav-tab').forEach(el => {
         el.classList.remove('border-blue-600', 'text-blue-600');
         el.classList.add('border-transparent', 'text-slate-500');
       });
-      document.getElementById('content-' + trackId).classList.remove('hidden');
-      document.getElementById('btn-' + trackId).classList.add('border-blue-600', 'text-blue-600');
-      document.getElementById('btn-' + trackId).classList.remove('border-transparent', 'text-slate-500');
+      document.getElementById('tab-content-' + tabId).classList.remove('hidden');
+      document.getElementById('btn-' + tabId).classList.add('border-blue-600', 'text-blue-600');
+      document.getElementById('btn-' + tabId).classList.remove('border-transparent', 'text-slate-500');
     }
 
     function gradeA() {
@@ -173,15 +268,7 @@
       if(t.length < 5) { alert('Vui lòng viết câu trả lời!'); return; }
       box.classList.remove('hidden');
       let ok = t.includes('alternative') || t.includes('foregone') || t.includes('given up') || t.includes('lựa chọn');
-      box.innerHTML = ok ? '✅ <strong>2/2 marks:</strong> Chính xác tuyệt đối khái niệm Opportunity Cost!' : '⚠️ <strong>0-1 mark:</strong> Cần nêu rõ ý "sự lựa chọn thay thế bị bỏ qua".';
-    }
-
-    function gradeB() {
-      let t = document.getElementById('ansB').value.trim().toLowerCase();
-      let box = document.getElementById('fbB');
-      if(t.length < 5) { alert('Vui lòng viết câu trả lời!'); return; }
-      box.classList.remove('hidden');
-      box.innerHTML = `📊 <strong>Đánh giá hệ thống:</strong> Đã ghi nhận câu trả lời tăng giá trị (Add Value).`;
+      box.innerHTML = ok ? '✅ <strong>2/2 marks:</strong> Chính xác tuyệt đối khái niệm Opportunity Cost (AO1)!' : '⚠️ <strong>0-1 mark:</strong> Cần nêu rõ ý "sự lựa chọn thay thế bị bỏ qua".';
     }
 
     function gradeC() {
@@ -192,7 +279,7 @@
       let hasLiab = t.includes('liability') || t.includes('trách nhiệm hữu hạn');
       let hasCap = t.includes('share') || t.includes('capital') || t.includes('finance') || t.includes('vốn');
       let score = (hasLiab ? 2 : 0) + (hasCap ? 2 : 0);
-      box.innerHTML = `<strong>Kết quả ước tính: ${score}/4 marks:</strong><br>- Limited Liability: ${hasLiab ? '✅ Có' : '❌ Chưa rõ'}<br>- Raising Capital: ${hasCap ? '✅ Có' : '❌ Chưa rõ'}`;
+      box.innerHTML = `<strong>Kết quả ước tính: ${score}/4 marks:</strong><br>- Limited Liability (AO1/AO2): ${hasLiab ? '✅ Có' : '❌ Chưa rõ'}<br>- Raising Capital (AO1/AO2): ${hasCap ? '✅ Có' : '❌ Chưa rõ'}`;
     }
 
     function gradeP2() {
@@ -202,7 +289,7 @@
       box.classList.remove('hidden');
       let hasChoice = t.includes('option a') || t.includes('option b');
       let hasJustify = t.includes('because') || t.includes('due to') || t.includes('better') || t.includes('lý do');
-      box.innerHTML = `<strong>Đánh giá Paper 2 Evaluation (AO4):</strong> ${hasChoice && hasJustify ? '✅ Đạt yêu cầu cơ bản! Đã có định hướng lựa chọn và lập luận chứng minh.' : '⚠️ Chưa hoàn thiện: Cần chỉ rõ chọn Option nào và đưa ra luận điểm giải thích thuyết phục.'}`;
+      box.innerHTML = `<strong>Đánh giá Paper 2 Evaluation (AO4):</strong> ${hasChoice && hasJustify ? '✅ Đạt yêu cầu! Đã có định hướng lựa chọn và lập luận chứng minh.' : '⚠️ Chưa hoàn thiện: Cần chỉ rõ chọn Option nào và đưa ra luận điểm giải thích thuyết phục.'}`;
     }
   </script>
 </body>
