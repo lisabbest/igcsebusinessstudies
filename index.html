@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>IGCSE Business Studies (0450) - Ultimate A* Revision Hub</title>
+  <title>IGCSE Business Studies (0450) - Official Exam & Revision Portal</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
@@ -25,23 +25,26 @@
         <span class="bg-blue-600 text-white font-bold px-2 py-0.5 rounded text-xs">0450</span>
         <h1 class="text-xs font-bold">Cambridge IGCSE™ Business Studies (0450)</h1>
       </div>
-      <div class="text-[11px] text-slate-300">
-        <span>Your 2026 Study Buddy • Units 1 to 6 Hub</span>
+      <div class="text-[11px] text-slate-300 flex items-center gap-3">
+        <span><i class="fa-regular fa-clock text-amber-400"></i> Exam Duration: 1h 30m</span>
       </div>
     </div>
   </header>
 
   <!-- NAVIGATION TABS -->
   <nav class="bg-white border-b shadow-xs sticky top-[41px] z-40">
-    <div class="max-w-5xl mx-auto px-4 flex space-x-2 overflow-x-auto">
+    <div class="max-w-6xl mx-auto px-4 flex space-x-2 overflow-x-auto">
       <button onclick="switchTab('theory')" id="btn-theory" class="nav-tab py-3 px-4 font-bold text-xs border-b-2 border-blue-600 text-blue-600 flex items-center gap-2 whitespace-nowrap cursor-pointer">
         <i class="fa-solid fa-book-open"></i> 📚 Track A: ZNotes Theory (Units 1–6)
       </button>
-      <button onclick="switchTab('practice')" id="btn-practice" class="nav-tab py-3 px-4 font-bold text-xs border-b-2 border-transparent text-slate-500 hover:text-slate-800 flex items-center gap-2 whitespace-nowrap cursor-pointer">
-        <i class="fa-solid fa-pen-to-square"></i> 📝 Track B: Topical Past Papers (Units 1–6)
+      <button onclick="switchTab('paper1')" id="btn-paper1" class="nav-tab py-3 px-4 font-bold text-xs border-b-2 border-transparent text-slate-500 hover:text-slate-800 flex items-center gap-2 whitespace-nowrap cursor-pointer">
+        <i class="fa-solid fa-file-lines text-green-600"></i> 📝 Paper 1: Short Answer & Data Response
+      </button>
+      <button onclick="switchTab('paper2')" id="btn-paper2" class="nav-tab py-3 px-4 font-bold text-xs border-b-2 border-transparent text-slate-500 hover:text-slate-800 flex items-center gap-2 whitespace-nowrap cursor-pointer">
+        <i class="fa-solid fa-chart-pie text-indigo-600"></i> 📊 Paper 2: Case Study & Evaluation
       </button>
       <button onclick="switchTab('masterclass')" id="btn-masterclass" class="nav-tab py-3 px-4 font-bold text-xs border-b-2 border-transparent text-slate-500 hover:text-slate-800 flex items-center gap-2 whitespace-nowrap cursor-pointer">
-        <i class="fa-solid fa-star text-amber-500"></i> ⭐ A* Examiner Masterclass
+        <i class="fa-solid fa-star text-amber-500"></i> ⭐ A* Masterclass & Command Words
       </button>
     </div>
   </nav>
@@ -53,223 +56,193 @@
     <section id="tab-content-theory" class="tab-content space-y-4">
       <div class="bg-white p-6 rounded-xl shadow-sm border-t-4 border-blue-600 space-y-4">
         <div class="border-b pb-3">
-          <span class="text-xs font-semibold text-blue-600 uppercase tracking-wider">Track A • Comprehensive Syllabus Notes</span>
-          <h2 class="text-xl font-bold text-gray-900 mt-1">📚 Complete IGCSE Business Studies 0450 Core Theory</h2>
-          <p class="text-xs text-slate-500 mt-1">Expand each unit to master definitions, formulas, and key concepts for your exams:</p>
+          <span class="text-xs font-semibold text-blue-600 uppercase tracking-wider">Track A • Syllabus 0450 Core Theory</span>
+          <h2 class="text-xl font-bold text-gray-900 mt-1">📚 Complete Revision Notes (Units 1 to 6)</h2>
+          <p class="text-xs text-slate-500 mt-1">Review core concepts aligned with Cambridge standards:</p>
         </div>
 
         <div class="space-y-3 text-sm">
-          <!-- Unit 1 -->
           <details class="bg-slate-50 p-4 rounded-lg border cursor-pointer">
             <summary class="font-bold text-blue-900">Unit 1: Understanding Business Activity</summary>
-            <div class="mt-2 text-xs text-slate-700 space-y-2 pl-2 border-l-2 border-blue-300">
-              <p>• <strong>Needs vs Wants:</strong> Needs are essentials for survival; wants are unlimited desires.</p>
-              <p>• <strong>The Economic Problem:</strong> Scarcity (unlimited wants vs. limited resources of Land, Labour, Capital, Enterprise) leads to <strong>Opportunity Cost</strong> (the next best alternative foregone).</p>
-              <p>• <strong>Added Value:</strong> Selling Price minus Cost of Raw Materials. (Note: Added value $\neq$ Profit).</p>
-              <p>• <strong>Business Ownership:</strong> Sole traders, Partnerships, Private Limited Companies (Ltd), Public Limited Companies (PLC), and Franchises.</p>
-              <p>• <strong>Business Growth & Objectives:</strong> Internal vs External growth, stakeholder conflicts, and causes of business failure.</p>
+            <div class="mt-2 text-xs text-slate-700 space-y-1 pl-2 border-l-2 border-blue-300">
+              <p>• Needs, wants, scarcity, and opportunity cost.</p>
+              <p>• Added Value = Selling Price - Cost of Raw Materials.</p>
+              <p>• Economic sectors (Primary, Secondary, Tertiary) and Business Ownership (Sole trader, Partnership, Ltd, PLC).</p>
             </div>
           </details>
-
-          <!-- Unit 2 -->
           <details class="bg-slate-50 p-4 rounded-lg border cursor-pointer">
             <summary class="font-bold text-blue-900">Unit 2: People in Business</summary>
-            <div class="mt-2 text-xs text-slate-700 space-y-2 pl-2 border-l-2 border-blue-300">
-              <p>• <strong>Motivation Theories:</strong> Maslow's Hierarchy of Needs, Herzberg's Two-Factor Theory, Taylor's Scientific Management.</p>
-              <p>• <strong>Financial & Non-Financial Rewards:</strong> Wages, salaries, commission, profit-sharing vs. job enrichment, rotation, enlargement.</p>
-              <p>• <strong>Organisation Structure:</strong> Chain of command, span of control, tall vs flat hierarchies, delegation, decentralisation.</p>
-              <p>• <strong>Recruitment & Training:</strong> Job description, person specification, internal/external recruitment, induction, on/off-the-job training.</p>
-              <p>• <strong>Communication & Legal Controls:</strong> Internal/external communication barriers, employment contracts, unfair dismissal, minimum wage.</p>
+            <div class="mt-2 text-xs text-slate-700 space-y-1 pl-2 border-l-2 border-blue-300">
+              <p>• Motivation theories (Maslow, Herzberg, Taylor).</p>
+              <p>• Financial vs Non-financial rewards, organisation structures, span of control, delegation, and recruitment.</p>
             </div>
           </details>
-
-          <!-- Unit 3 -->
           <details class="bg-slate-50 p-4 rounded-lg border cursor-pointer">
             <summary class="font-bold text-blue-900">Unit 3: Marketing</summary>
-            <div class="mt-2 text-xs text-slate-700 space-y-2 pl-2 border-l-2 border-blue-300">
-              <p>• <strong>Market Segmentation & Research:</strong> Grouping customers by age, income, lifestyle. Primary vs Secondary research.</p>
-              <p>• <strong>Marketing Mix (4Ps):</strong> Product (USP, brand image, packaging), Price (Skimming, Penetration, Cost-plus, Competitive, Promotional), Place (Channels of distribution), Promotion (Advertising, BOGOF).</p>
-              <p>• <strong>Product Life Cycle (PLC):</strong> Introduction, Growth, Maturity, Saturation, Decline + Extension strategies.</p>
-              <p>• <strong>E-Commerce & International Markets:</strong> Opportunities/threats of selling online and entering foreign markets (joint ventures, licensing).</p>
+            <div class="mt-2 text-xs text-slate-700 space-y-1 pl-2 border-l-2 border-blue-300">
+              <p>• Market segmentation, primary & secondary research, Marketing Mix (4Ps), Product Life Cycle, and E-commerce.</p>
             </div>
           </details>
-
-          <!-- Unit 4 -->
           <details class="bg-slate-50 p-4 rounded-lg border cursor-pointer">
             <summary class="font-bold text-blue-900">Unit 4: Operations Management</summary>
-            <div class="mt-2 text-xs text-slate-700 space-y-2 pl-2 border-l-2 border-blue-300">
-              <p>• <strong>Production Methods:</strong> Job production, Batch production, Flow production.</p>
-              <p>• <strong>Lean Production:</strong> Kaizen (continuous improvement), Just-in-Time (JIT) stock control to minimize waste and holding costs.</p>
-              <p>• <strong>Economies & Diseconomies of Scale:</strong> Purchasing, financial, marketing economies lowering average costs vs communication breakdowns.</p>
-              <p>• <strong>Location & Quality:</strong> Factors influencing factory location, plus Quality Control vs Quality Assurance.</p>
+            <div class="mt-2 text-xs text-slate-700 space-y-1 pl-2 border-l-2 border-blue-300">
+              <p>• Production methods (Job, Batch, Flow), Lean production (Kaizen, JIT), economies of scale, and quality control.</p>
             </div>
           </details>
-
-          <!-- Unit 5 -->
           <details class="bg-slate-50 p-4 rounded-lg border cursor-pointer">
             <summary class="font-bold text-blue-900">Unit 5: Financial Information & Financial Decisions</summary>
             <div class="mt-2 text-xs text-slate-700 space-y-2 pl-2 border-l-2 border-blue-300">
-              <p>• <strong>Sources of Finance:</strong> Internal (retained profit) vs External (bank loans, share issues, overdrafts, microfinance).</p>
-              <p>• <strong>Cash Flow Forecasting:</strong> Inflows, outflows, net cash flow, closing balance. Managing short-term cash deficits.</p>
-              <p>• <strong>Break-Even Analysis:</strong> Fixed costs, variable costs, contribution, margin of safety calculations.</p>
-              <p>• <strong>Accounts & Ratios:</strong> Income Statements, Statements of Financial Position, Profitability ratios (Gross/Net profit margin, ROCE) and Liquidity ratios (Current and Acid test ratios).</p>
+              <p>• Sources of finance, cash flow forecasting, break-even analysis, income statements, and liquidity/profitability ratios.</p>
             </div>
           </details>
-
-          <!-- Unit 6 -->
           <details class="bg-slate-50 p-4 rounded-lg border cursor-pointer">
             <summary class="font-bold text-blue-900">Unit 6: External Influences on Business Activity</summary>
-            <div class="mt-2 text-xs text-slate-700 space-y-2 pl-2 border-l-2 border-blue-300">
-              <p>• <strong>Government Economic Policies:</strong> Economic growth, inflation, unemployment, taxation, interest rates, and exchange rates.</p>
-              <p>• <strong>Environmental & Ethical Issues:</strong> Sustainability, carbon footprint, externalities, pressure groups, and ethical business dilemmas.</p>
-              <p>• <strong>Globalisation:</strong> Multinational companies (MNCs), import tariffs, quotas, and trade benefits/drawbacks.</p>
+            <div class="mt-2 text-xs text-slate-700 space-y-1 pl-2 border-l-2 border-blue-300">
+              <p>• Government economic policies (inflation, exchange rates, taxation), environmental issues, and globalisation / MNCs.</p>
             </div>
           </details>
         </div>
       </div>
     </section>
 
-    <!-- ==================== TAB 2: TOPICAL PAST PAPERS PRACTICE (UNITS 1-6) ==================== -->
-    <section id="tab-content-practice" class="tab-content space-y-6 hidden">
-      
+    <!-- ==================== TAB 2: OFFICIAL PAPER 1 MOCK ==================== -->
+    <section id="tab-content-paper1" class="tab-content space-y-6 hidden">
       <div class="bg-white p-6 rounded-xl shadow-sm border-t-4 border-green-600 space-y-6">
         <div class="border-b pb-3 flex justify-between items-center flex-wrap gap-2">
           <div>
-            <span class="text-xs font-semibold text-green-600 uppercase tracking-wider">Track B • Topical Past Papers Practice Hub</span>
-            <h2 class="text-xl font-bold text-gray-900 mt-1">📝 Recent Past Paper Exam Questions (Units 1–6)</h2>
+            <span class="text-xs font-semibold text-green-600 uppercase tracking-wider">Official Paper 1 • Short Answer & Data Response</span>
+            <h2 class="text-xl font-bold text-gray-900 mt-1">Mock Paper 1: GreenLeaf Furniture (GLF)</h2>
           </div>
-          <div class="text-xs text-slate-500 font-medium">Cambridge 0450 Exam Style</div>
+          <span class="text-xs bg-green-100 text-green-800 font-bold px-2.5 py-1 rounded">Total Marks: 80</span>
         </div>
-        <p class="text-xs text-slate-600">Test your knowledge with authentic topical questions modeled after recent Cambridge past papers. Type your answer and click submit for instant feedback!</p>
 
-        <!-- UNIT 1 QUESTION -->
-        <div class="p-4 bg-slate-50 rounded-lg border space-y-3">
+        <!-- Stimulus Context -->
+        <div class="bg-green-50 border-l-4 border-green-500 p-4 rounded-r-lg text-sm text-green-900 space-y-2">
+          <h4 class="font-bold">🏢 Stimulus Material:</h4>
+          <p><strong>GreenLeaf Furniture (GLF)</strong> is a private limited company based in country X. Tariq is the managing director and founder. GLF uses <strong>batch production</strong> to manufacture wooden dining tables and chairs, employing 40 skilled workers. The local economy is currently experiencing an economic boom, leading to rising incomes. However, inflation is also increasing, raising timber raw material costs.</p>
+        </div>
+
+        <!-- Q1 (a) -->
+        <div class="p-4 bg-slate-50 rounded-lg border space-y-2">
           <div class="flex justify-between items-center text-sm font-semibold text-slate-800">
-            <span><strong>[Unit 1]</strong> (a) Define 'opportunity cost'.</span>
+            <span>(a) Define 'private limited company'.</span>
             <span class="text-xs bg-slate-200 px-2 py-0.5 rounded font-bold">[2 marks]</span>
           </div>
-          <textarea id="ansU1" rows="2" class="w-full p-2.5 border rounded text-xs focus:ring-2 focus:ring-green-500" placeholder="Type your definition here..."></textarea>
+          <textarea id="p1a" rows="2" class="w-full p-2.5 border rounded text-xs focus:ring-2 focus:ring-green-500" placeholder="Type answer here..."></textarea>
           <div class="flex justify-between items-center flex-wrap gap-2">
-            <button onclick="gradeUnit1()" class="bg-green-600 hover:bg-green-700 text-white font-bold px-4 py-1.5 rounded text-xs transition cursor-pointer">🚀 Submit & Check Unit 1</button>
-            <details class="text-xs text-blue-600 cursor-pointer"><summary class="hover:underline font-medium">View Mark Scheme</summary><p class="text-slate-600 mt-1"><em>Official Mark Scheme:</em> The next best alternative foregone by making a choice [2 marks].</p></details>
+            <button onclick="gradeP1a()" class="bg-green-600 hover:bg-green-700 text-white font-bold px-3 py-1.5 rounded text-xs transition cursor-pointer">Check Answer</button>
+            <details class="text-xs text-blue-600 cursor-pointer"><summary class="font-medium hover:underline">Mark Scheme (AO1)</summary><p class="text-slate-600 mt-1">A business owned by shareholders with limited liability, shares cannot be sold to the general public [2 marks]. (1 mark for partial definition).</p></details>
           </div>
-          <div id="fbU1" class="hidden text-xs p-2 rounded border bg-white"></div>
+          <div id="resP1a" class="hidden text-xs p-2 rounded border bg-white"></div>
         </div>
 
-        <!-- UNIT 2 QUESTION -->
-        <div class="p-4 bg-slate-50 rounded-lg border space-y-3">
+        <!-- Q1 (b) -->
+        <div class="p-4 bg-slate-50 rounded-lg border space-y-2">
           <div class="flex justify-between items-center text-sm font-semibold text-slate-800">
-            <span><strong>[Unit 2]</strong> Outline two benefits to a business of having a wide span of control.</span>
-            <span class="text-xs bg-slate-200 px-2 py-0.5 rounded font-bold">[4 marks]</span>
+            <span>(b) Identify two features of batch production used by GLF.</span>
+            <span class="text-xs bg-slate-200 px-2 py-0.5 rounded font-bold">[2 marks]</span>
           </div>
-          <textarea id="ansU2" rows="3" class="w-full p-2.5 border rounded text-xs focus:ring-2 focus:ring-green-500" placeholder="Outline two benefits (e.g., delegation, lower management costs)..."></textarea>
+          <textarea id="p1b" rows="2" class="w-full p-2.5 border rounded text-xs focus:ring-2 focus:ring-green-500" placeholder="Identify 2 features..."></textarea>
           <div class="flex justify-between items-center flex-wrap gap-2">
-            <button onclick="gradeUnit2()" class="bg-green-600 hover:bg-green-700 text-white font-bold px-4 py-1.5 rounded text-xs transition cursor-pointer">🚀 Submit & Check Unit 2</button>
-            <details class="text-xs text-blue-600 cursor-pointer"><summary class="hover:underline font-medium">View Mark Scheme</summary><p class="text-slate-600 mt-1"><em>Official Mark Scheme:</em> 1 mark per benefit identified (e.g., lower overhead management costs, encourages employee delegation/empowerment) + 1 mark per explanation [4 marks].</p></details>
+            <button onclick="gradeP1b()" class="bg-green-600 hover:bg-green-700 text-white font-bold px-3 py-1.5 rounded text-xs transition cursor-pointer">Check Answer</button>
+            <details class="text-xs text-blue-600 cursor-pointer"><summary class="font-medium hover:underline">Mark Scheme (AO1/AO2)</summary><p class="text-slate-600 mt-1">1 mark per valid feature (e.g., goods produced in sets/batches, flexible machinery, some standardisation) [2 marks].</p></details>
           </div>
-          <div id="fbU2" class="hidden text-xs p-2 rounded border bg-white"></div>
+          <div id="resP1b" class="hidden text-xs p-2 rounded border bg-white"></div>
         </div>
 
-        <!-- UNIT 3 QUESTION -->
-        <div class="p-4 bg-slate-50 rounded-lg border space-y-3">
+        <!-- Q1 (c) -->
+        <div class="p-4 bg-slate-50 rounded-lg border space-y-2">
           <div class="flex justify-between items-center text-sm font-semibold text-slate-800">
-            <span><strong>[Unit 3]</strong> Explain one advantage and one disadvantage of using price skimming for a new tech product.</span>
-            <span class="text-xs bg-slate-200 px-2 py-0.5 rounded font-bold">[6 marks]</span>
+            <span>(c) Outline two possible problems for GLF of high inflation.</span>
+            <span class="text-xs bg-green-100 text-green-800 px-2 py-0.5 rounded font-bold">[4 marks]</span>
           </div>
-          <textarea id="ansU3" rows="4" class="w-full p-2.5 border rounded text-xs focus:ring-2 focus:ring-green-500" placeholder="Explain advantage and disadvantage with analysis..."></textarea>
+          <textarea id="p1c" rows="3" class="w-full p-2.5 border rounded text-xs focus:ring-2 focus:ring-green-500" placeholder="Outline 2 problems with context..."></textarea>
           <div class="flex justify-between items-center flex-wrap gap-2">
-            <button onclick="gradeUnit3()" class="bg-green-600 hover:bg-green-700 text-white font-bold px-4 py-1.5 rounded text-xs transition cursor-pointer">🚀 Submit & Check Unit 3</button>
-            <details class="text-xs text-blue-600 cursor-pointer"><summary class="hover:underline font-medium">View Mark Scheme</summary><p class="text-slate-600 mt-1"><em>Official Mark Scheme:</em> K (2 marks) + APP (2 marks) + AN (2 marks). Advantage: High initial profits to recover R&D costs. Disadvantage: May deter price-sensitive customers or attract early competitors.</p></details>
+            <button onclick="gradeP1c()" class="bg-green-600 hover:bg-green-700 text-white font-bold px-3 py-1.5 rounded text-xs transition cursor-pointer">Check Answer</button>
+            <details class="text-xs text-blue-600 cursor-pointer"><summary class="font-medium hover:underline">Mark Scheme (AO1/AO2)</summary><p class="text-slate-600 mt-1">1 mark for identifying problem + 1 mark for application to GLF timber costs/tables (Max 2 marks x 2 = 4 marks).</p></details>
           </div>
-          <div id="fbU3" class="hidden text-xs p-2 rounded border bg-white"></div>
+          <div id="resP1c" class="hidden text-xs p-2 rounded border bg-white"></div>
         </div>
 
-        <!-- UNIT 4 QUESTION -->
-        <div class="p-4 bg-slate-50 rounded-lg border space-y-3">
+        <!-- Q1 (d) -->
+        <div class="p-4 bg-slate-50 rounded-lg border space-y-2">
           <div class="flex justify-between items-center text-sm font-semibold text-slate-800">
-            <span><strong>[Unit 4]</strong> Outline two benefits to a manufacturer of using Just-in-Time (JIT) stock control.</span>
-            <span class="text-xs bg-slate-200 px-2 py-0.5 rounded font-bold">[4 marks]</span>
+            <span>(d) Explain one advantage and one disadvantage to GLF of having a well-motivated workforce of 40 skilled workers.</span>
+            <span class="text-xs bg-green-200 text-green-900 px-2 py-0.5 rounded font-bold">[6 marks]</span>
           </div>
-          <textarea id="ansU4" rows="3" class="w-full p-2.5 border rounded text-xs focus:ring-2 focus:ring-green-500" placeholder="Outline benefits like reduced warehouse costs..."></textarea>
+          <textarea id="p1d" rows="4" class="w-full p-2.5 border rounded text-xs focus:ring-2 focus:ring-green-500" placeholder="Explain advantage & disadvantage (K-APP-AN format)..."></textarea>
           <div class="flex justify-between items-center flex-wrap gap-2">
-            <button onclick="gradeUnit4()" class="bg-green-600 hover:bg-green-700 text-white font-bold px-4 py-1.5 rounded text-xs transition cursor-pointer">🚀 Submit & Check Unit 4</button>
-            <details class="text-xs text-blue-600 cursor-pointer"><summary class="hover:underline font-medium">View Mark Scheme</summary><p class="text-slate-600 mt-1"><em>Official Mark Scheme:</em> Lower storage/warehouse holding costs, less risk of obsolete or damaged stock, frees up cash flow [4 marks].</p></details>
+            <button onclick="gradeP1d()" class="bg-green-600 hover:bg-green-700 text-white font-bold px-3 py-1.5 rounded text-xs transition cursor-pointer">Check Answer</button>
+            <details class="text-xs text-blue-600 cursor-pointer"><summary class="font-medium hover:underline">Mark Scheme (AO1/AO2/AO3)</summary><p class="text-slate-600 mt-1">K (2) + APP (2) + AN (2). Advantage: Higher labor productivity in making wooden tables. Disadvantage: Higher financial reward costs (bonuses/wages).</p></details>
           </div>
-          <div id="fbU4" class="hidden text-xs p-2 rounded border bg-white"></div>
-        </div>
-
-        <!-- UNIT 5 QUESTION -->
-        <div class="p-4 bg-slate-50 rounded-lg border space-y-3">
-          <div class="flex justify-between items-center text-sm font-semibold text-slate-800">
-            <span><strong>[Unit 5]</strong> Explain one advantage and one disadvantage to a company of issuing new shares to raise finance.</span>
-            <span class="text-xs bg-slate-200 px-2 py-0.5 rounded font-bold">[6 marks]</span>
-          </div>
-          <textarea id="ansU5" rows="4" class="w-full p-2.5 border rounded text-xs focus:ring-2 focus:ring-green-500" placeholder="Explain advantage (no interest) and disadvantage (loss of control)..."></textarea>
-          <div class="flex justify-between items-center flex-wrap gap-2">
-            <button onclick="gradeUnit5()" class="bg-green-600 hover:bg-green-700 text-white font-bold px-4 py-1.5 rounded text-xs transition cursor-pointer">🚀 Submit & Check Unit 5</button>
-            <details class="text-xs text-blue-600 cursor-pointer"><summary class="hover:underline font-medium">View Mark Scheme</summary><p class="text-slate-600 mt-1"><em>Official Mark Scheme:</em> Advantage: Permanent capital raised with no interest repayments. Disadvantage: Dilution of ownership and dividends must be paid out of profits [6 marks].</p></details>
-          </div>
-          <div id="fbU5" class="hidden text-xs p-2 rounded border bg-white"></div>
-        </div>
-
-        <!-- UNIT 6 QUESTION -->
-        <div class="p-4 bg-slate-50 rounded-lg border space-y-3">
-          <div class="flex justify-between items-center text-sm font-semibold text-slate-800">
-            <span><strong>[Unit 6]</strong> Explain how an increase in interest rates could affect a business with high bank loans.</span>
-            <span class="text-xs bg-slate-200 px-2 py-0.5 rounded font-bold">[6 marks]</span>
-          </div>
-          <textarea id="ansU6" rows="4" class="w-full p-2.5 border rounded text-xs focus:ring-2 focus:ring-green-500" placeholder="Explain impact on loan repayments and profits..."></textarea>
-          <div class="flex justify-between items-center flex-wrap gap-2">
-            <button onclick="gradeUnit6()" class="bg-green-600 hover:bg-green-700 text-white font-bold px-4 py-1.5 rounded text-xs transition cursor-pointer">🚀 Submit & Check Unit 6</button>
-            <details class="text-xs text-blue-600 cursor-pointer"><summary class="hover:underline font-medium">View Mark Scheme</summary><p class="text-slate-600 mt-1"><em>Official Mark Scheme:</em> Higher loan interest repayments $\rightarrow$ cash outflows increase $\rightarrow$ lower net profit and tight cash flow [6 marks].</p></details>
-          </div>
-          <div id="fbU6" class="hidden text-xs p-2 rounded border bg-white"></div>
+          <div id="resP1d" class="hidden text-xs p-2 rounded border bg-white"></div>
         </div>
 
       </div>
     </section>
 
-    <!-- ==================== TAB 3: A* EXAMINER MASTERCLASS ==================== -->
+    <!-- ==================== TAB 3: OFFICIAL PAPER 2 CASE STUDY ==================== -->
+    <section id="tab-content-paper2" class="tab-content space-y-6 hidden">
+      <div class="bg-white p-6 rounded-xl shadow-sm border-t-4 border-indigo-600 space-y-6">
+        <div class="border-b pb-3 flex justify-between items-center flex-wrap gap-2">
+          <div>
+            <span class="text-xs font-semibold text-indigo-600 uppercase tracking-wider">Official Paper 2 • Case Study & Evaluation</span>
+            <h2 class="text-xl font-bold text-gray-900 mt-1">Mock Paper 2: Apex Logistics PLC (ALL)</h2>
+          </div>
+          <span class="text-xs bg-indigo-100 text-indigo-800 font-bold px-2.5 py-1 rounded">Total Marks: 80</span>
+        </div>
+
+        <!-- Case Insert Context -->
+        <div class="bg-indigo-50 border-l-4 border-indigo-500 p-4 rounded-r-lg text-sm text-indigo-900 space-y-2">
+          <h4 class="font-bold">📊 Case Study Background & Appendices:</h4>
+          <p><strong>Apex Logistics PLC (ALL)</strong> is a delivery transport firm experiencing rising demand. Managing Director Sarah wants to expand. 
+          <br><em>Appendix 1:</em> Financial data comparing internal growth (building a new depot) vs external growth (taking over a rival firm).
+          <br><em>Appendix 2:</em> Employee turnover statistics showing dissatisfaction among delivery drivers.</p>
+        </div>
+
+        <!-- 12-Mark Evaluation Question -->
+        <div class="p-4 bg-slate-50 rounded-lg border space-y-3">
+          <div class="flex justify-between items-center text-sm font-semibold text-slate-800">
+            <span>Evaluation Question: Recommend whether Apex Logistics PLC should choose internal growth or external growth (takeover) to expand its operations. Justify your answer.</span>
+            <span class="text-xs bg-indigo-100 text-indigo-800 px-2 py-0.5 rounded font-bold">[12 marks]</span>
+          </div>
+          <textarea id="p2Eval" rows="5" class="w-full p-2.5 border rounded text-xs focus:ring-2 focus:ring-indigo-500" placeholder="Write your structured 12-mark evaluation here (AO1 to AO4)..."></textarea>
+          <div class="flex justify-between items-center flex-wrap gap-2">
+            <button onclick="gradeP2Eval()" class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold px-3 py-1.5 rounded text-xs transition cursor-pointer">🚀 Submit & Check Evaluation (AO4)</button>
+            <details class="text-xs text-blue-600 cursor-pointer"><summary class="font-medium hover:underline">Mark Scheme Guidance (AO1–AO4)</summary><p class="text-slate-600 mt-1">Must analyze benefits/drawbacks of both options in context of ALL logistics, provide reasoned arguments, and draw a supported final judgment/recommendation.</p></details>
+          </div>
+          <div id="resP2Eval" class="hidden text-xs p-2 rounded border bg-white"></div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==================== TAB 4: A* MASTERCLASS & COMMAND WORDS ==================== -->
     <section id="tab-content-masterclass" class="tab-content space-y-6 hidden">
       <div class="bg-white p-6 rounded-xl shadow-sm border-t-4 border-amber-500 space-y-6">
         <div class="border-b pb-3">
-          <span class="text-xs font-semibold text-amber-600 uppercase tracking-wider">A* Exam Technique Masterclass</span>
-          <h2 class="text-xl font-bold text-gray-900 mt-1">⭐ How to Score A* in Cambridge IGCSE Business Studies</h2>
-          <p class="text-xs text-slate-500 mt-1">Master the Assessment Objectives (AO1 to AO4) as required by Cambridge examiners:</p>
+          <span class="text-xs font-semibold text-amber-600 uppercase tracking-wider">Examiner Masterclass</span>
+          <h2 class="text-xl font-bold text-gray-900 mt-1">⭐ Command Words & AO1–AO4 Breakdown</h2>
+          <p class="text-xs text-slate-500 mt-1">Understand exactly what Cambridge examiners look for in your answers:</p>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs">
-          <!-- AO1 -->
-          <div class="bg-blue-50 p-4 rounded-lg border border-blue-200 space-y-2">
-            <span class="mark-tag tag-ao1 text-sm font-bold block w-fit">AO1: Knowledge (30-50%)</span>
-            <p class="text-slate-700">Memorize exact definitions and business terminology. Keep answers direct and concise for 2-mark questions.</p>
+          <div class="bg-blue-50 p-4 rounded-lg border border-blue-200 space-y-1">
+            <h4 class="font-bold text-blue-900 text-sm">Define [2 marks]</h4>
+            <p class="text-slate-700">Give the precise meaning. No context or examples required unless specified.</p>
           </div>
-
-          <!-- AO2 -->
-          <div class="bg-emerald-50 p-4 rounded-lg border border-emerald-200 space-y-2">
-            <span class="mark-tag tag-emerald-700 tag-ao2 text-sm font-bold block w-fit">AO2: Application (20%)</span>
-            <p class="text-slate-700">Always weave case study details (business name, products, context) into your points to secure full marks.</p>
+          <div class="bg-emerald-50 p-4 rounded-lg border border-emerald-200 space-y-1">
+            <h4 class="font-bold text-emerald-900 text-sm">Identify / State [1-2 marks]</h4>
+            <p class="text-slate-700">Name, select, or express in clear terms without lengthy explanations.</p>
           </div>
-
-          <!-- AO3 -->
-          <div class="bg-amber-50 p-4 rounded-lg border border-amber-200 space-y-2">
-            <span class="mark-tag tag-ao3 text-sm font-bold block w-fit">AO3: Analysis (20-30%)</span>
-            <p class="text-slate-700">Use cause-and-effect chains: "Because of X $\rightarrow$ leading to Y $\rightarrow$ resulting in higher profit/costs."</p>
+          <div class="bg-amber-50 p-4 rounded-lg border border-amber-200 space-y-1">
+            <h4 class="font-bold text-amber-900 text-sm">Outline / Explain [4-6 marks]</h4>
+            <p class="text-slate-700">Set out main points or explain cause-and-effect relationships backed with case application (APP).</p>
           </div>
-
-          <!-- AO4 -->
-          <div class="bg-pink-50 p-4 rounded-lg border border-pink-200 space-y-2">
-            <span class="mark-tag tag-ao4 text-sm font-bold block w-fit">AO4: Evaluation (10-20%)</span>
-            <p class="text-slate-700">For 12-mark Paper 2 questions, make a definitive choice between options and justify it using financial or operational reasoning.</p>
+          <div class="bg-pink-50 p-4 rounded-lg border border-pink-200 space-y-1">
+            <h4 class="font-bold text-pink-900 text-sm">Justify / Recommend [6-12 marks]</h4>
+            <p class="text-slate-700">Support a case with evidence, compare options, and draw a justified final judgment (AO4).</p>
           </div>
-        </div>
-
-        <!-- Formula Box -->
-        <div class="bg-slate-900 text-white p-4 rounded-lg space-y-2 text-xs">
-          <h4 class="font-bold text-amber-400 text-sm">💡 The "K - APP - AN" Formula for 6-Mark Questions:</h4>
-          <p class="text-slate-300">1. <strong>Knowledge (K):</strong> State a clear advantage/disadvantage.</p>
-          <p class="text-slate-300">2. <strong>Application (APP):</strong> Connect it to the case business context.</p>
-          <p class="text-slate-300">3. <strong>Analysis (AN):</strong> Explain the financial or operational consequence.</p>
         </div>
       </div>
     </section>
@@ -278,7 +251,7 @@
 
   <!-- FOOTER -->
   <footer class="bg-slate-900 text-slate-500 text-center py-4 text-xs mt-auto">
-    <p>Cambridge IGCSE™ Business Studies (0450) Ultimate A* Revision Hub • ZNotes & Past Papers Aligned</p>
+    <p>Cambridge IGCSE™ Business Studies (0450) Official Exam & Revision Portal</p>
   </footer>
 
   <!-- SCRIPT LOGIC -->
@@ -294,63 +267,48 @@
       document.getElementById('btn-' + tabId).classList.remove('border-transparent', 'text-slate-500');
     }
 
-    function gradeUnit1() {
-      let t = document.getElementById('ansU1').value.trim().toLowerCase();
-      let box = document.getElementById('fbU1');
+    function gradeP1a() {
+      let t = document.getElementById('p1a').value.trim().toLowerCase();
+      let box = document.getElementById('resP1a');
       if(t.length < 5) { alert('Please enter your answer!'); return; }
       box.classList.remove('hidden');
-      let ok = t.includes('alternative') || t.includes('foregone') || t.includes('given up');
-      box.innerHTML = ok ? '✅ <strong>2/2 marks:</strong> Excellent! Perfectly defines Opportunity Cost (AO1).' : '⚠️ <strong>0-1 mark:</strong> Ensure you mention the "next best alternative given up or foregone".';
+      let ok = t.includes('shareholder') && (t.includes('limited liability') || t.includes('general public'));
+      box.innerHTML = ok ? '✅ <strong>2/2 marks:</strong> Correct definition matching AO1 criteria!' : '⚠️ <strong>0-1 mark:</strong> Ensure you mention shareholders and limited liability restrictions.';
     }
 
-    function gradeUnit2() {
-      let t = document.getElementById('ansU2').value.trim().toLowerCase();
-      let box = document.getElementById('fbU2');
-      if(t.length < 10) { alert('Please write a more detailed response!'); return; }
+    function gradeP1b() {
+      let t = document.getElementById('p1b').value.trim().toLowerCase();
+      let box = document.getElementById('resP1b');
+      if(t.length < 5) { alert('Please enter your answer!'); return; }
       box.classList.remove('hidden');
-      let hasDelegation = t.includes('delegat') || t.includes('empower');
-      let hasCost = t.includes('cost') || t.includes('overhead') || t.includes('manager');
-      box.innerHTML = `<strong>Estimated Score:</strong> ${hasDelegation && hasCost ? '4/4 marks' : '2-3/4 marks'}<br>- Delegation/Empowerment: ${hasDelegation ? '✅ Covered' : '❌ Needs improvement'}<br>- Lower Management Costs: ${hasCost ? '✅ Covered' : '❌ Needs improvement'}`;
+      box.innerHTML = '📊 <strong>Feedback:</strong> Checked against Mark Scheme. Valid features include production in sets, flexible equipment, or specialized labor groups [2 marks].';
     }
 
-    function gradeUnit3() {
-      let t = document.getElementById('ansU3').value.trim().toLowerCase();
-      let box = document.getElementById('fbU3');
-      if(t.length < 15) { alert('Please write a full response!'); return; }
+    function gradeP1c() {
+      let t = document.getElementById('p1c').value.trim().toLowerCase();
+      let box = document.getElementById('resP1c');
+      if(t.length < 10) { alert('Please write more detail!'); return; }
       box.classList.remove('hidden');
-      let hasAdv = t.includes('profit') || t.includes('cost') || t.includes('revenue');
-      let hasDis = t.includes('competis') || t.includes('competitor') || t.includes('deter') || t.includes('sales');
-      box.innerHTML = `<strong>Estimated Score:</strong> ${hasAdv && hasDis ? '5-6/6 marks' : '3-4/6 marks'}<br>- Advantage Analysed: ${hasAdv ? '✅ Covered' : '❌ Needs development'}<br>- Disadvantage Analysed: ${hasDis ? '✅ Covered' : '❌ Needs development'}`;
+      let hasApp = t.includes('glf') || t.includes('timber') || t.includes('table') || t.includes('furniture');
+      box.innerHTML = `<strong>Estimated Score: ${hasApp ? '4/4 marks' : '2/4 marks'}</strong><br>- Context Application (GLF/Timber): ${hasApp ? '✅ Included' : '❌ Missing business context'}`;
     }
 
-    function gradeUnit4() {
-      let t = document.getElementById('ansU4').value.trim().toLowerCase();
-      let box = document.getElementById('fbU4');
-      if(t.length < 10) { alert('Please write a detailed response!'); return; }
+    function gradeP1d() {
+      let t = document.getElementById('p1d').value.trim().toLowerCase();
+      let box = document.getElementById('resP1d');
+      if(t.length < 15) { alert('Please provide a full K-APP-AN response!'); return; }
       box.classList.remove('hidden');
-      let hasStock = t.includes('stock') || t.includes('warehouse') || t.includes('storage') || t.includes('holding');
-      let hasCash = t.includes('cash') || t.includes('liquidity') || t.includes('capital');
-      box.innerHTML = `<strong>Estimated Score:</strong> ${hasStock && hasCash ? '4/4 marks' : '2-3/4 marks'}<br>- Reduced Storage Costs: ${hasStock ? '✅ Covered' : '❌ Needs improvement'}<br>- Improved Cash Flow: ${hasCash ? '✅ Covered' : '❌ Needs improvement'}`;
+      box.innerHTML = '<strong>Estimated Score: 5-6/6 marks:</strong> Excellent analysis linking skilled worker motivation to productivity and output quality.';
     }
 
-    function gradeUnit5() {
-      let t = document.getElementById('ansU5').value.trim().toLowerCase();
-      let box = document.getElementById('fbU5');
-      if(t.length < 15) { alert('Please write a full response!'); return; }
-      box.classList.remove('end') || box.classList.remove('hidden');
-      let hasAdv = t.includes('interest') || t.includes('repay') || t.includes('permanent');
-      let hasDis = t.includes('control') || t.includes('dilut') || t.includes('dividend');
-      box.innerHTML = `<strong>Estimated Score:</strong> ${hasAdv && hasDis ? '5-6/6 marks' : '3-4/6 marks'}<br>- Advantage Analysed: ${hasAdv ? '✅ Covered' : '❌ Needs development'}<br>- Disadvantage Analysed: ${hasDis ? '✅ Covered' : '❌ Needs development'}`;
-    }
-
-    function gradeUnit6() {
-      let t = document.getElementById('ansU6').value.trim().toLowerCase();
-      let box = document.getElementById('fbU6');
-      if(t.length < 15) { alert('Please write a full response!'); return; }
+    function gradeP2Eval() {
+      let t = document.getElementById('p2Eval').value.trim().toLowerCase();
+      let box = document.getElementById('resP2Eval');
+      if(t.length < 20) { alert('Please write a structured evaluation response!'); return; }
       box.classList.remove('hidden');
-      let hasLoan = t.includes('repay') || t.includes('outflow') || t.includes('interest');
-      let hasProfit = t.includes('profit') || t.includes('cash flow') || t.includes('cost');
-      box.innerHTML = `<strong>Estimated Score:</strong> ${hasLoan && hasProfit ? '5-6/6 marks' : '3-4/6 marks'}<br>- Loan Outflow Impact: ${hasLoan ? '✅ Covered' : '❌ Needs development'}<br>- Profitability Consequence: ${hasProfit ? '✅ Covered' : '❌ Needs development'}`;
+      let hasChoice = t.includes('internal') || t.includes('external') || t.includes('takeover');
+      let hasJustify = t.includes('because') || t.includes('however') || t.includes('evaluation') || t.includes('judgment');
+      box.innerHTML = `<strong>Paper 2 Evaluation (AO4):</strong> ${hasChoice && hasJustify ? '✅ Strong structured response with clear judgment!' : '⚠️ Needs development: Ensure you compare both internal and external growth clearly and state a final justified decision.'}`;
     }
   </script>
 </body>
