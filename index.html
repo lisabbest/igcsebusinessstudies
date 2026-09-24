@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>IGCSE Business Studies (0450) - Professional Curriculum & Examination Portal</title>
+  <title>IGCSE Business Studies (0450) - Professional Master Examination & Revision Portal</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
@@ -14,39 +14,45 @@
     .tag-ao2 { background-color: #D1FAE5; color: #065F46; }
     .tag-ao3 { background-color: #FEF3C7; color: #92400E; }
     .tag-ao4 { background-color: #FCE7F3; color: #9D174D; }
+    .transition-custom { transition: all 0.25s ease-in-out; }
   </style>
 </head>
 <body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col">
 
   <!-- HEADER -->
-  <header class="bg-slate-900 text-white sticky top-0 z-50 shadow-sm">
-    <div class="max-w-7xl mx-auto px-4 py-2.5 flex justify-between items-center">
-      <div class="flex items-center space-x-2">
-        <span class="bg-blue-600 text-white font-bold px-2 py-0.5 rounded text-xs">0450</span>
-        <h1 class="text-xs font-bold">Cambridge IGCSE™ Business Studies (0450) • Syllabus 2026</h1>
+  <header class="bg-slate-900 text-white sticky top-0 z-50 shadow-md">
+    <div class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
+      <div class="flex items-center space-x-3">
+        <span class="bg-blue-600 text-white font-bold px-2.5 py-1 rounded text-xs">0450</span>
+        <div>
+          <h1 class="text-xs font-bold tracking-wide">Cambridge IGCSE™ Business Studies</h1>
+          <p class="text-[10px] text-slate-400">Syllabus for Examinations in 2026</p>
+        </div>
       </div>
-      <div class="text-[11px] text-slate-300">
-        <span>Professional Curriculum & Examination Hub</span>
+      <div class="text-right hidden sm:block">
+        <span class="text-xs bg-slate-800 text-emerald-400 px-2.5 py-1 rounded font-semibold border border-slate-700">
+          <i class="fa-solid fa-circle-check text-[10px]"></i> Master Portal Active
+        </span>
       </div>
     </div>
   </header>
 
   <!-- NAVIGATION TABS -->
-  <nav class="bg-white border-b shadow-xs sticky top-[41px] z-40">
+  <nav class="bg-white border-b shadow-xs sticky top-[53px] z-40">
     <div class="max-w-6xl mx-auto px-4 flex space-x-1 overflow-x-auto">
-      <button onclick="switchTab('framework')" id="btn-framework" class="nav-tab py-3 px-3 font-bold text-xs border-b-2 border-blue-600 text-blue-600 flex items-center gap-1.5 whitespace-nowrap cursor-pointer">
+      <button onclick="switchTab('framework')" id="btn-framework" class="nav-tab py-3 px-4 font-bold text-xs border-b-2 border-blue-600 text-blue-600 flex items-center gap-2 whitespace-nowrap cursor-pointer transition-custom">
         <i class="fa-solid fa-graduation-cap"></i> 🌐 Curriculum Framework
       </button>
-      <button onclick="switchTab('theory')" id="btn-theory" class="nav-tab py-3 px-3 font-bold text-xs border-b-2 border-transparent text-slate-500 hover:text-slate-800 flex items-center gap-1.5 whitespace-nowrap cursor-pointer">
+      <button onclick="switchTab('theory')" id="btn-theory" class="nav-tab py-3 px-4 font-bold text-xs border-b-2 border-transparent text-slate-500 hover:text-slate-800 flex items-center gap-2 whitespace-nowrap cursor-pointer transition-custom">
         <i class="fa-solid fa-book-open"></i> 📚 Track A: Units 1–6 Theory
       </button>
-      <button onclick="switchTab('paper1')" id="btn-paper1" class="nav-tab py-3 px-3 font-bold text-xs border-b-2 border-transparent text-slate-500 hover:text-slate-800 flex items-center gap-1.5 whitespace-nowrap cursor-pointer">
-        <i class="fa-solid fa-file-lines text-green-600"></i> 📝 Full Paper 1 (Interactive)
+      <button onclick="switchTab('paper1')" id="btn-paper1" class="nav-tab py-3 px-4 font-bold text-xs border-b-2 border-transparent text-slate-500 hover:text-slate-800 flex items-center gap-2 whitespace-nowrap cursor-pointer transition-custom">
+        <i class="fa-solid fa-file-lines text-green-600"></i> 📝 Full Paper 1 (Q1–Q4)
       </button>
-      <button onclick="switchTab('paper2')" id="btn-paper2" class="nav-tab py-3 px-3 font-bold text-xs border-b-2 border-transparent text-slate-500 hover:text-slate-800 flex items-center gap-1.5 whitespace-nowrap cursor-pointer">
+      <button onclick="switchTab('paper2')" id="btn-paper2" class="nav-tab py-3 px-3 font-bold text-xs border-b-2 border-transparent text-slate-500 hover:text-slate-800 flex items-center gap-2 whitespace-nowrap cursor-pointer transition-custom">
         <i class="fa-solid fa-chart-pie text-indigo-600"></i> 📊 Full Paper 2 (Case Study)
       </button>
-      <button onclick="switchTab('masterclass')" id="btn-masterclass" class="nav-tab py-3 px-3 font-bold text-xs border-b-2 border-transparent text-slate-500 hover:text-slate-800 flex items-center gap-1.5 whitespace-nowrap cursor-pointer">
+      <button onclick="switchTab('masterclass')" id="btn-masterclass" class="nav-tab py-3 px-4 font-bold text-xs border-b-2 border-transparent text-slate-500 hover:text-slate-800 flex items-center gap-2 whitespace-nowrap cursor-pointer transition-custom">
         <i class="fa-solid fa-star text-amber-500"></i> ⭐ A* Examiner Masterclass
       </button>
     </div>
@@ -56,26 +62,26 @@
   <main class="max-w-5xl mx-auto px-4 py-6 flex-grow w-full space-y-6">
 
     <!-- ==================== TAB 0: CURRICULUM FRAMEWORK ==================== -->
-    <section id="tab-content-framework" class="tab-content space-y-4">
+    <section id="tab-content-framework" class="tab-content space-y-6">
       <div class="bg-white p-6 rounded-xl shadow-sm border-t-4 border-blue-600 space-y-4">
         <div class="border-b pb-3">
-          <span class="text-xs font-semibold text-blue-600 uppercase tracking-wider">Cambridge International Education</span>
+          <span class="text-xs font-semibold text-blue-600 uppercase tracking-wider">Cambridge International Education[cite: 9]</span>
           <h2 class="text-xl font-bold text-gray-900 mt-1">🌐 Syllabus 0450 Curriculum Design & Assessment Architecture</h2>
-          <p class="text-xs text-slate-500 mt-1">Aligned with Cambridge IGCSE 2026 standards, ensuring rigorous academic preparation[cite: 6, 10].</p>
+          <p class="text-xs text-slate-500 mt-1">Based on official Cambridge IGCSE Business Studies standards for 2026.</p>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs">
           <div class="bg-slate-50 p-4 rounded-lg border space-y-2">
-            <h3 class="font-bold text-blue-900 text-sm">Course Aims & Objectives</h3>
-            <p>Designed to develop critical thinking, numerical literacy, and decision-making skills across diverse business environments[cite: 6].</p>
-            <p><strong>Assessment Components:</strong> All candidates complete <strong>Paper 1</strong> (Short Answer & Data Response) and <strong>Paper 2</strong> (Case Study). Each component is 1 hour 30 minutes, worth 80 marks (50% weighting each)[cite: 10].</p>
+            <h3 class="font-bold text-blue-900 text-sm"><i class="fa-solid fa-bullseye"></i> Course Aims & Structure</h3>
+            <p>Develops informed understanding of business activity across primary, secondary, and tertiary sectors, focusing on marketing, operations, finance, and human resources.</p>
+            <p><strong>Components:</strong> All candidates take Paper 1 (Short Answer & Data Response) and Paper 2 (Case Study). Each paper is 1 hour 30 minutes, valued at 80 marks (50% weight each).</p>
           </div>
           <div class="bg-slate-50 p-4 rounded-lg border space-y-2">
-            <h3 class="font-bold text-blue-900 text-sm">Assessment Objectives (AOs) Weighting</h3>
-            <p><span class="mark-tag tag-ao1">AO1 Knowledge (40%)</span>[cite: 11] - Recall facts, terms, and theories[cite: 10].</p>
-            <p><span class="mark-tag tag-ao2">AO2 Application (20%)</span>[cite: 11] - Apply concepts to real business contexts[cite: 10].</p>
-            <p><span class="mark-tag tag-ao3">AO3 Analysis (25%)</span>[cite: 11] - Interpret data and build logical chains[cite: 10].</p>
-            <p><span class="mark-tag tag-ao4">AO4 Evaluation (15%)</span>[cite: 11] - Draw reasoned judgements and recommendations[cite: 10].</p>
+            <h3 class="font-bold text-blue-900 text-sm"><i class="fa-solid fa-scale-balanced"></i> Assessment Objectives (AOs)</h3>
+            <p><span class="mark-tag tag-ao1">AO1 Knowledge (40%)</span>[cite: 11] - Recall business facts, terms, and theories.</p>
+            <p><span class="mark-tag tag-ao2">AO2 Application (20%)</span>[cite: 11] - Apply knowledge to specific business case contexts.</p>
+            <p><span class="mark-tag tag-ao3">AO3 Analysis (25%)</span>[cite: 11] - Analyse business data and construct logical arguments.</p>
+            <p><span class="mark-tag tag-ao4">AO4 Evaluation (15%)</span>[cite: 11] - Make reasoned judgments and recommendations.</p>
           </div>
         </div>
       </div>
@@ -87,16 +93,66 @@
         <div class="border-b pb-3">
           <span class="text-xs font-semibold text-blue-600 uppercase tracking-wider">Track A • Comprehensive Syllabus Notes</span>
           <h2 class="text-xl font-bold text-gray-900 mt-1">📚 Complete IGCSE Business Studies Core Theory (Units 1–6)</h2>
-          <p class="text-xs text-slate-500 mt-1">Click each unit to review academic summaries across all functional areas[cite: 10]:</p>
+          <p class="text-xs text-slate-500 mt-1">Expand each unit to review academic summaries across all functional areas[cite: 10]:</p>
         </div>
 
         <div class="space-y-3 text-sm">
-          <details class="bg-slate-50 p-4 rounded-lg border cursor-pointer"><summary class="font-bold text-blue-900">Unit 1: Understanding Business Activity</summary><p class="text-xs text-slate-700 mt-2 pl-2 border-l-2 border-blue-300">Needs, wants, scarcity, opportunity cost, added value, economic sectors, enterprise, business growth, and business organisation structures (Sole traders, Partnerships, Ltd, PLC)[cite: 10].</p></details>
-          <details class="bg-slate-50 p-4 rounded-lg border cursor-pointer"><summary class="font-bold text-blue-900">Unit 2: People in Business</summary><p class="text-xs text-slate-700 mt-2 pl-2 border-l-2 border-blue-300">Motivation theories (Maslow, Herzberg, Taylor), financial/non-financial rewards, organisational structures, span of control, delegation, leadership styles, recruitment, and training[cite: 10].</p></details>
-          <details class="bg-slate-50 p-4 rounded-lg border cursor-pointer"><summary class="font-bold text-blue-900">Unit 3: Marketing</summary><p class="text-xs text-slate-700 mt-2 pl-2 border-l-2 border-blue-300">Market segmentation, primary & secondary research, Marketing Mix (4Ps), Product Life Cycle, pricing strategies, distribution channels, and e-commerce[cite: 10].</p></details>
-          <details class="bg-slate-50 p-4 rounded-lg border cursor-pointer"><summary class="font-bold text-blue-900">Unit 4: Operations Management</summary><p class="text-xs text-slate-700 mt-2 pl-2 border-l-2 border-blue-300">Production methods (Job, Batch, Flow), lean production (Kaizen, JIT), economies of scale, break-even analysis, quality control/assurance, and location decisions[cite: 10].</p></details>
-          <details class="bg-slate-50 p-4 rounded-lg border cursor-pointer"><summary class="font-bold text-blue-900">Unit 5: Financial Information & Financial Decisions</summary><p class="text-xs text-slate-700 mt-2 pl-2 border-l-2 border-blue-300">Sources of finance, cash flow forecasting, working capital, income statements, statement of financial position, and liquidity/profitability ratios[cite: 10].</p></details>
-          <details class="bg-slate-50 p-4 rounded-lg border cursor-pointer"><summary class="font-bold text-blue-900">Unit 6: External Influences on Business Activity</summary><p class="text-xs text-slate-700 mt-2 pl-2 border-l-2 border-blue-300">Economic cycles, government economic policies (taxation, interest rates, exchange rates), environmental concerns, ethical issues, globalisation, and MNCs[cite: 10].</p></details>
+          <details class="bg-slate-50 p-4 rounded-lg border cursor-pointer">
+            <summary class="font-bold text-blue-900">Unit 1: Understanding Business Activity</summary>
+            <div class="mt-2 text-xs text-slate-700 space-y-1.5 pl-2 border-l-2 border-blue-300">
+              <p>• <strong>Needs, Wants & Scarcity:</strong> Unlimited human wants vs finite resources leading to opportunity cost[cite: 10].</p>
+              <p>• <strong>Added Value:</strong> Selling Price minus Cost of Raw Materials (Distinct from profit)[cite: 10].</p>
+              <p>• <strong>Economic Sectors:</strong> Primary, secondary, and tertiary classification and shifting trends[cite: 10].</p>
+              <p>• <strong>Enterprise & Growth:</strong> Sole traders, partnerships, private/public limited companies, franchises, and internal/external growth[cite: 10].</p>
+            </div>
+          </details>
+
+          <details class="bg-slate-50 p-4 rounded-lg border cursor-pointer">
+            <summary class="font-bold text-blue-900">Unit 2: People in Business</summary>
+            <div class="mt-2 text-xs text-slate-700 space-y-1.5 pl-2 border-l-2 border-blue-300">
+              <p>• <strong>Motivation Theories:</strong> Maslow's Hierarchy of Needs, Herzberg's Two-Factor Theory, and Taylor's Scientific Management[cite: 10].</p>
+              <p>• <strong>Financial & Non-Financial Rewards:</strong> Wages, salaries, commission, bonus vs. job enrichment, rotation, and enlargement[cite: 10].</p>
+              <p>• <strong>Organisation Structure:</strong> Hierarchy, span of control, chain of command, delegation, and leadership styles (Autocratic, Democratic, Laissez-faire)[cite: 10].</p>
+              <p>• <strong>Recruitment & Training:</strong> Job description, person specification, internal/external recruitment, induction, on/off-the-job training[cite: 10].</p>
+            </div>
+          </details>
+
+          <details class="bg-slate-50 p-4 rounded-lg border cursor-pointer">
+            <summary class="font-bold text-blue-900">Unit 3: Marketing</summary>
+            <div class="mt-2 text-xs text-slate-700 space-y-1.5 pl-2 border-l-2 border-blue-300">
+              <p>• <strong>Market Segmentation & Research:</strong> Demographic, psychographic grouping. Primary vs. secondary research methodologies[cite: 10].</p>
+              <p>• <strong>Marketing Mix (4Ps):</strong> Product lifecycle & extension strategies; Pricing strategies (Skimming, Penetration, Cost-plus, Competitive); Place (Distribution channels); Promotion (Advertising, sales promotion)[cite: 10].</p>
+              <p>• <strong>E-Commerce:</strong> Opportunities and threats of online trading for businesses and consumers[cite: 10].</p>
+            </div>
+          </details>
+
+          <details class="bg-slate-50 p-4 rounded-lg border cursor-pointer">
+            <summary class="font-bold text-blue-900">Unit 4: Operations Management</summary>
+            <div class="mt-2 text-xs text-slate-700 space-y-1.5 pl-2 border-l-2 border-blue-300">
+              <p>• <strong>Production Methods:</strong> Job, batch, and flow production systems[cite: 10].</p>
+              <p>• <strong>Lean Production:</strong> Kaizen (continuous improvement) and Just-in-Time (JIT) inventory control to minimize waste[cite: 10].</p>
+              <p>• <strong>Break-Even Analysis:</strong> Fixed costs, variable costs, contribution, break-even output, and margin of safety calculations[cite: 10].</p>
+              <p>• <strong>Quality Control & Assurance:</strong> Methods of ensuring high standards of production[cite: 10].</p>
+            </div>
+          </details>
+
+          <details class="bg-slate-50 p-4 rounded-lg border cursor-pointer">
+            <summary class="font-bold text-blue-900">Unit 5: Financial Information & Financial Decisions</summary>
+            <div class="mt-2 text-xs text-slate-700 space-y-1.5 pl-2 border-l-2 border-blue-300">
+              <p>• <strong>Sources of Finance:</strong> Internal (retained earnings, asset sales) vs. External (bank loans, share issues, overdrafts, micro-finance, crowdfunding)[cite: 10].</p>
+              <p>• <strong>Cash Flow Forecasting:</strong> Inflows, outflows, net cash flow, closing balance, and working capital management[cite: 10].</p>
+              <p>• <strong>Accounting Ratios:</strong> Gross profit margin, profit margin, ROCE, current ratio, and acid test ratio[cite: 10].</p>
+            </div>
+          </details>
+
+          <details class="bg-slate-50 p-4 rounded-lg border cursor-pointer">
+            <summary class="font-bold text-blue-900">Unit 6: External Influences on Business Activity</summary>
+            <div class="mt-2 text-xs text-slate-700 space-y-1.5 pl-2 border-l-2 border-blue-300">
+              <p>• <strong>Macroeconomic Policies:</strong> Economic growth (GDP), inflation, unemployment, interest rates, and taxation[cite: 10].</p>
+              <p>• <strong>Environmental & Ethical Issues:</strong> Sustainability, externalities, pressure groups, and ethical dilemmas[cite: 10].</p>
+              <p>• <strong>Globalisation:</strong> Multinational companies (MNCs), import tariffs, quotas, and exchange rate fluctuations (appreciation/depreciation)[cite: 10].</p>
+            </div>
+          </details>
         </div>
       </div>
     </section>
@@ -107,12 +163,12 @@
         <div class="border-b pb-3 flex justify-between items-center flex-wrap gap-2">
           <div>
             <span class="text-xs font-semibold text-green-600 uppercase tracking-wider">Component 1 • Short Answer and Data Response (1h 30m)[cite: 10]</span>
-            <h2 class="text-xl font-bold text-gray-900 mt-1">📝 Full Paper 1: Official Mock Examination (80 Marks)</h2>
+            <h2 class="text-xl font-bold text-gray-900 mt-1">📝 Full Paper 1: Official Mock Examination (Q1–Q4)</h2>
           </div>
           <span class="text-xs bg-green-100 text-green-800 font-bold px-2.5 py-1 rounded">Interactive Auto-Grading</span>
         </div>
 
-        <p class="text-xs text-slate-600">Based on recent 2026 past papers (e.g., Peter's Photography & OBZ Carpets). Type your answers and click submit for instant evaluation[cite: 11, 12].</p>
+        <p class="text-xs text-slate-600">Based on recent past papers (Peter's Photography, OBZ Carpets, SDY Hats, TRC Smoothies)[cite: 11, 12]. Test your answers below:</p>
 
         <!-- QUESTION 1 -->
         <div class="p-4 bg-slate-50 rounded-lg border space-y-3">
@@ -123,11 +179,42 @@
             <div class="flex justify-between items-center"><button onclick="gradeGeneric('p1_q1a', 'revenue')" class="bg-green-600 text-white px-3 py-1 rounded font-bold cursor-pointer">Submit Q1(a)</button><span id="fb_p1_q1a" class="font-semibold"></span></div>
           </div>
           <div class="space-y-2 text-xs pt-2">
-            <div class="flex justify-between font-semibold"><span>(d) Explain one advantage and one disadvantage to Peter of using crowdfunding as a source of finance. [AO1+AO2+AO3]</span><span>[6 marks][cite: 11, 12]</span></div>
+            <div class="flex justify-between font-semibold"><span>(d) Explain one advantage and one disadvantage to Peter of using crowdfunding. [AO1+AO2+AO3]</span><span>[6 marks][cite: 11, 12]</span></div>
             <textarea id="p1_q1d" rows="4" class="w-full p-2 border rounded" placeholder="Use K - APP - AN formula (Mention photographer / weddings)..."></textarea>
             <div class="flex justify-between items-center"><button onclick="gradeGeneric('p1_q1d', 'interest')" class="bg-green-600 text-white px-3 py-1 rounded font-bold cursor-pointer">Submit Q1(d)</button><span id="fb_p1_q1d" class="font-semibold"></span></div>
           </div>
         </div>
+
+        <!-- QUESTION 2 -->
+        <div class="p-4 bg-slate-50 rounded-lg border space-y-3">
+          <h3 class="font-bold text-sm text-green-900 border-b pb-1">Question 2: OBZ Carpets (Operations & Finance)[cite: 11, 12]</h3>
+          <div class="space-y-2 text-xs">
+            <div class="flex justify-between font-semibold"><span>(a) Define 'non-current assets'. [AO1]</span><span>[2 marks][cite: 11, 12]</span></div>
+            <textarea id="p1_q2a" rows="2" class="w-full p-2 border rounded" placeholder="Answer Q2(a)..."></textarea>
+            <div class="flex justify-between items-center"><button onclick="gradeGeneric('p1_q2a', 'year')" class="bg-green-600 text-white px-3 py-1 rounded font-bold cursor-pointer">Submit Q2(a)</button><span id="fb_p1_q2a" class="font-semibold"></span></div>
+          </div>
+        </div>
+
+        <!-- QUESTION 3 -->
+        <div class="p-4 bg-slate-50 rounded-lg border space-y-3">
+          <h3 class="font-bold text-sm text-green-900 border-b pb-1">Question 3: SDY Hats & Scarves (Leadership & Training)[cite: 11, 12]</h3>
+          <div class="space-y-2 text-xs">
+            <div class="flex justify-between font-semibold"><span>(a) Define 'democratic leadership style'. [AO1]</span><span>[2 marks][cite: 11, 12]</span></div>
+            <textarea id="p1_q3a" rows="2" class="w-full p-2 border rounded" placeholder="Answer Q3(a)..."></textarea>
+            <div class="flex justify-between items-center"><button onclick="gradeGeneric('p1_q3a', 'employees')" class="bg-green-600 text-white px-3 py-1 rounded font-bold cursor-pointer">Submit Q3(a)</button><span id="fb_p1_q3a" class="font-semibold"></span></div>
+          </div>
+        </div>
+
+        <!-- QUESTION 4 -->
+        <div class="p-4 bg-slate-50 rounded-lg border space-y-3">
+          <h3 class="font-bold text-sm text-green-900 border-b pb-1">Question 4: TRC Fruit Smoothies (External Influences)[cite: 11, 12]</h3>
+          <div class="space-y-2 text-xs">
+            <div class="flex justify-between font-semibold"><span>(a) Define 'exchange rate depreciation'. [AO1]</span><span>[2 marks][cite: 11, 12]</span></div>
+            <textarea id="p1_q4a" rows="2" class="w-full p-2 border rounded" placeholder="Answer Q4(a)..."></textarea>
+            <div class="flex justify-between items-center"><button onclick="gradeGeneric('p1_q4a', 'falls')" class="bg-green-600 text-white px-3 py-1 rounded font-bold cursor-pointer">Submit Q4(a)</button><span id="fb_p1_q4a" class="font-semibold"></span></div>
+          </div>
+        </div>
+
       </div>
     </section>
 
@@ -142,12 +229,22 @@
           <span class="text-xs bg-indigo-100 text-indigo-800 font-bold px-2.5 py-1 rounded">Total: 80 Marks[cite: 10]</span>
         </div>
 
-        <p class="text-xs text-slate-600">Based on the comprehensive case study insert (Youth Clothes - YC)[cite: 10]. Test your structured answers and 12-mark evaluations.</p>
+        <p class="text-xs text-slate-600">Based on the comprehensive case study insert (Youth Clothes - YC)[cite: 10]. Test your structured answers and 12-mark break-even evaluations.</p>
 
         <!-- Case Insert Context -->
         <div class="bg-indigo-50 border-l-4 border-indigo-500 p-4 rounded-r-lg text-xs text-indigo-950 space-y-1">
           <h4 class="font-bold text-sm">🏢 Case Context: Youth Clothes (YC)[cite: 10]</h4>
-          <p>Ashanti starts a clothes shop called YC in Main City, targeting ages 16–30[cite: 10]. Evaluates sources of finance, marketing mix elements, and break-even for product ranges A and B[cite: 10].</p>
+          <p>Ashanti starts a clothes shop called YC in Main City, targeting ages 16–30[cite: 10]. Evaluates sources of finance (owners' savings, bank loan, leasing), marketing mix elements, and break-even calculations for product ranges A and B[cite: 10].</p>
+        </div>
+
+        <!-- Q1 -->
+        <div class="p-4 bg-slate-50 rounded-lg border space-y-3">
+          <h3 class="font-bold text-sm text-indigo-900 border-b pb-1">Question 1: Entrepreneurship & Finance[cite: 10, 11]</h3>
+          <div class="space-y-2 text-xs">
+            <div class="flex justify-between font-semibold"><span>(a) Explain four characteristics of a successful entrepreneur. [AO1]</span><span>[8 marks][cite: 11]</span></div>
+            <textarea id="p2_q1a" rows="3" class="w-full p-2 border rounded" placeholder="Explain characteristics..."></textarea>
+            <div class="flex justify-between items-center"><button onclick="gradeGeneric('p2_q1a', 'risk')" class="bg-indigo-600 text-white px-3 py-1 rounded font-bold cursor-pointer">Submit Q1(a)</button><span id="fb_p2_q1a" class="font-semibold"></span></div>
+          </div>
         </div>
 
         <!-- Q3 Break-Even Evaluation -->
