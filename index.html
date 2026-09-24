@@ -164,7 +164,7 @@
 </section>
 <!-- KẾT THÚC PHẦN EXAM WRITING MASTERCLASS -->
 
-    <!-- BẮT ĐẦU PHẦN TÍNH NĂNG CHẤM ĐIỂM TƯƠNG TÁC (INTERACTIVE GRADING WIDGET) -->
+<!-- BẮT ĐẦU PHẦN TÍNH NĂNG CHẤM ĐIỂM TƯƠNG TÁC (INTERACTIVE GRADING WIDGET) -->
 <section class="max-w-4xl mx-auto p-6 bg-white rounded-lg shadow-sm my-8 border-t-4 border-purple-600">
   <div class="border-b pb-4 mb-6">
     <span class="text-sm font-semibold text-purple-600 uppercase tracking-wider">Interactive Practice & AI Assessment</span>
@@ -179,15 +179,16 @@
   </div>
 
   <!-- Student Input Area -->
-  <div class="space-y-3">
+  <div class="space-y-4">
     <label for="studentAnswer" class="block text-sm font-medium text-gray-700">✍️ Nhập câu trả lời của bạn vào ô dưới đây:</label>
     <textarea id="studentAnswer" rows="4" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:outline-none text-sm text-gray-800" placeholder="Ví dụ: Benefit 1 is flexibility because BCF can easily switch batches to roast different specialty coffee blends for local cafes..."></textarea>
     
-    <div class="flex flex-wrap gap-3 items-center justify-between">
-      <button onclick="checkStudentAnswer()" class="bg-purple-600 hover:bg-purple-700 text-white font-semibold px-5 py-2.5 rounded-lg text-sm transition shadow-sm cursor-pointer">
-        🔍 Kiểm tra & Chấm điểm sơ bộ
+    <!-- Nút Submit rõ ràng, kích thước lớn -->
+    <div>
+      <button onclick="checkStudentAnswer()" class="w-full sm:w-auto bg-purple-600 hover:bg-purple-700 text-white font-bold px-6 py-3 rounded-lg text-base transition shadow-md cursor-pointer flex items-center justify-center space-x-2">
+        <span>🚀 Submit & Chấm điểm ngay</span>
       </button>
-      <span class="text-xs text-gray-500 italic">💡 Mẹo: Học sinh có thể copy bài viết dán vào chat AI để được phân tích chi tiết AO1-AO4.</span>
+      <p class="text-xs text-gray-500 italic mt-2">💡 Mẹo: Học sinh có thể copy bài viết dán vào chat AI để được phân tích chi tiết chuẩn AO1-AO4.</p>
     </div>
   </div>
 
@@ -206,7 +207,7 @@ function checkStudentAnswer() {
   const feedbackContent = document.getElementById('feedbackContent');
   
   if (text.length < 15) {
-    alert('Vui lòng viết câu trả lời dài hơn một chút trước khi chấm điểm nhé!');
+    alert('Vui lòng viết câu trả lời dài hơn một chút trước khi nộp bài nhé!');
     return;
   }
 
