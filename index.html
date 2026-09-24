@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>IGCSE Business Studies (0450) - Ultimate Revision Portal (Units 1-6)</title>
+  <title>IGCSE Business Studies (0450) - Ultimate Portal</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
@@ -15,133 +15,134 @@
 
   <!-- HEADER -->
   <header class="bg-slate-900 text-white sticky top-0 z-50 shadow-sm">
-    <div class="max-w-7xl mx-auto px-4 py-2 flex justify-between items-center">
+    <div class="max-w-7xl mx-auto px-4 py-2.5 flex justify-between items-center">
       <div class="flex items-center space-x-2">
         <span class="bg-blue-600 text-white font-bold px-2 py-0.5 rounded text-xs">0450</span>
         <h1 class="text-xs font-bold">Cambridge IGCSE™ Business Studies</h1>
       </div>
-      <div class="text-[10px] text-slate-400 hidden sm:block">
-        <span>Track A (Units 1–6) & Track B (Exam Practice)</span>
+      <div class="text-[11px] text-slate-300">
+        <span>Portal Ôn Thi Chuyên Sâu</span>
       </div>
     </div>
   </header>
 
+  <!-- NAVIGATION TABS (CHUYỂN ĐỔI NHANH TRACK A & TRACK B) -->
+  <nav class="bg-white border-b shadow-xs sticky top-[41px] z-40">
+    <div class="max-w-4xl mx-auto px-4 flex space-x-4">
+      <button onclick="switchTrack('trackA')" id="btn-trackA" class="track-tab py-3 px-4 font-bold text-xs border-b-2 border-blue-600 text-blue-600 flex items-center gap-2 cursor-pointer">
+        <i class="fa-solid fa-book-open"></i> 📚 Track A: Lý thuyết (Units 1–6)
+      </button>
+      <button onclick="switchTrack('trackB')" id="btn-trackB" class="track-tab py-3 px-4 font-bold text-xs border-b-2 border-transparent text-slate-500 hover:text-slate-800 flex items-center gap-2 cursor-pointer">
+        <i class="fa-solid fa-pen-to-square"></i> 📝 Track B: Luyện đề (Paper 1 & 2)
+      </button>
+    </div>
+  </nav>
+
   <!-- MAIN CONTAINER -->
-  <main class="max-w-4xl mx-auto px-4 py-6 flex-grow w-full space-y-8">
+  <main class="max-w-4xl mx-auto px-4 py-6 flex-grow w-full">
 
     <!-- ==================== TRACK A: LÝ THUYẾT UNITS 1 - 6 ==================== -->
-    <section id="chapters" class="bg-white p-6 rounded-xl shadow-sm border-t-4 border-blue-600 space-y-6">
-      <div class="border-b pb-3">
-        <span class="text-xs font-semibold text-blue-600 uppercase tracking-wider">Track A • Comprehensive Theory</span>
-        <h2 class="text-xl font-bold text-gray-900 mt-1">📚 Tóm tắt Lý thuyết chuẩn Syllabus 0450 (Units 1 – 6)</h2>
-      </div>
+    <section id="content-trackA" class="track-content space-y-6">
+      <div class="bg-white p-6 rounded-xl shadow-sm border-t-4 border-blue-600 space-y-6">
+        <div class="border-b pb-3">
+          <span class="text-xs font-semibold text-blue-600 uppercase tracking-wider">Track A • Comprehensive Theory</span>
+          <h2 class="text-xl font-bold text-gray-900 mt-1">📚 Tóm tắt Lý thuyết chuẩn Syllabus 0450 (Units 1 – 6)</h2>
+          <p class="text-xs text-slate-500 mt-1">Bấm vào từng Unit để xem tóm tắt kiến thức trọng tâm:</p>
+        </div>
 
-      <div class="space-y-4 text-sm">
-        
-        <!-- Unit 1 -->
-        <details class="bg-slate-50 p-4 rounded-lg border border-slate-200 cursor-pointer">
-          <summary class="font-bold text-blue-900">Unit 1: Understanding Business Activity</summary>
-          <p class="text-xs text-slate-700 mt-2 leading-relaxed">
-            <strong>Key Concepts:</strong> Needs vs. Wants, Scarcity, Opportunity Cost, Factors of Production (Land, Labour, Capital, Enterprise), Added Value, Specialisation, Primary/Secondary/Tertiary sectors, and Business Growth (Internal vs. External, Sole trader to PLC).
-          </p>
-        </details>
-
-        <!-- Unit 2 -->
-        <details class="bg-slate-50 p-4 rounded-lg border border-slate-200 cursor-pointer">
-          <summary class="font-bold text-blue-900">Unit 2: People in Business</summary>
-          <p class="text-xs text-slate-700 mt-2 leading-relaxed">
-            <strong>Key Concepts:</strong> Motivation theories (Maslow, Herzberg, Taylor), Financial rewards (Wage, Salary, Bonus, Commission, Profit-sharing), Non-financial motivators (Job rotation, enlargement, enrichment), Organisational structures (Span of control, Chain of command, Delegation, Tall vs. Flat), Recruitment & Training, and Legal controls over employment.
-          </p>
-        </details>
-
-        <!-- Unit 3 -->
-        <details class="bg-slate-50 p-4 rounded-lg border border-slate-200 cursor-pointer">
-          <summary class="font-bold text-blue-900">Unit 3: Marketing</summary>
-          <p class="text-xs text-slate-700 mt-2 leading-relaxed">
-            <strong>Key Concepts:</strong> Market segmentation, Mass vs. Niche markets, Primary & Secondary market research, The Marketing Mix (4Ps: Product, Price, Place, Promotion), Product Life Cycle (PLC) & Extension strategies, Pricing strategies (Skimming, Penetration, Cost-plus, Competitive, Promotional), Channels of distribution, and E-commerce.
-          </p>
-        </details>
-
-        <!-- Unit 4 -->
-        <details class="bg-slate-50 p-4 rounded-lg border border-slate-200 cursor-pointer">
-          <summary class="font-bold text-blue-900">Unit 4: Operations Management</summary>
-          <p class="text-xs text-slate-700 mt-2 leading-relaxed">
-            <strong>Key Concepts:</strong> Production methods (Job, Batch, Flow production), Lean production (Kaizen, Just-in-Time, Kanban, Waste reduction), Economies & Diseconomies of scale, Location decisions, and Quality control vs. Quality assurance.
-          </p>
-        </details>
-
-        <!-- Unit 5 -->
-        <details class="bg-slate-50 p-4 rounded-lg border border-slate-200 cursor-pointer">
-          <summary class="font-bold text-blue-900">Unit 5: Financial Information & Financial Decisions</summary>
-          <p class="text-xs text-slate-700 mt-2 leading-relaxed">
-            <strong>Key Concepts:</strong> Sources of finance (Internal vs. External, Short-term vs. Long-term), Cash flow forecasting (Inflows, Outflows, Net cash flow, Closing balance), Break-even analysis (Contribution, Margin of safety), and Income Statements & Balance Sheets (Profitability and Liquidity ratios).
-          </p>
-        </details>
-
-        <!-- Unit 6 -->
-        <details class="bg-slate-50 p-4 rounded-lg border border-slate-200 cursor-pointer">
-          <summary class="font-bold text-blue-900">Unit 6: External Influences on Business Activity</summary>
-          <p class="text-xs text-slate-700 mt-2 leading-relaxed">
-            <strong>Key Concepts:</strong> Government economic policies (Inflation, Unemployment, Economic growth, Exchange rates, Taxation, Interest rates), Environmental pressures & Sustainability, and Ethical issues in business decision-making.
-          </p>
-        </details>
-
+        <div class="space-y-3 text-sm">
+          <details class="bg-slate-50 p-3 rounded-lg border cursor-pointer"><summary class="font-bold text-blue-900 text-xs">Unit 1: Understanding Business Activity</summary><p class="text-xs text-slate-700 mt-2">Needs vs. Wants, Scarcity, Opportunity Cost, Factors of Production, Added Value, Specialisation, Business Growth.</p></details>
+          <details class="bg-slate-50 p-3 rounded-lg border cursor-pointer"><summary class="font-bold text-blue-900 text-xs">Unit 2: People in Business</summary><p class="text-xs text-slate-700 mt-2">Motivation theories (Maslow, Herzberg, Taylor), Financial & Non-financial rewards, Organisational structures, Recruitment.</p></details>
+          <details class="bg-slate-50 p-3 rounded-lg border cursor-pointer"><summary class="font-bold text-blue-900 text-xs">Unit 3: Marketing</summary><p class="text-xs text-slate-700 mt-2">Market segmentation, Mass vs Niche, Market research, Marketing Mix (4Ps), Product Life Cycle, Pricing strategies, E-commerce.</p></details>
+          <details class="bg-slate-50 p-3 rounded-lg border cursor-pointer"><summary class="font-bold text-blue-900 text-xs">Unit 4: Operations Management</summary><p class="text-xs text-slate-700 mt-2">Production methods (Job, Batch, Flow), Lean production, Economies/Diseconomies of scale, Location decisions.</p></details>
+          <details class="bg-slate-50 p-3 rounded-lg border cursor-pointer"><summary class="font-bold text-blue-900 text-xs">Unit 5: Financial Information & Decisions</summary><p class="text-xs text-slate-700 mt-2">Sources of finance, Cash flow forecasting, Break-even analysis, Income statements & balance sheets.</p></details>
+          <details class="bg-slate-50 p-3 rounded-lg border cursor-pointer"><summary class="font-bold text-blue-900 text-xs">Unit 6: External Influences on Business Activity</summary><p class="text-xs text-slate-700 mt-2">Government economic policies (Inflation, Exchange rates, Taxation), Environmental pressures, Ethics.</p></details>
+        </div>
       </div>
     </section>
 
-    <!-- ==================== TRACK B: KHO LUYỆN ĐỀ TƯƠNG TÁC ==================== -->
-    <section id="papers" class="bg-white p-6 rounded-xl shadow-sm border-t-4 border-green-600 space-y-6">
-      <div class="border-b pb-3">
-        <span class="text-xs font-semibold text-green-600 uppercase tracking-wider">Track B • Interactive Exam Practice</span>
-        <h2 class="text-xl font-bold text-gray-900 mt-1">Question Set: GreenLeaf Furniture (GLF) - Paper 1</h2>
+    <!-- ==================== TRACK B: LUYỆN ĐỀ PAPER 1 & PAPER 2 ==================== -->
+    <section id="content-trackB" class="track-content space-y-6 hidden">
+      
+      <!-- PAPER 1 PRACTICE -->
+      <div class="bg-white p-6 rounded-xl shadow-sm border-t-4 border-green-600 space-y-6">
+        <div class="border-b pb-3">
+          <span class="text-xs font-semibold text-green-600 uppercase tracking-wider">Track B • Paper 1 Practice</span>
+          <h2 class="text-xl font-bold text-gray-900 mt-1">Question Set: GreenLeaf Furniture (GLF)</h2>
+        </div>
+
+        <div class="bg-green-50 border-l-4 border-green-500 p-4 rounded-r-lg text-sm text-green-900">
+          <h4 class="font-bold mb-1">🏢 Business Context:</h4>
+          <p>Tariq is an entrepreneur who founded <strong>GreenLeaf Furniture (GLF)</strong> as a sole trader, producing handcrafted wooden tables. He faces scarcity of skilled labor and high raw material costs. He is considering converting GLF into a Private Limited Company (Ltd) and expanding operations.</p>
+        </div>
+
+        <!-- Question (a) -->
+        <div class="p-4 bg-slate-50 rounded-lg border space-y-2">
+          <div class="flex justify-between items-center text-sm font-semibold text-slate-800">
+            <span>(a) Define 'opportunity cost'.</span>
+            <span class="text-xs bg-slate-200 px-2 py-0.5 rounded font-bold">[2 marks]</span>
+          </div>
+          <textarea id="ansA" rows="2" class="w-full p-2.5 border rounded text-xs focus:ring-2 focus:ring-green-500" placeholder="Nhập định nghĩa..."></textarea>
+          <div class="flex justify-between items-center flex-wrap gap-2">
+            <button onclick="gradeA()" class="bg-green-600 hover:bg-green-700 text-white font-bold px-4 py-1.5 rounded text-xs transition cursor-pointer">🚀 Submit & Chấm câu (a)</button>
+            <details class="text-xs text-blue-600 cursor-pointer"><summary class="hover:underline font-medium">Xem Mark Scheme</summary><p class="text-slate-600 mt-1"><em>Đáp án chuẩn:</em> The next best alternative foregone by making a choice [2 marks].</p></details>
+          </div>
+          <div id="fbA" class="hidden text-xs p-2 rounded border bg-white"></div>
+        </div>
+
+        <!-- Question (b) -->
+        <div class="p-4 bg-slate-50 rounded-lg border space-y-2">
+          <div class="flex justify-between items-center text-sm font-semibold text-slate-800">
+            <span>(b) Identify two ways in which GLF could add value to its products.</span>
+            <span class="text-xs bg-slate-200 px-2 py-0.5 rounded font-bold">[2 marks]</span>
+          </div>
+          <textarea id="ansB" rows="2" class="w-full p-2.5 border rounded text-xs focus:ring-2 focus:ring-green-500" placeholder="Nêu 2 cách tăng giá trị..."></textarea>
+          <div class="flex justify-between items-center flex-wrap gap-2">
+            <button onclick="gradeB()" class="bg-green-600 hover:bg-green-700 text-white font-bold px-4 py-1.5 rounded text-xs transition cursor-pointer">🚀 Submit & Chấm câu (b)</button>
+            <details class="text-xs text-blue-600 cursor-pointer"><summary class="hover:underline font-medium">Xem Mark Scheme</summary><p class="text-slate-600 mt-1"><em>Đáp án chuẩn:</em> Branded packaging, high-quality finishing, custom wood carving [2 marks].</p></details>
+          </div>
+          <div id="fbB" class="hidden text-xs p-2 rounded border bg-white"></div>
+        </div>
+
+        <!-- Question (c) -->
+        <div class="p-4 bg-slate-50 rounded-lg border space-y-2">
+          <div class="flex justify-between items-center text-sm font-semibold text-slate-800">
+            <span>(c) Outline two benefits to Tariq of converting GLF from a sole trader to a Private Limited Company (Ltd).</span>
+            <span class="text-xs bg-green-100 text-green-800 px-2 py-0.5 rounded font-bold">[4 marks]</span>
+          </div>
+          <textarea id="ansC" rows="3" class="w-full p-2.5 border rounded text-xs focus:ring-2 focus:ring-green-500" placeholder="Nêu 2 lợi ích..."></textarea>
+          <div class="flex justify-between items-center flex-wrap gap-2">
+            <button onclick="gradeC()" class="bg-green-600 hover:bg-green-700 text-white font-bold px-4 py-1.5 rounded text-xs transition cursor-pointer">🚀 Submit & Chấm câu (c)</button>
+            <details class="text-xs text-blue-600 cursor-pointer"><summary class="hover:underline font-medium">Xem Mark Scheme</summary><p class="text-slate-600 mt-1"><em>Đáp án chuẩn:</em> Limited liability protects personal assets; easier to raise capital by selling shares [4 marks].</p></details>
+          </div>
+          <div id="fbC" class="hidden text-xs p-2 rounded border bg-white"></div>
+        </div>
       </div>
 
-      <!-- Business Context -->
-      <div class="bg-green-50 border-l-4 border-green-500 p-4 rounded-r-lg text-sm text-green-900">
-        <h4 class="font-bold mb-1">🏢 Business Context:</h4>
-        <p>Tariq is an entrepreneur who founded <strong>GreenLeaf Furniture (GLF)</strong> as a sole trader, producing handcrafted wooden tables. He faces scarcity of skilled labor and high raw material costs. He is considering converting GLF into a Private Limited Company (Ltd) and expanding operations.</p>
-      </div>
+      <!-- PAPER 2 PRACTICE -->
+      <div class="bg-white p-6 rounded-xl shadow-sm border-t-4 border-indigo-600 space-y-6">
+        <div class="border-b pb-3">
+          <span class="text-xs font-semibold text-indigo-600 uppercase tracking-wider">Track B • Paper 2 Case Study</span>
+          <h2 class="text-xl font-bold text-gray-900 mt-1">Question Set: MegaRetail PLC (12-Mark Evaluation)</h2>
+        </div>
 
-      <!-- Question (a) -->
-      <div class="p-4 bg-slate-50 rounded-lg border space-y-2">
-        <div class="flex justify-between items-center text-sm font-semibold text-slate-800">
-          <span>(a) Define 'opportunity cost'.</span>
-          <span class="text-xs bg-slate-200 px-2 py-0.5 rounded font-bold">[2 marks]</span>
+        <div class="bg-indigo-50 border-l-4 border-indigo-500 p-4 rounded-r-lg text-sm text-indigo-900">
+          <h4 class="font-bold mb-1">🏢 Case Context:</h4>
+          <p>MegaRetail PLC operates large supermarkets with falling profits. CEO Thomas considers two options: <strong>Option A:</strong> Open 50 small convenience stores. <strong>Option B:</strong> Invest heavily in an e-commerce website and home delivery.</p>
         </div>
-        <textarea id="ansA" rows="2" class="w-full p-2.5 border rounded text-xs focus:ring-2 focus:ring-green-500" placeholder="Nhập định nghĩa opportunity cost..."></textarea>
-        <div class="flex justify-between items-center flex-wrap gap-2">
-          <button onclick="gradeA()" class="bg-green-600 hover:bg-green-700 text-white font-bold px-4 py-1.5 rounded text-xs transition cursor-pointer">🚀 Submit & Chấm câu (a)</button>
-          <details class="text-xs text-blue-600 cursor-pointer"><summary class="hover:underline font-medium">Xem Mark Scheme</summary><p class="text-slate-600 mt-1"><em>Đáp án chuẩn:</em> The next best alternative foregone by making a choice [2 marks].</p></details>
-        </div>
-        <div id="fbA" class="hidden text-xs p-2 rounded border bg-white"></div>
-      </div>
 
-      <!-- Question (b) -->
-      <div class="p-4 bg-slate-50 rounded-lg border space-y-2">
-        <div class="flex justify-between items-center text-sm font-semibold text-slate-800">
-          <span>(b) Identify two ways in which GLF could add value to its products.</span>
-          <span class="text-xs bg-slate-200 px-2 py-0.5 rounded font-bold">[2 marks]</span>
+        <div class="p-4 bg-slate-50 rounded-lg border space-y-2">
+          <div class="flex justify-between items-center text-sm font-semibold text-slate-800">
+            <span>Evaluation: Recommend whether MegaRetail PLC should choose Option A or Option B. Justify your answer.</span>
+            <span class="text-xs bg-indigo-100 text-indigo-800 px-2 py-0.5 rounded font-bold">[12 marks]</span>
+          </div>
+          <textarea id="p2Answer" rows="4" class="w-full p-2.5 border rounded text-xs focus:ring-2 focus:ring-indigo-500" placeholder="Viết câu trả lời 12-mark của bạn (chọn option nào và lý do)..."></textarea>
+          <div class="flex justify-between items-center flex-wrap gap-2">
+            <button onclick="gradeP2()" class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold px-4 py-1.5 rounded text-xs transition cursor-pointer">🚀 Submit & Chấm điểm Paper 2</button>
+            <details class="text-xs text-blue-600 cursor-pointer"><summary class="hover:underline font-medium">Xem Gợi ý Mark Scheme</summary><p class="text-slate-600 mt-1"><em>Đáp án chuẩn:</em> Cần phân tích ưu/nhược điểm cả 2 option và đưa ra kết luận lựa chọn có căn cứ (AO4) dựa trên xu hướng thương mại điện tử.</p></details>
+          </div>
+          <div id="fbP2" class="hidden text-xs p-2 rounded border bg-white"></div>
         </div>
-        <textarea id="ansB" rows="2" class="w-full p-2.5 border rounded text-xs focus:ring-2 focus:ring-green-500" placeholder="Nêu 2 cách tăng giá trị (Add value)..."></textarea>
-        <div class="flex justify-between items-center flex-wrap gap-2">
-          <button onclick="gradeB()" class="bg-green-600 hover:bg-green-700 text-white font-bold px-4 py-1.5 rounded text-xs transition cursor-pointer">🚀 Submit & Chấm câu (b)</button>
-          <details class="text-xs text-blue-600 cursor-pointer"><summary class="hover:underline font-medium">Xem Mark Scheme</summary><p class="text-slate-600 mt-1"><em>Đáp án chuẩn:</em> Branded packaging, high-quality finishing, custom wood carving [2 marks].</p></details>
-        </div>
-        <div id="fbB" class="hidden text-xs p-2 rounded border bg-white"></div>
-      </div>
-
-      <!-- Question (c) -->
-      <div class="p-4 bg-slate-50 rounded-lg border space-y-2">
-        <div class="flex justify-between items-center text-sm font-semibold text-slate-800">
-          <span>(c) Outline two benefits to Tariq of converting GLF from a sole trader to a Private Limited Company (Ltd).</span>
-          <span class="text-xs bg-green-100 text-green-800 px-2 py-0.5 rounded font-bold">[4 marks]</span>
-        </div>
-        <textarea id="ansC" rows="3" class="w-full p-2.5 border rounded text-xs focus:ring-2 focus:ring-green-500" placeholder="Nêu 2 lợi ích chuyển đổi công ty cổ phần..."></textarea>
-        <div class="flex justify-between items-center flex-wrap gap-2">
-          <button onclick="gradeC()" class="bg-green-600 hover:bg-green-700 text-white font-bold px-4 py-1.5 rounded text-xs transition cursor-pointer">🚀 Submit & Chấm câu (c)</button>
-          <details class="text-xs text-blue-600 cursor-pointer"><summary class="hover:underline font-medium">Xem Mark Scheme</summary><p class="text-slate-600 mt-1"><em>Đáp án chuẩn:</em> Limited liability protects personal assets; easier to raise capital by selling shares [4 marks].</p></details>
-        </div>
-        <div id="fbC" class="hidden text-xs p-2 rounded border bg-white"></div>
       </div>
 
     </section>
@@ -150,15 +151,26 @@
 
   <!-- FOOTER -->
   <footer class="bg-slate-900 text-slate-500 text-center py-4 text-xs mt-auto">
-    <p>Cambridge IGCSE™ Business Studies (0450) Ultimate Revision Portal • Units 1 to 6</p>
+    <p>Cambridge IGCSE™ Business Studies (0450) Portal</p>
   </footer>
 
-  <!-- JAVASCRIPT CHẤM ĐIỂM -->
+  <!-- SCRIPT XỬ LÝ CHUYỂN TAB & CHẤM ĐIỂM -->
   <script>
+    function switchTrack(trackId) {
+      document.querySelectorAll('.track-content').forEach(el => el.classList.add('hidden'));
+      document.querySelectorAll('.track-tab').forEach(el => {
+        el.classList.remove('border-blue-600', 'text-blue-600');
+        el.classList.add('border-transparent', 'text-slate-500');
+      });
+      document.getElementById('content-' + trackId).classList.remove('hidden');
+      document.getElementById('btn-' + trackId).classList.add('border-blue-600', 'text-blue-600');
+      document.getElementById('btn-' + trackId).classList.remove('border-transparent', 'text-slate-500');
+    }
+
     function gradeA() {
       let t = document.getElementById('ansA').value.trim().toLowerCase();
       let box = document.getElementById('fbA');
-      if(t.length < 5) { alert('Vui lòng viết câu trả lời dài hơn!'); return; }
+      if(t.length < 5) { alert('Vui lòng viết câu trả lời!'); return; }
       box.classList.remove('hidden');
       let ok = t.includes('alternative') || t.includes('foregone') || t.includes('given up') || t.includes('lựa chọn');
       box.innerHTML = ok ? '✅ <strong>2/2 marks:</strong> Chính xác tuyệt đối khái niệm Opportunity Cost!' : '⚠️ <strong>0-1 mark:</strong> Cần nêu rõ ý "sự lựa chọn thay thế bị bỏ qua".';
@@ -167,9 +179,9 @@
     function gradeB() {
       let t = document.getElementById('ansB').value.trim().toLowerCase();
       let box = document.getElementById('fbB');
-      if(t.length < 5) { alert('Vui lòng viết câu trả lời dài hơn!'); return; }
+      if(t.length < 5) { alert('Vui lòng viết câu trả lời!'); return; }
       box.classList.remove('hidden');
-      box.innerHTML = `📊 <strong>Đánh giá hệ thống:</strong> Đã ghi nhận câu trả lời của bạn. (Gợi ý Mark Scheme: Branding, Finishing, Customization).`;
+      box.innerHTML = `📊 <strong>Đánh giá hệ thống:</strong> Đã ghi nhận câu trả lời tăng giá trị (Add Value).`;
     }
 
     function gradeC() {
@@ -178,14 +190,19 @@
       if(t.length < 10) { alert('Vui lòng viết chi tiết hơn!'); return; }
       box.classList.remove('hidden');
       let hasLiab = t.includes('liability') || t.includes('trách nhiệm hữu hạn');
-      let hasCap = t.includes('share') || t.includes('capital') || t.includes('finance') || t.includes('vốn') || t.includes('cổ phần');
-      let hasApp = t.includes('glf') || t.includes('tariq') || t.includes('furniture');
-      
-      let score = (hasLiab ? 1 : 0) + (hasCap ? 1 : 0) + (hasApp ? 2 : 0);
-      box.innerHTML = `<strong>Kết quả ước tính: ${score}/4 marks:</strong><br>` +
-                      `- Limited Liability: ${hasLiab ? '✅ Có' : '❌ Chưa rõ'}<br>` +
-                      `- Raising Capital/Shares: ${hasCap ? '✅ Có' : '❌ Chưa rõ'}<br>` +
-                      `- Application (GLF/Tariq): ${hasApp ? '✅ Đã gắn kết bối cảnh' : '❌ Thiếu tên doanh nghiệp GLF'}`;
+      let hasCap = t.includes('share') || t.includes('capital') || t.includes('finance') || t.includes('vốn');
+      let score = (hasLiab ? 2 : 0) + (hasCap ? 2 : 0);
+      box.innerHTML = `<strong>Kết quả ước tính: ${score}/4 marks:</strong><br>- Limited Liability: ${hasLiab ? '✅ Có' : '❌ Chưa rõ'}<br>- Raising Capital: ${hasCap ? '✅ Có' : '❌ Chưa rõ'}`;
+    }
+
+    function gradeP2() {
+      let t = document.getElementById('p2Answer').value.trim().toLowerCase();
+      let box = document.getElementById('fbP2');
+      if(t.length < 15) { alert('Vui lòng viết bài làm dài hơn cho câu 12-mark!'); return; }
+      box.classList.remove('hidden');
+      let hasChoice = t.includes('option a') || t.includes('option b');
+      let hasJustify = t.includes('because') || t.includes('due to') || t.includes('better') || t.includes('lý do');
+      box.innerHTML = `<strong>Đánh giá Paper 2 Evaluation (AO4):</strong> ${hasChoice && hasJustify ? '✅ Đạt yêu cầu cơ bản! Đã có định hướng lựa chọn và lập luận chứng minh.' : '⚠️ Chưa hoàn thiện: Cần chỉ rõ chọn Option nào và đưa ra luận điểm giải thích thuyết phục.'}`;
     }
   </script>
 </body>
