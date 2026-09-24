@@ -3,26 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>IGCSE Business Studies (0450) - Comprehensive Revision Portal</title>
+  <title>IGCSE Business Studies (0450) - Interactive Exam Portal</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
     body { font-family: 'Inter', sans-serif; }
-    .mark-tag { font-size: 0.75rem; padding: 0.15rem 0.4rem; border-radius: 0.25rem; font-weight: 600; }
-    .tag-ao1 { background-color: #DBEAFE; color: #1E40AF; }
-    .tag-ao2 { background-color: #D1FAE5; color: #065F46; }
-    .tag-ao3 { background-color: #FEF3C7; color: #92400E; }
-    .tag-ao4 { background-color: #FCE7F3; color: #9D174D; }
-    @media print {
-      .no-print { display: none !important; }
-      body { background: white; color: black; }
-    }
   </style>
 </head>
 <body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col">
 
-  <!-- HEADER SIÊU THU GỌN & HIỆN ĐẠI -->
+  <!-- HEADER -->
   <header class="bg-slate-900 text-white sticky top-0 z-50 shadow-sm">
     <div class="max-w-7xl mx-auto px-4 py-2 flex justify-between items-center">
       <div class="flex items-center space-x-2">
@@ -30,55 +21,19 @@
         <h1 class="text-xs font-bold">Cambridge IGCSE™ Business Studies</h1>
       </div>
       <div class="text-[10px] text-slate-400 hidden sm:block">
-        <span>Track A (Theory) & Track B (Exam Practice)</span>
+        <span>Track A & Track B Interactive Portal</span>
       </div>
     </div>
   </header>
 
-  <!-- MENU TRACK A & TRACK B (GỌN GÀNG) -->
-  <section class="max-w-6xl mx-auto px-4 my-4">
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
-      <!-- Track A -->
-      <div class="bg-white p-3 rounded-lg shadow-sm border border-slate-200 border-t-2 border-blue-600">
-        <div class="flex justify-between items-center">
-          <h3 class="text-sm font-bold text-blue-900">📚 Track A: Lý thuyết theo Chapter</h3>
-          <a href="#chapters" class="text-blue-600 text-xs font-semibold hover:underline">Xem &rarr;</a>
-        </div>
-        <p class="text-slate-600 text-[11px] mt-1">Ôn kiến thức, từ vựng và câu hỏi check nhanh Unit 1 - Unit 6.</p>
-      </div>
-      
-      <!-- Track B -->
-      <div class="bg-white p-3 rounded-lg shadow-sm border border-slate-200 border-t-2 border-green-600">
-        <div class="flex justify-between items-center">
-          <h3 class="text-sm font-bold text-green-900">📝 Track B: Luyện đề theo Paper</h3>
-          <a href="#papers" class="text-green-600 text-xs font-semibold hover:underline">Luyện &rarr;</a>
-        </div>
-        <p class="text-slate-600 text-[11px] mt-1">Luyện Paper 1 & Paper 2 (Case Study & Evaluation) chuẩn mark scheme.</p>
-      </div>
-    </div>
-  </section>
+  <!-- MAIN CONTENT -->
+  <main class="max-w-4xl mx-auto px-4 py-6 flex-grow w-full space-y-6">
 
-  <!-- MAIN CONTAINER -->
-  <main class="max-w-5xl mx-auto px-4 py-4 flex-grow w-full space-y-8">
-
-    <!-- TRACK A: LÝ THUYẾT CHAPTER 1.1 -->
-    <section id="chapters" class="bg-white p-6 rounded-xl shadow-sm border-t-4 border-blue-600">
-      <div class="border-b pb-3 mb-4">
-        <span class="text-xs font-semibold text-blue-600 uppercase tracking-wider">Track A • Unit 1 Theory</span>
-        <h2 class="text-xl font-bold text-gray-900">Chapter 1.1: Business Activity & The Economic Problem</h2>
-      </div>
-      <div class="space-y-3 text-sm text-slate-700">
-        <p><strong>Needs vs. Wants:</strong> Needs are essentials for survival (food, water). Wants are desires for comfort. Resources are limited, but wants are infinite.</p>
-        <p><strong>Opportunity Cost:</strong> The next best alternative foregone when making a choice.</p>
-        <p><strong>Added Value:</strong> Selling price minus cost of raw materials (Added value $\neq$ profit).</p>
-      </div>
-    </section>
-
-    <!-- TRACK B: KHO LUYỆN ĐỀ PAPER 1 & PAPER 2 (CÓ TÍCH HỢP TƯƠNG TÁC CHẤM ĐIỂM) -->
-    <section id="papers" class="bg-white p-6 rounded-xl shadow-sm border-t-4 border-green-600 space-y-6">
+    <!-- TRACK B: PAPER 1 INTERACTIVE PRACTICE -->
+    <section class="bg-white p-6 rounded-xl shadow-sm border-t-4 border-green-600 space-y-6">
       <div class="border-b pb-3">
-        <span class="text-xs font-semibold text-green-600 uppercase tracking-wider">Track B • Interactive Exam Practice</span>
-        <h2 class="text-xl font-bold text-gray-900">GreenLeaf Furniture (GLF) - Paper 1 Practice Set</h2>
+        <span class="text-xs font-semibold text-green-600 uppercase tracking-wider">Track B • Paper 1 Practice</span>
+        <h2 class="text-xl font-bold text-gray-900 mt-1">Question Set: GreenLeaf Furniture (GLF)</h2>
       </div>
 
       <!-- Business Context -->
@@ -91,12 +46,12 @@
       <div class="p-4 bg-slate-50 rounded-lg border space-y-2">
         <div class="flex justify-between items-center text-sm font-semibold text-slate-800">
           <span>(a) Define 'opportunity cost'.</span>
-          <span class="text-xs bg-slate-200 px-2 py-0.5 rounded">[2 marks]</span>
+          <span class="text-xs bg-slate-200 px-2 py-0.5 rounded font-bold">[2 marks]</span>
         </div>
-        <textarea id="ansA" rows="2" class="w-full p-2.5 border rounded text-xs focus:ring-2 focus:ring-green-500" placeholder="Nhập định nghĩa..."></textarea>
+        <textarea id="ansA" rows="2" class="w-full p-2.5 border rounded text-xs focus:ring-2 focus:ring-green-500" placeholder="Nhập định nghĩa opportunity cost..."></textarea>
         <div class="flex justify-between items-center flex-wrap gap-2">
           <button onclick="gradeA()" class="bg-green-600 hover:bg-green-700 text-white font-bold px-4 py-1.5 rounded text-xs transition cursor-pointer">🚀 Submit & Chấm câu (a)</button>
-          <details class="text-xs text-blue-600 cursor-pointer"><summary class="hover:underline">Xem Mark Scheme</summary><p class="text-slate-600 mt-1"><em>Đáp án:</em> The next best alternative foregone by making a choice [2 marks].</p></details>
+          <details class="text-xs text-blue-600 cursor-pointer"><summary class="hover:underline font-medium">Xem Mark Scheme</summary><p class="text-slate-600 mt-1"><em>Đáp án chuẩn:</em> The next best alternative foregone by making a choice [2 marks].</p></details>
         </div>
         <div id="fbA" class="hidden text-xs p-2 rounded border bg-white"></div>
       </div>
@@ -105,12 +60,12 @@
       <div class="p-4 bg-slate-50 rounded-lg border space-y-2">
         <div class="flex justify-between items-center text-sm font-semibold text-slate-800">
           <span>(b) Identify two ways in which GLF could add value to its products.</span>
-          <span class="text-xs bg-slate-200 px-2 py-0.5 rounded">[2 marks]</span>
+          <span class="text-xs bg-slate-200 px-2 py-0.5 rounded font-bold">[2 marks]</span>
         </div>
-        <textarea id="ansB" rows="2" class="w-full p-2.5 border rounded text-xs focus:ring-2 focus:ring-green-500" placeholder="Nêu 2 cách tăng giá trị..."></textarea>
+        <textarea id="ansB" rows="2" class="w-full p-2.5 border rounded text-xs focus:ring-2 focus:ring-green-500" placeholder="Nêu 2 cách tăng giá trị (Add value)..."></textarea>
         <div class="flex justify-between items-center flex-wrap gap-2">
           <button onclick="gradeB()" class="bg-green-600 hover:bg-green-700 text-white font-bold px-4 py-1.5 rounded text-xs transition cursor-pointer">🚀 Submit & Chấm câu (b)</button>
-          <details class="text-xs text-blue-600 cursor-pointer"><summary class="hover:underline">Xem Mark Scheme</summary><p class="text-slate-600 mt-1"><em>Đáp án:</em> Branded packaging, high-quality finishing, custom wood carving [2 marks].</p></details>
+          <details class="text-xs text-blue-600 cursor-pointer"><summary class="hover:underline font-medium">Xem Mark Scheme</summary><p class="text-slate-600 mt-1"><em>Đáp án chuẩn:</em> Branded packaging, high-quality finishing, custom wood carving [2 marks].</p></details>
         </div>
         <div id="fbB" class="hidden text-xs p-2 rounded border bg-white"></div>
       </div>
@@ -121,10 +76,10 @@
           <span>(c) Outline two benefits to Tariq of converting GLF from a sole trader to a Private Limited Company (Ltd).</span>
           <span class="text-xs bg-green-100 text-green-800 px-2 py-0.5 rounded font-bold">[4 marks]</span>
         </div>
-        <textarea id="ansC" rows="3" class="w-full p-2.5 border rounded text-xs focus:ring-2 focus:ring-green-500" placeholder="Nêu 2 lợi ích chuyển đổi công ty..."></textarea>
+        <textarea id="ansC" rows="3" class="w-full p-2.5 border rounded text-xs focus:ring-2 focus:ring-green-500" placeholder="Nêu 2 lợi ích chuyển đổi công ty cổ phần..."></textarea>
         <div class="flex justify-between items-center flex-wrap gap-2">
           <button onclick="gradeC()" class="bg-green-600 hover:bg-green-700 text-white font-bold px-4 py-1.5 rounded text-xs transition cursor-pointer">🚀 Submit & Chấm câu (c)</button>
-          <details class="text-xs text-blue-600 cursor-pointer"><summary class="hover:underline">Xem Mark Scheme</summary><p class="text-slate-600 mt-1"><em>Đáp án:</em> Limited liability protects personal assets; easier to raise capital by selling shares [4 marks].</p></details>
+          <details class="text-xs text-blue-600 cursor-pointer"><summary class="hover:underline font-medium">Xem Mark Scheme</summary><p class="text-slate-600 mt-1"><em>Đáp án chuẩn:</em> Limited liability protects personal assets; easier to raise capital by selling shares [4 marks].</p></details>
         </div>
         <div id="fbC" class="hidden text-xs p-2 rounded border bg-white"></div>
       </div>
@@ -135,10 +90,10 @@
 
   <!-- FOOTER -->
   <footer class="bg-slate-900 text-slate-500 text-center py-4 text-xs mt-auto">
-    <p>Cambridge IGCSE™ Business Studies (0450) Interactive Revision Portal</p>
+    <p>Cambridge IGCSE™ Business Studies (0450) Interactive Portal</p>
   </footer>
 
-  <!-- JAVASCRIPT XỬ LÝ CHẤM ĐIỂM TỰ ĐỘNG -->
+  <!-- JAVASCRIPT CHẤM ĐIỂM -->
   <script>
     function gradeA() {
       let t = document.getElementById('ansA').value.trim().toLowerCase();
@@ -154,7 +109,7 @@
       let box = document.getElementById('fbB');
       if(t.length < 5) { alert('Vui lòng viết câu trả lời dài hơn!'); return; }
       box.classList.remove('hidden');
-      box.innerHTML = `📊 <strong>Đánh giá:</strong> Hệ thống đã nhận diện câu trả lời. Gợi ý Mark Scheme: Branding, Finishing, Customization.`;
+      box.innerHTML = `📊 <strong>Đánh giá hệ thống:</strong> Đã ghi nhận câu trả lời của bạn. (Gợi ý Mark Scheme: Branding, Finishing, Customization).`;
     }
 
     function gradeC() {
