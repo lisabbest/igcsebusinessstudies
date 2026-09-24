@@ -164,6 +164,80 @@
 </section>
 <!-- KẾT THÚC PHẦN EXAM WRITING MASTERCLASS -->
 
+    <!-- BẮT ĐẦU PHẦN TÍNH NĂNG CHẤM ĐIỂM TƯƠNG TÁC (INTERACTIVE GRADING WIDGET) -->
+<section class="max-w-4xl mx-auto p-6 bg-white rounded-lg shadow-sm my-8 border-t-4 border-purple-600">
+  <div class="border-b pb-4 mb-6">
+    <span class="text-sm font-semibold text-purple-600 uppercase tracking-wider">Interactive Practice & AI Assessment</span>
+    <h2 class="text-2xl font-bold text-gray-900 mt-1">💡 Khu vực làm bài & Tự chấm điểm thông minh</h2>
+    <p class="text-sm text-gray-600 mt-1">Học sinh gõ câu trả lời trực tiếp vào ô bên dưới, hệ thống sẽ tự động quét từ khóa (Keywords) và so sánh với Mark Scheme chuẩn.</p>
+  </div>
+
+  <!-- Question Box -->
+  <div class="bg-purple-50 p-4 rounded-lg mb-4 border border-purple-100">
+    <span class="text-xs font-bold bg-purple-200 text-purple-800 px-2 py-0.5 rounded">Paper 1 • 4 Marks Practice</span>
+    <p class="font-semibold text-gray-800 mt-2">Question: Outline two benefits to BeanCraft Coffee of using batch production. [4 marks]</p>
+  </div>
+
+  <!-- Student Input Area -->
+  <div class="space-y-3">
+    <label for="studentAnswer" class="block text-sm font-medium text-gray-700">✍️ Nhập câu trả lời của bạn vào ô dưới đây:</label>
+    <textarea id="studentAnswer" rows="4" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:outline-none text-sm text-gray-800" placeholder="Ví dụ: Benefit 1 is flexibility because BCF can easily switch batches to roast different specialty coffee blends for local cafes..."></textarea>
+    
+    <div class="flex flex-wrap gap-3 items-center justify-between">
+      <button onclick="checkStudentAnswer()" class="bg-purple-600 hover:bg-purple-700 text-white font-semibold px-5 py-2.5 rounded-lg text-sm transition shadow-sm cursor-pointer">
+        🔍 Kiểm tra & Chấm điểm sơ bộ
+      </button>
+      <span class="text-xs text-gray-500 italic">💡 Mẹo: Học sinh có thể copy bài viết dán vào chat AI để được phân tích chi tiết AO1-AO4.</span>
+    </div>
+  </div>
+
+  <!-- Feedback Result Box (Hidden by default) -->
+  <div id="feedbackResult" class="mt-6 hidden p-4 rounded-lg border bg-gray-50 space-y-2">
+    <h4 class="font-bold text-gray-800 text-sm">📊 Kết quả đánh giá tự động (Auto-Grading Feedback):</h4>
+    <div id="feedbackContent" class="text-sm text-gray-700 space-y-1"></div>
+  </div>
+</section>
+
+<!-- JavaScript xử lý chấm điểm tự động -->
+<script>
+function checkStudentAnswer() {
+  const text = document.getElementById('studentAnswer').value.trim();
+  const feedbackBox = document.getElementById('feedbackResult');
+  const feedbackContent = document.getElementById('feedbackContent');
+  
+  if (text.length < 15) {
+    alert('Vui lòng viết câu trả lời dài hơn một chút trước khi chấm điểm nhé!');
+    return;
+  }
+
+  // Thuật toán kiểm tra từ khóa mẫu cho bài tập BCF
+  const lowerText = text.toLowerCase();
+  const hasApplication = lowerText.includes('bcf') || lowerText.includes('bean') || lowerText.includes('coffee') || lowerText.includes('cafe') || lowerText.includes('roast');
+  const hasBenefit = lowerText.includes('flexib') || lowerText.includes('quality') || lowerText.includes('batch') || lowerText.includes('variety') || lowerText.includes('control');
+  const hasTwoPoints = lowerText.includes('second') || lowerText.includes('additionally') || lowerText.includes('furthermore') || lowerText.includes('other') || (text.split('.').length >= 3);
+  
+  let score = 0;
+  if (hasBenefit) score += 1;
+  if (hasTwoPoints) score += 1;
+  if (hasApplication) score += 2; // Gắn kết bối cảnh chiếm 2 điểm Application
+
+  feedbackBox.classList.remove('hidden');
+  
+  let html = `<p><strong>Điểm số ước tính:</strong> <span class="text-purple-700 font-bold text-base">${score}/4 marks</span></p>`;
+  html += `<ul class="list-disc pl-5 text-xs space-y-1.5 text-gray-600 mt-2">`;
+  html += `<li><strong>Độ hoàn thiện ý kiến (Knowledge):</strong> ${hasBenefit ? '✅ Đã nêu được lợi ích của sản xuất theo lô (batch).' : '❌ Chưa rõ ý lợi ích (cần nhắc tới sự linh hoạt hoặc kiểm soát chất lượng).' }</li>`;
+  html += `<li><strong>Cấu trúc bài làm (Structure):</strong> ${hasTwoPoints ? '✅ Đã phát triển đủ các ý trong bài.' : '⚠️ Nên tách rõ 2 ý (Benefit 1 và Benefit 2) để đảm bảo trọn vẹn điểm.' }</li>`;
+  html += `<li><strong>Gắn kết bối cảnh (Application - AO2):</strong> ${hasApplication ? '✅ Tuyệt vời! Đã nhắc tới từ khóa doanh nghiệp (BCF / coffee).' : '❌ Thiếu Application! Cần liên kết trực tiếp với tiệm rang cà phê BeanCraft Coffee hoặc thợ rang.' }</li>`;
+  html += `</ul>`;
+  html += `<div class='mt-3 pt-2 border-t text-xs text-purple-900 bg-purple-50 p-2.5 rounded'>`;
+  html += `<strong>Nhận xét từ hệ thống:</strong> ${score >= 3 ? 'Bài làm rất tốt, lập luận bám sát đề thi chuẩn Cambridge!' : 'Cần chú ý gắn tên doanh nghiệp (Application) vào mỗi luận điểm để đạt điểm tối đa.'}`;
+  html += `</div>`;
+  
+  feedbackContent.innerHTML = html;
+}
+</script>
+<!-- KẾT THÚC PHẦN TÍNH NĂNG CHẤM ĐIỂM -->
+
     <!-- BẮT ĐẦU PHẦN TRACK A: LÝ THUYẾT CHAPTER 1.1 -->
 <section id="chapters" class="max-w-4xl mx-auto p-6 bg-white rounded-lg shadow-sm my-6 border-t-4 border-blue-600">
   <div class="border-b pb-4 mb-6">
